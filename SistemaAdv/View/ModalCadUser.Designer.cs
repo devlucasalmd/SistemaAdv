@@ -30,33 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadUser));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnMin = new System.Windows.Forms.Button();
-            this.BtnMax = new System.Windows.Forms.Button();
-            this.BtnClose = new System.Windows.Forms.Button();
+            this.Btn_Min = new System.Windows.Forms.Button();
+            this.Btn_Max = new System.Windows.Forms.Button();
+            this.Btn_Close = new System.Windows.Forms.Button();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.TxtBox_Email = new System.Windows.Forms.TextBox();
             this.LblEmail = new System.Windows.Forms.Label();
-            this.BtnClear = new System.Windows.Forms.Button();
+            this.Btn_Clear = new System.Windows.Forms.Button();
             this.LblStatus = new System.Windows.Forms.Label();
-            this.CmbBoxStatus = new System.Windows.Forms.ComboBox();
+            this.CmbBox_Status = new System.Windows.Forms.ComboBox();
             this.LblCargo = new System.Windows.Forms.Label();
-            this.TxtBox_Pass = new System.Windows.Forms.TextBox();
+            this.TxtBox_Password = new System.Windows.Forms.TextBox();
             this.LblPass = new System.Windows.Forms.Label();
             this.TxtBox_UserName = new System.Windows.Forms.TextBox();
             this.LblUserName = new System.Windows.Forms.Label();
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
             this.LblNome = new System.Windows.Forms.Label();
-            this.CmbBoxCargo = new System.Windows.Forms.ComboBox();
-            this.BtnConfirmar = new System.Windows.Forms.Button();
+            this.CmbBox_Cargo = new System.Windows.Forms.ComboBox();
+            this.Btn_Confirmar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
-            this.panel1.Controls.Add(this.BtnMin);
-            this.panel1.Controls.Add(this.BtnMax);
-            this.panel1.Controls.Add(this.BtnClose);
+            this.panel1.Controls.Add(this.Btn_Min);
+            this.panel1.Controls.Add(this.Btn_Max);
+            this.panel1.Controls.Add(this.Btn_Close);
             this.panel1.Controls.Add(this.LblTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -64,41 +64,41 @@
             this.panel1.Size = new System.Drawing.Size(491, 37);
             this.panel1.TabIndex = 8;
             // 
-            // BtnMin
+            // Btn_Min
             // 
-            this.BtnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMin.FlatAppearance.BorderSize = 0;
-            this.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMin.Image = ((System.Drawing.Image)(resources.GetObject("BtnMin.Image")));
-            this.BtnMin.Location = new System.Drawing.Point(372, 3);
-            this.BtnMin.Name = "BtnMin";
-            this.BtnMin.Size = new System.Drawing.Size(40, 28);
-            this.BtnMin.TabIndex = 7;
-            this.BtnMin.UseVisualStyleBackColor = true;
+            this.Btn_Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Min.FlatAppearance.BorderSize = 0;
+            this.Btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Min.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Min.Image")));
+            this.Btn_Min.Location = new System.Drawing.Point(372, 3);
+            this.Btn_Min.Name = "Btn_Min";
+            this.Btn_Min.Size = new System.Drawing.Size(40, 28);
+            this.Btn_Min.TabIndex = 7;
+            this.Btn_Min.UseVisualStyleBackColor = true;
             // 
-            // BtnMax
+            // Btn_Max
             // 
-            this.BtnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMax.FlatAppearance.BorderSize = 0;
-            this.BtnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMax.Image = ((System.Drawing.Image)(resources.GetObject("BtnMax.Image")));
-            this.BtnMax.Location = new System.Drawing.Point(412, 3);
-            this.BtnMax.Name = "BtnMax";
-            this.BtnMax.Size = new System.Drawing.Size(40, 28);
-            this.BtnMax.TabIndex = 6;
-            this.BtnMax.UseVisualStyleBackColor = true;
+            this.Btn_Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Max.FlatAppearance.BorderSize = 0;
+            this.Btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Max.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Max.Image")));
+            this.Btn_Max.Location = new System.Drawing.Point(412, 3);
+            this.Btn_Max.Name = "Btn_Max";
+            this.Btn_Max.Size = new System.Drawing.Size(40, 28);
+            this.Btn_Max.TabIndex = 6;
+            this.Btn_Max.UseVisualStyleBackColor = true;
             // 
-            // BtnClose
+            // Btn_Close
             // 
-            this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnClose.FlatAppearance.BorderSize = 0;
-            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose.Image")));
-            this.BtnClose.Location = new System.Drawing.Point(451, 3);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(40, 28);
-            this.BtnClose.TabIndex = 5;
-            this.BtnClose.UseVisualStyleBackColor = true;
+            this.Btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Close.FlatAppearance.BorderSize = 0;
+            this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Close.Image")));
+            this.Btn_Close.Location = new System.Drawing.Point(451, 3);
+            this.Btn_Close.Name = "Btn_Close";
+            this.Btn_Close.Size = new System.Drawing.Size(40, 28);
+            this.Btn_Close.TabIndex = 5;
+            this.Btn_Close.UseVisualStyleBackColor = true;
             // 
             // LblTitulo
             // 
@@ -127,14 +127,14 @@
             this.LblEmail.TabIndex = 34;
             this.LblEmail.Text = "Email";
             // 
-            // BtnClear
+            // Btn_Clear
             // 
-            this.BtnClear.Location = new System.Drawing.Point(376, 250);
-            this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(97, 23);
-            this.BtnClear.TabIndex = 33;
-            this.BtnClear.Text = "Limpar";
-            this.BtnClear.UseVisualStyleBackColor = true;
+            this.Btn_Clear.Location = new System.Drawing.Point(376, 250);
+            this.Btn_Clear.Name = "Btn_Clear";
+            this.Btn_Clear.Size = new System.Drawing.Size(97, 23);
+            this.Btn_Clear.TabIndex = 33;
+            this.Btn_Clear.Text = "Limpar";
+            this.Btn_Clear.UseVisualStyleBackColor = true;
             // 
             // LblStatus
             // 
@@ -145,16 +145,16 @@
             this.LblStatus.TabIndex = 32;
             this.LblStatus.Text = "Status";
             // 
-            // CmbBoxStatus
+            // CmbBox_Status
             // 
-            this.CmbBoxStatus.FormattingEnabled = true;
-            this.CmbBoxStatus.Items.AddRange(new object[] {
+            this.CmbBox_Status.FormattingEnabled = true;
+            this.CmbBox_Status.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.CmbBoxStatus.Location = new System.Drawing.Point(241, 74);
-            this.CmbBoxStatus.Name = "CmbBoxStatus";
-            this.CmbBoxStatus.Size = new System.Drawing.Size(121, 21);
-            this.CmbBoxStatus.TabIndex = 31;
+            this.CmbBox_Status.Location = new System.Drawing.Point(241, 74);
+            this.CmbBox_Status.Name = "CmbBox_Status";
+            this.CmbBox_Status.Size = new System.Drawing.Size(121, 21);
+            this.CmbBox_Status.TabIndex = 31;
             // 
             // LblCargo
             // 
@@ -165,13 +165,13 @@
             this.LblCargo.TabIndex = 30;
             this.LblCargo.Text = "Cargo";
             // 
-            // TxtBox_Pass
+            // TxtBox_Password
             // 
-            this.TxtBox_Pass.Location = new System.Drawing.Point(241, 189);
-            this.TxtBox_Pass.Name = "TxtBox_Pass";
-            this.TxtBox_Pass.PasswordChar = '*';
-            this.TxtBox_Pass.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_Pass.TabIndex = 29;
+            this.TxtBox_Password.Location = new System.Drawing.Point(241, 189);
+            this.TxtBox_Password.Name = "TxtBox_Password";
+            this.TxtBox_Password.PasswordChar = '*';
+            this.TxtBox_Password.Size = new System.Drawing.Size(100, 20);
+            this.TxtBox_Password.TabIndex = 29;
             // 
             // LblPass
             // 
@@ -214,27 +214,27 @@
             this.LblNome.TabIndex = 24;
             this.LblNome.Text = "Nome";
             // 
-            // CmbBoxCargo
+            // CmbBox_Cargo
             // 
-            this.CmbBoxCargo.FormattingEnabled = true;
-            this.CmbBoxCargo.Items.AddRange(new object[] {
+            this.CmbBox_Cargo.FormattingEnabled = true;
+            this.CmbBox_Cargo.Items.AddRange(new object[] {
             "Estagiario (a)",
             "Secretario (a)",
             "Advogado (a)",
             "Administrador (a)"});
-            this.CmbBoxCargo.Location = new System.Drawing.Point(15, 74);
-            this.CmbBoxCargo.Name = "CmbBoxCargo";
-            this.CmbBoxCargo.Size = new System.Drawing.Size(119, 21);
-            this.CmbBoxCargo.TabIndex = 23;
+            this.CmbBox_Cargo.Location = new System.Drawing.Point(15, 74);
+            this.CmbBox_Cargo.Name = "CmbBox_Cargo";
+            this.CmbBox_Cargo.Size = new System.Drawing.Size(119, 21);
+            this.CmbBox_Cargo.TabIndex = 23;
             // 
-            // BtnConfirmar
+            // Btn_Confirmar
             // 
-            this.BtnConfirmar.Location = new System.Drawing.Point(273, 250);
-            this.BtnConfirmar.Name = "BtnConfirmar";
-            this.BtnConfirmar.Size = new System.Drawing.Size(97, 23);
-            this.BtnConfirmar.TabIndex = 22;
-            this.BtnConfirmar.Text = "Salvar";
-            this.BtnConfirmar.UseVisualStyleBackColor = true;
+            this.Btn_Confirmar.Location = new System.Drawing.Point(273, 250);
+            this.Btn_Confirmar.Name = "Btn_Confirmar";
+            this.Btn_Confirmar.Size = new System.Drawing.Size(97, 23);
+            this.Btn_Confirmar.TabIndex = 22;
+            this.Btn_Confirmar.Text = "Salvar";
+            this.Btn_Confirmar.UseVisualStyleBackColor = true;
             // 
             // ModalCadUser
             // 
@@ -243,18 +243,18 @@
             this.ClientSize = new System.Drawing.Size(491, 293);
             this.Controls.Add(this.TxtBox_Email);
             this.Controls.Add(this.LblEmail);
-            this.Controls.Add(this.BtnClear);
+            this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.LblStatus);
-            this.Controls.Add(this.CmbBoxStatus);
+            this.Controls.Add(this.CmbBox_Status);
             this.Controls.Add(this.LblCargo);
-            this.Controls.Add(this.TxtBox_Pass);
+            this.Controls.Add(this.TxtBox_Password);
             this.Controls.Add(this.LblPass);
             this.Controls.Add(this.TxtBox_UserName);
             this.Controls.Add(this.LblUserName);
             this.Controls.Add(this.TxtBox_Name);
             this.Controls.Add(this.LblNome);
-            this.Controls.Add(this.CmbBoxCargo);
-            this.Controls.Add(this.BtnConfirmar);
+            this.Controls.Add(this.CmbBox_Cargo);
+            this.Controls.Add(this.Btn_Confirmar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModalCadUser";
@@ -269,23 +269,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button BtnMin;
-        private System.Windows.Forms.Button BtnMax;
-        private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.Button Btn_Min;
+        private System.Windows.Forms.Button Btn_Max;
+        private System.Windows.Forms.Button Btn_Close;
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.TextBox TxtBox_Email;
         private System.Windows.Forms.Label LblEmail;
-        private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Label LblStatus;
-        private System.Windows.Forms.ComboBox CmbBoxStatus;
+        private System.Windows.Forms.ComboBox CmbBox_Status;
         private System.Windows.Forms.Label LblCargo;
-        private System.Windows.Forms.TextBox TxtBox_Pass;
+        private System.Windows.Forms.TextBox TxtBox_Password;
         private System.Windows.Forms.Label LblPass;
         private System.Windows.Forms.TextBox TxtBox_UserName;
         private System.Windows.Forms.Label LblUserName;
         private System.Windows.Forms.TextBox TxtBox_Name;
         private System.Windows.Forms.Label LblNome;
-        private System.Windows.Forms.ComboBox CmbBoxCargo;
-        private System.Windows.Forms.Button BtnConfirmar;
+        private System.Windows.Forms.ComboBox CmbBox_Cargo;
+        private System.Windows.Forms.Button Btn_Confirmar;
     }
 }

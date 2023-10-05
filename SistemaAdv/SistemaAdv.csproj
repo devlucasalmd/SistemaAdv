@@ -64,6 +64,12 @@
     <Compile Include="View\ModalCadUser.Designer.cs">
       <DependentUpon>ModalCadUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TelaCadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaCadCliente.Designer.cs">
+      <DependentUpon>TelaCadCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaCadProcesso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,8 +105,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ModalCadCliente.resx">
+      <DependentUpon>ModalCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModalCadProcesso.resx">
+      <DependentUpon>ModalCadProcesso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ModalCadUser.resx">
       <DependentUpon>ModalCadUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TelaCadCliente.resx">
+      <DependentUpon>TelaCadCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaCadProcesso.resx">
       <DependentUpon>TelaCadProcesso.cs</DependentUpon>
@@ -130,6 +145,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Service\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

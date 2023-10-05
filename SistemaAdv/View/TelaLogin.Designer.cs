@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Close = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picBox_User = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.LnkLbl_EsqueciSenha = new System.Windows.Forms.LinkLabel();
+            this.Btn_Login = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtBox_Password = new System.Windows.Forms.TextBox();
             this.Lbl_UserName = new System.Windows.Forms.Label();
             this.Lbl_Login = new System.Windows.Forms.Label();
             this.TxtBox_UserName = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Btn_Close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -72,18 +72,18 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Advocacia";
             // 
-            // button1
+            // Btn_Close
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(663, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 37);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_Close.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Close.BackgroundImage")));
+            this.Btn_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_Close.FlatAppearance.BorderSize = 0;
+            this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Close.Location = new System.Drawing.Point(663, 0);
+            this.Btn_Close.Name = "Btn_Close";
+            this.Btn_Close.Size = new System.Drawing.Size(38, 37);
+            this.Btn_Close.TabIndex = 0;
+            this.Btn_Close.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -91,10 +91,10 @@
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.picBox_User);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.LnkLbl_EsqueciSenha);
+            this.panel2.Controls.Add(this.Btn_Login);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.TxtBox_Password);
             this.panel2.Controls.Add(this.Lbl_UserName);
             this.panel2.Controls.Add(this.Lbl_Login);
             this.panel2.Controls.Add(this.TxtBox_UserName);
@@ -124,28 +124,28 @@
             this.picBox_User.TabIndex = 8;
             this.picBox_User.TabStop = false;
             // 
-            // linkLabel1
+            // LnkLbl_EsqueciSenha
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.ForeColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(85, 157);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 13);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Esqueci a senha";
+            this.LnkLbl_EsqueciSenha.AutoSize = true;
+            this.LnkLbl_EsqueciSenha.ForeColor = System.Drawing.Color.White;
+            this.LnkLbl_EsqueciSenha.LinkColor = System.Drawing.Color.White;
+            this.LnkLbl_EsqueciSenha.Location = new System.Drawing.Point(85, 157);
+            this.LnkLbl_EsqueciSenha.Name = "LnkLbl_EsqueciSenha";
+            this.LnkLbl_EsqueciSenha.Size = new System.Drawing.Size(86, 13);
+            this.LnkLbl_EsqueciSenha.TabIndex = 7;
+            this.LnkLbl_EsqueciSenha.TabStop = true;
+            this.LnkLbl_EsqueciSenha.Text = "Esqueci a senha";
             // 
-            // button2
+            // Btn_Login
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(70, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Login";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_Login.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Login.Location = new System.Drawing.Point(70, 183);
+            this.Btn_Login.Name = "Btn_Login";
+            this.Btn_Login.Size = new System.Drawing.Size(122, 35);
+            this.Btn_Login.TabIndex = 1;
+            this.Btn_Login.Text = "Login";
+            this.Btn_Login.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -157,14 +157,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Senha";
             // 
-            // textBox2
+            // TxtBox_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(50, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.TxtBox_Password.Location = new System.Drawing.Point(50, 119);
+            this.TxtBox_Password.Name = "TxtBox_Password";
+            this.TxtBox_Password.PasswordChar = '*';
+            this.TxtBox_Password.Size = new System.Drawing.Size(175, 20);
+            this.TxtBox_Password.TabIndex = 5;
+            this.TxtBox_Password.UseSystemPasswordChar = true;
             // 
             // Lbl_UserName
             // 
@@ -231,14 +231,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Close;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox picBox_User;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.LinkLabel LnkLbl_EsqueciSenha;
+        private System.Windows.Forms.Button Btn_Login;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtBox_Password;
         private System.Windows.Forms.Label Lbl_UserName;
         private System.Windows.Forms.Label Lbl_Login;
         private System.Windows.Forms.TextBox TxtBox_UserName;

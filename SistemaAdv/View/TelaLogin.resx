@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Btn_Close.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAKlJREFUWEftllEKgzAQRHOKVnrF9riCepp2BlnYjxCzSdZQ2AeD+XCyY8waUxAE
@@ -130,7 +130,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAQBJREFUSEvt1D1OAkEYxvEBEg02aMRb0NIDiVYUHoToLbDwAJRAyw2IBwCCNVRe
+        DAAACwwBP0AiyAAAAQBJREFUSEvt1D1OAkEYxvEBEg02aMRb0NIDiVYUHoToLbDwAJRAyw2IBwCCNVRe
         QSINhV/8n93ZxATXHWawAZ7kl5l3ZybvJvthDjJ1PKJvxxp2ljKe8I1PvNpR9RCXCMoppnhHG+dQLvCA
         D4xxAu/cQ3fciqrN3OGvdadMMEMuqjaTxxyjqPLMAt14mpoe9Jy8s0InnqZG69rnnX9rco0X6wtvP+rf
         aF37klrnM3MLvTHP0PfhSvt1TuczkzTZ9ovW/mMTc4ZGPDUF3NhR0fViPA1r0oT+USVUoDWNqnVd60pQ
@@ -140,7 +140,7 @@
   <data name="picBox_User.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAg9JREFUSEvllDtPVEEYQNdEotAQEksrSZRXrQn+ARWxUCxpwBZo1X+AopbUKGik
+        DAAACwwBP0AiyAAAAg9JREFUSEvllDtPVEEYQNdEotAQEksrSZRXrQn+ARWxUCxpwBZo1X+AopbUKGik
         gF5bhQoVWjoQCg2UFMQH58zOZCeX3csldniSk9nvu3f2zuObqf139OAUvsK52Bqb/2eG8Bv+jf7G/dim
         3Fe8g6emHd+hf7KNj7EPz6PY9uMT/I6+9xbtVwlf/Ix/cDrGZXTgM/R9+1X6kDOww1iIGrj+s/gxttcw
         ZxztNx+iEtwDp+4Mcu7hAR7iZmyNhzHnOdr/doha4Ca7xvmUu/AnruNlE7HdwB/YaSLi0tl/LURN6EVH

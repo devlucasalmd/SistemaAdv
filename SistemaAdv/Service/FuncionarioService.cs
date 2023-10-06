@@ -21,32 +21,21 @@ namespace SistemaAdv.Service
         //retornar int para devolver id do funcionario, para setar permissão
         public void CadastrarFuncionario(Funcionario novoFuncionario)
         {
-            try
-            {
                 connection.OpenConnection();
 
                 // Criar um novo objeto Funcionario com os dados fornecidos.
                 sqlCommand.Connection = connection.ReturnConnection();
-                sqlCommand.CommandText = @"INSERT INTO TB_User VALUES 
-            (@name, @job, @email, @cpf, @gender)"
+                sqlCommand.CommandText = @"INSERT INTO Funcionarios VALUES (@Nome, @UserName, @Senha, @Email, @Cargo, @Status, @Data)"
                 ;
 
-                sqlCommand.Parameters.AddWithValue("@name", novoFuncionario.Nome);
-                sqlCommand.Parameters.AddWithValue("@job", txbJob.Text);
-                sqlCommand.Parameters.AddWithValue("@email", txbEmail.Text);
-                sqlCommand.Parameters.AddWithValue("@cpf", mtbCPF.Text);
-                sqlCommand.Parameters.AddWithValue("@gender", cmbGender.Text);
-                
-
-                MessageBox.Show("Funcionário cadastrado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-            
-
+                sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
+                sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
+                sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
+                sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
+                sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
+                sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
+                sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
+         
             try
             {
                 //Insere o cliente
@@ -56,19 +45,21 @@ namespace SistemaAdv.Service
             {
                 throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
                     + err.Message);
-}
+            }
             finally
-{
-    connection.CloseConnection();
-}
-ClearFields();
-UpdateListView();
+            {
+                connection.CloseConnection();
+            }
 
-MessageBox.Show(
-    "Cadastrado com Sucesso",
-    "CADASTRO",
-    MessageBoxButtons.OK,
-    MessageBoxIcon.Information
-    );
+
+            MessageBox.Show(
+                "Cadastrado com Sucesso",
+                "CADASTRO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
         }
+                
+    
     }
+}

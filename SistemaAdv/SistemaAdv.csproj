@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Service\FuncionarioService.cs" />
+    <Compile Include="View\Connection.cs" />
     <Compile Include="View\ModalCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,8 +146,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Service\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

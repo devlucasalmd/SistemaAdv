@@ -235,6 +235,7 @@
             this.Btn_Confirmar.TabIndex = 22;
             this.Btn_Confirmar.Text = "Salvar";
             this.Btn_Confirmar.UseVisualStyleBackColor = true;
+            this.Btn_Confirmar.Click += new System.EventHandler(this.Btn_Confirmar_Click);
             // 
             // ModalCadUser
             // 

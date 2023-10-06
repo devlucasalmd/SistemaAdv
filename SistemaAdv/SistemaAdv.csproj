@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
-    <Compile Include="View\Connection.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="View\ModalCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="View\ModalCadUser.Designer.cs">
       <DependentUpon>ModalCadUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TelaCadAudiencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaCadAudiencia.Designer.cs">
+      <DependentUpon>TelaCadAudiencia.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TelaCadCliente.cs">
       <SubType>Form</SubType>
@@ -145,8 +151,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

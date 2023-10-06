@@ -58,6 +58,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -92,9 +94,9 @@
             this.LblStatus.AutoSize = true;
             this.LblStatus.Location = new System.Drawing.Point(9, 46);
             this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(50, 13);
+            this.LblStatus.Size = new System.Drawing.Size(42, 13);
             this.LblStatus.TabIndex = 47;
-            this.LblStatus.Text = "Natureza";
+            this.LblStatus.Text = "Pessoa";
             // 
             // CmbBox_Status
             // 
@@ -247,7 +249,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 276);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 400);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(256, 20);
             this.dataGridView1.TabIndex = 61;
@@ -255,7 +257,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 260);
+            this.label1.Location = new System.Drawing.Point(12, 384);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 62;
@@ -263,7 +265,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(513, 63);
+            this.textBox1.Location = new System.Drawing.Point(502, 123);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(172, 20);
             this.textBox1.TabIndex = 64;
@@ -271,7 +273,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(510, 47);
+            this.label2.Location = new System.Drawing.Point(499, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 63;
@@ -279,7 +281,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(513, 123);
+            this.textBox2.Location = new System.Drawing.Point(502, 183);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(172, 20);
             this.textBox2.TabIndex = 66;
@@ -287,7 +289,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(510, 107);
+            this.label3.Location = new System.Drawing.Point(499, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 65;
@@ -295,7 +297,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 350);
+            this.textBox3.Location = new System.Drawing.Point(12, 273);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(172, 20);
             this.textBox3.TabIndex = 68;
@@ -303,7 +305,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 334);
+            this.label6.Location = new System.Drawing.Point(9, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 67;
@@ -311,7 +313,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(228, 350);
+            this.textBox5.Location = new System.Drawing.Point(225, 273);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(172, 20);
             this.textBox5.TabIndex = 70;
@@ -319,17 +321,35 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(225, 334);
+            this.label7.Location = new System.Drawing.Point(222, 257);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 69;
             this.label7.Text = "Acordo";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(502, 63);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 71;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(499, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 13);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Data Distribuição";
             // 
             // ModalCadProcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
@@ -397,5 +417,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label8;
     }
 }

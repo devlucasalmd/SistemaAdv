@@ -29,56 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadProcesso));
-            this.TxtBox_Email = new System.Windows.Forms.TextBox();
-            this.LblEmail = new System.Windows.Forms.Label();
+            this.TxtBox_PC = new System.Windows.Forms.TextBox();
+            this.LblPC = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
-            this.LblStatus = new System.Windows.Forms.Label();
-            this.CmbBox_Status = new System.Windows.Forms.ComboBox();
-            this.LblCargo = new System.Windows.Forms.Label();
-            this.TxtBox_UserName = new System.Windows.Forms.TextBox();
-            this.LblUserName = new System.Windows.Forms.Label();
-            this.TxtBox_Name = new System.Windows.Forms.TextBox();
+            this.LblNumProcesso = new System.Windows.Forms.Label();
+            this.LblDemanda = new System.Windows.Forms.Label();
+            this.TxtBox_NumProcesso = new System.Windows.Forms.TextBox();
             this.Btn_Confirmar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Min = new System.Windows.Forms.Button();
             this.Btn_Max = new System.Windows.Forms.Button();
             this.Btn_Close = new System.Windows.Forms.Button();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LblAdvPC = new System.Windows.Forms.Label();
+            this.TxtBox_AdvPC = new System.Windows.Forms.TextBox();
+            this.LblJuizo = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
+            this.LblCliente = new System.Windows.Forms.Label();
+            this.TxtBox_LastAndamento = new System.Windows.Forms.TextBox();
+            this.LblLastAndamento = new System.Windows.Forms.Label();
+            this.TxtBox_Obs = new System.Windows.Forms.TextBox();
+            this.LblObs = new System.Windows.Forms.Label();
+            this.TxtBox_Finalizacao = new System.Windows.Forms.TextBox();
+            this.LblFinalizacao = new System.Windows.Forms.Label();
+            this.TxtBox_Acordo = new System.Windows.Forms.TextBox();
+            this.LblAcordo = new System.Windows.Forms.Label();
+            this.DataDistribuicao = new System.Windows.Forms.DateTimePicker();
+            this.LblDataDist = new System.Windows.Forms.Label();
+            this.TxtBox_Demanda = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.TxtBox_Cliente = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TxtBox_Email
+            // TxtBox_PC
             // 
-            this.TxtBox_Email.Location = new System.Drawing.Point(12, 198);
-            this.TxtBox_Email.Name = "TxtBox_Email";
-            this.TxtBox_Email.Size = new System.Drawing.Size(172, 20);
-            this.TxtBox_Email.TabIndex = 50;
+            this.TxtBox_PC.Location = new System.Drawing.Point(7, 123);
+            this.TxtBox_PC.Name = "TxtBox_PC";
+            this.TxtBox_PC.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_PC.TabIndex = 50;
             // 
-            // LblEmail
+            // LblPC
             // 
-            this.LblEmail.AutoSize = true;
-            this.LblEmail.Location = new System.Drawing.Point(9, 182);
-            this.LblEmail.Name = "LblEmail";
-            this.LblEmail.Size = new System.Drawing.Size(77, 13);
-            this.LblEmail.TabIndex = 49;
-            this.LblEmail.Text = "Parte Contrária";
+            this.LblPC.AutoSize = true;
+            this.LblPC.Location = new System.Drawing.Point(4, 107);
+            this.LblPC.Name = "LblPC";
+            this.LblPC.Size = new System.Drawing.Size(77, 13);
+            this.LblPC.TabIndex = 49;
+            this.LblPC.Text = "Parte Contrária";
             // 
             // Btn_Clear
             // 
@@ -89,57 +88,30 @@
             this.Btn_Clear.Text = "Limpar";
             this.Btn_Clear.UseVisualStyleBackColor = true;
             // 
-            // LblStatus
+            // LblNumProcesso
             // 
-            this.LblStatus.AutoSize = true;
-            this.LblStatus.Location = new System.Drawing.Point(9, 46);
-            this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(42, 13);
-            this.LblStatus.TabIndex = 47;
-            this.LblStatus.Text = "Pessoa";
+            this.LblNumProcesso.AutoSize = true;
+            this.LblNumProcesso.Location = new System.Drawing.Point(4, 47);
+            this.LblNumProcesso.Name = "LblNumProcesso";
+            this.LblNumProcesso.Size = new System.Drawing.Size(106, 13);
+            this.LblNumProcesso.TabIndex = 45;
+            this.LblNumProcesso.Text = "Número do Processo";
             // 
-            // CmbBox_Status
+            // LblDemanda
             // 
-            this.CmbBox_Status.FormattingEnabled = true;
-            this.CmbBox_Status.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
-            this.CmbBox_Status.Location = new System.Drawing.Point(12, 62);
-            this.CmbBox_Status.Name = "CmbBox_Status";
-            this.CmbBox_Status.Size = new System.Drawing.Size(121, 21);
-            this.CmbBox_Status.TabIndex = 46;
+            this.LblDemanda.AutoSize = true;
+            this.LblDemanda.Location = new System.Drawing.Point(4, 172);
+            this.LblDemanda.Name = "LblDemanda";
+            this.LblDemanda.Size = new System.Drawing.Size(53, 13);
+            this.LblDemanda.TabIndex = 41;
+            this.LblDemanda.Text = "Demanda";
             // 
-            // LblCargo
+            // TxtBox_NumProcesso
             // 
-            this.LblCargo.AutoSize = true;
-            this.LblCargo.Location = new System.Drawing.Point(9, 106);
-            this.LblCargo.Name = "LblCargo";
-            this.LblCargo.Size = new System.Drawing.Size(106, 13);
-            this.LblCargo.TabIndex = 45;
-            this.LblCargo.Text = "Número do Processo";
-            // 
-            // TxtBox_UserName
-            // 
-            this.TxtBox_UserName.Location = new System.Drawing.Point(200, 62);
-            this.TxtBox_UserName.Name = "TxtBox_UserName";
-            this.TxtBox_UserName.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_UserName.TabIndex = 42;
-            // 
-            // LblUserName
-            // 
-            this.LblUserName.AutoSize = true;
-            this.LblUserName.Location = new System.Drawing.Point(197, 46);
-            this.LblUserName.Name = "LblUserName";
-            this.LblUserName.Size = new System.Drawing.Size(53, 13);
-            this.LblUserName.TabIndex = 41;
-            this.LblUserName.Text = "Demanda";
-            // 
-            // TxtBox_Name
-            // 
-            this.TxtBox_Name.Location = new System.Drawing.Point(12, 122);
-            this.TxtBox_Name.Name = "TxtBox_Name";
-            this.TxtBox_Name.Size = new System.Drawing.Size(206, 20);
-            this.TxtBox_Name.TabIndex = 40;
+            this.TxtBox_NumProcesso.Location = new System.Drawing.Point(7, 63);
+            this.TxtBox_NumProcesso.Name = "TxtBox_NumProcesso";
+            this.TxtBox_NumProcesso.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_NumProcesso.TabIndex = 40;
             // 
             // Btn_Confirmar
             // 
@@ -210,30 +182,30 @@
             this.LblTitulo.TabIndex = 4;
             this.LblTitulo.Text = "Advocacia";
             // 
-            // label4
+            // LblAdvPC
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 13);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "Advogado da Parte Contraria";
+            this.LblAdvPC.AutoSize = true;
+            this.LblAdvPC.Location = new System.Drawing.Point(236, 107);
+            this.LblAdvPC.Name = "LblAdvPC";
+            this.LblAdvPC.Size = new System.Drawing.Size(144, 13);
+            this.LblAdvPC.TabIndex = 58;
+            this.LblAdvPC.Text = "Advogado da Parte Contraria";
             // 
-            // textBox4
+            // TxtBox_AdvPC
             // 
-            this.textBox4.Location = new System.Drawing.Point(233, 198);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 20);
-            this.textBox4.TabIndex = 57;
+            this.TxtBox_AdvPC.Location = new System.Drawing.Point(239, 123);
+            this.TxtBox_AdvPC.Name = "TxtBox_AdvPC";
+            this.TxtBox_AdvPC.Size = new System.Drawing.Size(173, 20);
+            this.TxtBox_AdvPC.TabIndex = 57;
             // 
-            // label5
+            // LblJuizo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(276, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Juízo";
+            this.LblJuizo.AutoSize = true;
+            this.LblJuizo.Location = new System.Drawing.Point(236, 47);
+            this.LblJuizo.Name = "LblJuizo";
+            this.LblJuizo.Size = new System.Drawing.Size(33, 13);
+            this.LblJuizo.TabIndex = 60;
+            this.LblJuizo.Text = "Juízo";
             // 
             // comboBox1
             // 
@@ -241,138 +213,150 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Fisica",
             "Juridica"});
-            this.comboBox1.Location = new System.Drawing.Point(279, 122);
+            this.comboBox1.Location = new System.Drawing.Point(239, 63);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 59;
             // 
-            // dataGridView1
+            // LblCliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 400);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(256, 20);
-            this.dataGridView1.TabIndex = 61;
+            this.LblCliente.AutoSize = true;
+            this.LblCliente.Location = new System.Drawing.Point(4, 233);
+            this.LblCliente.Name = "LblCliente";
+            this.LblCliente.Size = new System.Drawing.Size(39, 13);
+            this.LblCliente.TabIndex = 62;
+            this.LblCliente.Text = "Cliente";
             // 
-            // label1
+            // TxtBox_LastAndamento
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 384);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Cliente";
+            this.TxtBox_LastAndamento.Location = new System.Drawing.Point(13, 38);
+            this.TxtBox_LastAndamento.Name = "TxtBox_LastAndamento";
+            this.TxtBox_LastAndamento.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_LastAndamento.TabIndex = 64;
             // 
-            // textBox1
+            // LblLastAndamento
             // 
-            this.textBox1.Location = new System.Drawing.Point(502, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 64;
+            this.LblLastAndamento.AutoSize = true;
+            this.LblLastAndamento.Location = new System.Drawing.Point(10, 22);
+            this.LblLastAndamento.Name = "LblLastAndamento";
+            this.LblLastAndamento.Size = new System.Drawing.Size(93, 13);
+            this.LblLastAndamento.TabIndex = 63;
+            this.LblLastAndamento.Text = "Ultimo Andamento";
             // 
-            // label2
+            // TxtBox_Obs
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(499, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "Ultimo Andamento";
+            this.TxtBox_Obs.Location = new System.Drawing.Point(240, 249);
+            this.TxtBox_Obs.Name = "TxtBox_Obs";
+            this.TxtBox_Obs.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Obs.TabIndex = 66;
             // 
-            // textBox2
+            // LblObs
             // 
-            this.textBox2.Location = new System.Drawing.Point(502, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 20);
-            this.textBox2.TabIndex = 66;
+            this.LblObs.AutoSize = true;
+            this.LblObs.Location = new System.Drawing.Point(237, 233);
+            this.LblObs.Name = "LblObs";
+            this.LblObs.Size = new System.Drawing.Size(65, 13);
+            this.LblObs.TabIndex = 65;
+            this.LblObs.Text = "Observação";
             // 
-            // label3
+            // TxtBox_Finalizacao
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(499, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Observação";
+            this.TxtBox_Finalizacao.Location = new System.Drawing.Point(7, 316);
+            this.TxtBox_Finalizacao.Name = "TxtBox_Finalizacao";
+            this.TxtBox_Finalizacao.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Finalizacao.TabIndex = 68;
             // 
-            // textBox3
+            // LblFinalizacao
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 273);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 20);
-            this.textBox3.TabIndex = 68;
+            this.LblFinalizacao.AutoSize = true;
+            this.LblFinalizacao.Location = new System.Drawing.Point(4, 300);
+            this.LblFinalizacao.Name = "LblFinalizacao";
+            this.LblFinalizacao.Size = new System.Drawing.Size(60, 13);
+            this.LblFinalizacao.TabIndex = 67;
+            this.LblFinalizacao.Text = "Finalização";
             // 
-            // label6
+            // TxtBox_Acordo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 257);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 67;
-            this.label6.Text = "Finalização";
+            this.TxtBox_Acordo.Location = new System.Drawing.Point(239, 188);
+            this.TxtBox_Acordo.Name = "TxtBox_Acordo";
+            this.TxtBox_Acordo.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Acordo.TabIndex = 70;
             // 
-            // textBox5
+            // LblAcordo
             // 
-            this.textBox5.Location = new System.Drawing.Point(225, 273);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 20);
-            this.textBox5.TabIndex = 70;
+            this.LblAcordo.AutoSize = true;
+            this.LblAcordo.Location = new System.Drawing.Point(236, 172);
+            this.LblAcordo.Name = "LblAcordo";
+            this.LblAcordo.Size = new System.Drawing.Size(41, 13);
+            this.LblAcordo.TabIndex = 69;
+            this.LblAcordo.Text = "Acordo";
             // 
-            // label7
+            // DataDistribuicao
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(222, 257);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 69;
-            this.label7.Text = "Acordo";
+            this.DataDistribuicao.Location = new System.Drawing.Point(426, 64);
+            this.DataDistribuicao.Name = "DataDistribuicao";
+            this.DataDistribuicao.Size = new System.Drawing.Size(200, 20);
+            this.DataDistribuicao.TabIndex = 71;
             // 
-            // dateTimePicker1
+            // LblDataDist
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(502, 63);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 71;
+            this.LblDataDist.AutoSize = true;
+            this.LblDataDist.Location = new System.Drawing.Point(423, 48);
+            this.LblDataDist.Name = "LblDataDist";
+            this.LblDataDist.Size = new System.Drawing.Size(88, 13);
+            this.LblDataDist.TabIndex = 72;
+            this.LblDataDist.Text = "Data Distribuição";
             // 
-            // label8
+            // TxtBox_Demanda
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(499, 47);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 72;
-            this.label8.Text = "Data Distribuição";
+            this.TxtBox_Demanda.Location = new System.Drawing.Point(7, 188);
+            this.TxtBox_Demanda.Name = "TxtBox_Demanda";
+            this.TxtBox_Demanda.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Demanda.TabIndex = 73;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.TxtBox_LastAndamento);
+            this.panel2.Controls.Add(this.LblLastAndamento);
+            this.panel2.Location = new System.Drawing.Point(588, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 177);
+            this.panel2.TabIndex = 76;
+            // 
+            // TxtBox_Cliente
+            // 
+            this.TxtBox_Cliente.Location = new System.Drawing.Point(7, 249);
+            this.TxtBox_Cliente.Name = "TxtBox_Cliente";
+            this.TxtBox_Cliente.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Cliente.TabIndex = 77;
             // 
             // ModalCadProcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TxtBox_Cliente);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.TxtBox_Obs);
+            this.Controls.Add(this.LblObs);
+            this.Controls.Add(this.TxtBox_Demanda);
+            this.Controls.Add(this.LblDataDist);
+            this.Controls.Add(this.DataDistribuicao);
+            this.Controls.Add(this.TxtBox_Acordo);
+            this.Controls.Add(this.LblAcordo);
+            this.Controls.Add(this.TxtBox_Finalizacao);
+            this.Controls.Add(this.LblFinalizacao);
+            this.Controls.Add(this.LblCliente);
+            this.Controls.Add(this.LblJuizo);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.TxtBox_Email);
-            this.Controls.Add(this.LblEmail);
+            this.Controls.Add(this.LblAdvPC);
+            this.Controls.Add(this.TxtBox_AdvPC);
+            this.Controls.Add(this.TxtBox_PC);
+            this.Controls.Add(this.LblPC);
             this.Controls.Add(this.Btn_Clear);
-            this.Controls.Add(this.LblStatus);
-            this.Controls.Add(this.CmbBox_Status);
-            this.Controls.Add(this.LblCargo);
-            this.Controls.Add(this.TxtBox_UserName);
-            this.Controls.Add(this.LblUserName);
-            this.Controls.Add(this.TxtBox_Name);
+            this.Controls.Add(this.LblNumProcesso);
+            this.Controls.Add(this.LblDemanda);
+            this.Controls.Add(this.TxtBox_NumProcesso);
             this.Controls.Add(this.Btn_Confirmar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -380,7 +364,8 @@
             this.Text = "ModalCadProcesso";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,36 +373,35 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox TxtBox_Email;
-        private System.Windows.Forms.Label LblEmail;
+        private System.Windows.Forms.TextBox TxtBox_PC;
+        private System.Windows.Forms.Label LblPC;
         private System.Windows.Forms.Button Btn_Clear;
-        private System.Windows.Forms.Label LblStatus;
-        private System.Windows.Forms.ComboBox CmbBox_Status;
-        private System.Windows.Forms.Label LblCargo;
-        private System.Windows.Forms.TextBox TxtBox_UserName;
-        private System.Windows.Forms.Label LblUserName;
-        private System.Windows.Forms.TextBox TxtBox_Name;
+        private System.Windows.Forms.Label LblNumProcesso;
+        private System.Windows.Forms.Label LblDemanda;
+        private System.Windows.Forms.TextBox TxtBox_NumProcesso;
         private System.Windows.Forms.Button Btn_Confirmar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Min;
         private System.Windows.Forms.Button Btn_Max;
         private System.Windows.Forms.Button Btn_Close;
         private System.Windows.Forms.Label LblTitulo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LblAdvPC;
+        private System.Windows.Forms.TextBox TxtBox_AdvPC;
+        private System.Windows.Forms.Label LblJuizo;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label LblCliente;
+        private System.Windows.Forms.TextBox TxtBox_LastAndamento;
+        private System.Windows.Forms.Label LblLastAndamento;
+        private System.Windows.Forms.TextBox TxtBox_Obs;
+        private System.Windows.Forms.Label LblObs;
+        private System.Windows.Forms.TextBox TxtBox_Finalizacao;
+        private System.Windows.Forms.Label LblFinalizacao;
+        private System.Windows.Forms.TextBox TxtBox_Acordo;
+        private System.Windows.Forms.Label LblAcordo;
+        private System.Windows.Forms.DateTimePicker DataDistribuicao;
+        private System.Windows.Forms.Label LblDataDist;
+        private System.Windows.Forms.TextBox TxtBox_Demanda;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox TxtBox_Cliente;
     }
 }

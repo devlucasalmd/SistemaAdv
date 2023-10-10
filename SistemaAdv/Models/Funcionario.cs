@@ -29,9 +29,15 @@ namespace SistemaAdv.Models
             Data = data;
         }
 
-        // READ
+        // READ & EDIT
         public Funcionario(string id, string nome, string userName, string senha, string email, string cargo, string status, DateTime data): 
                 this(nome, userName, senha, email, cargo, status, data)
+        {
+            Id = id;
+        }
+
+        // DELETE
+        public Funcionario(string id) 
         {
             Id = id;
         }

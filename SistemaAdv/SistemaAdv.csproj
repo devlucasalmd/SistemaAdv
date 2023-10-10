@@ -46,14 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="View\ModalCadAudiencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModalCadAudiencia.Designer.cs">
+      <DependentUpon>ModalCadAudiencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ModalCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ModalCadCliente.Designer.cs">
       <DependentUpon>ModalCadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModalCadFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModalCadFinanceiro.Designer.cs">
+      <DependentUpon>ModalCadFinanceiro.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ModalCadProcesso.cs">
       <SubType>Form</SubType>
@@ -114,14 +127,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ModalCadAudiencia.resx">
+      <DependentUpon>ModalCadAudiencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ModalCadCliente.resx">
       <DependentUpon>ModalCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModalCadFinanceiro.resx">
+      <DependentUpon>ModalCadFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ModalCadProcesso.resx">
       <DependentUpon>ModalCadProcesso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ModalCadUser.resx">
       <DependentUpon>ModalCadUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TelaCadAudiencia.resx">
+      <DependentUpon>TelaCadAudiencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaCadCliente.resx">
       <DependentUpon>TelaCadCliente.cs</DependentUpon>

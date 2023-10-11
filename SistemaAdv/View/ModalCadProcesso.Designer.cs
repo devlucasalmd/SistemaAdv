@@ -59,13 +59,15 @@
             this.TxtBox_Demanda = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TxtBox_Cliente = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtBox_PC
             // 
-            this.TxtBox_PC.Location = new System.Drawing.Point(7, 123);
+            this.TxtBox_PC.Location = new System.Drawing.Point(15, 185);
             this.TxtBox_PC.Name = "TxtBox_PC";
             this.TxtBox_PC.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_PC.TabIndex = 50;
@@ -73,7 +75,7 @@
             // LblPC
             // 
             this.LblPC.AutoSize = true;
-            this.LblPC.Location = new System.Drawing.Point(4, 107);
+            this.LblPC.Location = new System.Drawing.Point(12, 169);
             this.LblPC.Name = "LblPC";
             this.LblPC.Size = new System.Drawing.Size(77, 13);
             this.LblPC.TabIndex = 49;
@@ -91,7 +93,7 @@
             // LblNumProcesso
             // 
             this.LblNumProcesso.AutoSize = true;
-            this.LblNumProcesso.Location = new System.Drawing.Point(4, 47);
+            this.LblNumProcesso.Location = new System.Drawing.Point(9, 110);
             this.LblNumProcesso.Name = "LblNumProcesso";
             this.LblNumProcesso.Size = new System.Drawing.Size(106, 13);
             this.LblNumProcesso.TabIndex = 45;
@@ -100,7 +102,7 @@
             // LblDemanda
             // 
             this.LblDemanda.AutoSize = true;
-            this.LblDemanda.Location = new System.Drawing.Point(4, 172);
+            this.LblDemanda.Location = new System.Drawing.Point(12, 226);
             this.LblDemanda.Name = "LblDemanda";
             this.LblDemanda.Size = new System.Drawing.Size(53, 13);
             this.LblDemanda.TabIndex = 41;
@@ -108,7 +110,7 @@
             // 
             // TxtBox_NumProcesso
             // 
-            this.TxtBox_NumProcesso.Location = new System.Drawing.Point(7, 63);
+            this.TxtBox_NumProcesso.Location = new System.Drawing.Point(12, 126);
             this.TxtBox_NumProcesso.Name = "TxtBox_NumProcesso";
             this.TxtBox_NumProcesso.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_NumProcesso.TabIndex = 40;
@@ -185,7 +187,7 @@
             // LblAdvPC
             // 
             this.LblAdvPC.AutoSize = true;
-            this.LblAdvPC.Location = new System.Drawing.Point(236, 107);
+            this.LblAdvPC.Location = new System.Drawing.Point(232, 169);
             this.LblAdvPC.Name = "LblAdvPC";
             this.LblAdvPC.Size = new System.Drawing.Size(144, 13);
             this.LblAdvPC.TabIndex = 58;
@@ -193,7 +195,7 @@
             // 
             // TxtBox_AdvPC
             // 
-            this.TxtBox_AdvPC.Location = new System.Drawing.Point(239, 123);
+            this.TxtBox_AdvPC.Location = new System.Drawing.Point(235, 185);
             this.TxtBox_AdvPC.Name = "TxtBox_AdvPC";
             this.TxtBox_AdvPC.Size = new System.Drawing.Size(173, 20);
             this.TxtBox_AdvPC.TabIndex = 57;
@@ -201,7 +203,7 @@
             // LblJuizo
             // 
             this.LblJuizo.AutoSize = true;
-            this.LblJuizo.Location = new System.Drawing.Point(236, 47);
+            this.LblJuizo.Location = new System.Drawing.Point(233, 110);
             this.LblJuizo.Name = "LblJuizo";
             this.LblJuizo.Size = new System.Drawing.Size(33, 13);
             this.LblJuizo.TabIndex = 60;
@@ -213,15 +215,15 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Fisica",
             "Juridica"});
-            this.comboBox1.Location = new System.Drawing.Point(239, 63);
+            this.comboBox1.Location = new System.Drawing.Point(236, 126);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(171, 21);
             this.comboBox1.TabIndex = 59;
             // 
             // LblCliente
             // 
             this.LblCliente.AutoSize = true;
-            this.LblCliente.Location = new System.Drawing.Point(4, 233);
+            this.LblCliente.Location = new System.Drawing.Point(12, 275);
             this.LblCliente.Name = "LblCliente";
             this.LblCliente.Size = new System.Drawing.Size(39, 13);
             this.LblCliente.TabIndex = 62;
@@ -245,7 +247,7 @@
             // 
             // TxtBox_Obs
             // 
-            this.TxtBox_Obs.Location = new System.Drawing.Point(240, 249);
+            this.TxtBox_Obs.Location = new System.Drawing.Point(13, 87);
             this.TxtBox_Obs.Name = "TxtBox_Obs";
             this.TxtBox_Obs.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Obs.TabIndex = 66;
@@ -253,7 +255,7 @@
             // LblObs
             // 
             this.LblObs.AutoSize = true;
-            this.LblObs.Location = new System.Drawing.Point(237, 233);
+            this.LblObs.Location = new System.Drawing.Point(10, 71);
             this.LblObs.Name = "LblObs";
             this.LblObs.Size = new System.Drawing.Size(65, 13);
             this.LblObs.TabIndex = 65;
@@ -261,7 +263,7 @@
             // 
             // TxtBox_Finalizacao
             // 
-            this.TxtBox_Finalizacao.Location = new System.Drawing.Point(7, 316);
+            this.TxtBox_Finalizacao.Location = new System.Drawing.Point(15, 345);
             this.TxtBox_Finalizacao.Name = "TxtBox_Finalizacao";
             this.TxtBox_Finalizacao.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Finalizacao.TabIndex = 68;
@@ -269,7 +271,7 @@
             // LblFinalizacao
             // 
             this.LblFinalizacao.AutoSize = true;
-            this.LblFinalizacao.Location = new System.Drawing.Point(4, 300);
+            this.LblFinalizacao.Location = new System.Drawing.Point(12, 329);
             this.LblFinalizacao.Name = "LblFinalizacao";
             this.LblFinalizacao.Size = new System.Drawing.Size(60, 13);
             this.LblFinalizacao.TabIndex = 67;
@@ -277,7 +279,7 @@
             // 
             // TxtBox_Acordo
             // 
-            this.TxtBox_Acordo.Location = new System.Drawing.Point(239, 188);
+            this.TxtBox_Acordo.Location = new System.Drawing.Point(235, 242);
             this.TxtBox_Acordo.Name = "TxtBox_Acordo";
             this.TxtBox_Acordo.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Acordo.TabIndex = 70;
@@ -285,7 +287,7 @@
             // LblAcordo
             // 
             this.LblAcordo.AutoSize = true;
-            this.LblAcordo.Location = new System.Drawing.Point(236, 172);
+            this.LblAcordo.Location = new System.Drawing.Point(232, 226);
             this.LblAcordo.Name = "LblAcordo";
             this.LblAcordo.Size = new System.Drawing.Size(41, 13);
             this.LblAcordo.TabIndex = 69;
@@ -293,7 +295,7 @@
             // 
             // DataDistribuicao
             // 
-            this.DataDistribuicao.Location = new System.Drawing.Point(426, 64);
+            this.DataDistribuicao.Location = new System.Drawing.Point(455, 126);
             this.DataDistribuicao.Name = "DataDistribuicao";
             this.DataDistribuicao.Size = new System.Drawing.Size(200, 20);
             this.DataDistribuicao.TabIndex = 71;
@@ -301,7 +303,7 @@
             // LblDataDist
             // 
             this.LblDataDist.AutoSize = true;
-            this.LblDataDist.Location = new System.Drawing.Point(423, 48);
+            this.LblDataDist.Location = new System.Drawing.Point(452, 110);
             this.LblDataDist.Name = "LblDataDist";
             this.LblDataDist.Size = new System.Drawing.Size(88, 13);
             this.LblDataDist.TabIndex = 72;
@@ -309,7 +311,7 @@
             // 
             // TxtBox_Demanda
             // 
-            this.TxtBox_Demanda.Location = new System.Drawing.Point(7, 188);
+            this.TxtBox_Demanda.Location = new System.Drawing.Point(15, 242);
             this.TxtBox_Demanda.Name = "TxtBox_Demanda";
             this.TxtBox_Demanda.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Demanda.TabIndex = 73;
@@ -318,6 +320,8 @@
             // 
             this.panel2.Controls.Add(this.TxtBox_LastAndamento);
             this.panel2.Controls.Add(this.LblLastAndamento);
+            this.panel2.Controls.Add(this.TxtBox_Obs);
+            this.panel2.Controls.Add(this.LblObs);
             this.panel2.Location = new System.Drawing.Point(588, 220);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 177);
@@ -325,20 +329,42 @@
             // 
             // TxtBox_Cliente
             // 
-            this.TxtBox_Cliente.Location = new System.Drawing.Point(7, 249);
+            this.TxtBox_Cliente.Location = new System.Drawing.Point(15, 291);
             this.TxtBox_Cliente.Name = "TxtBox_Cliente";
             this.TxtBox_Cliente.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Cliente.TabIndex = 77;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Familia",
+            "Civel",
+            "Administrativo",
+            "Trabalhista"});
+            this.comboBox2.Location = new System.Drawing.Point(12, 65);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 78;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Tipo do Processo";
             // 
             // ModalCadProcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.TxtBox_Cliente);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.TxtBox_Obs);
-            this.Controls.Add(this.LblObs);
             this.Controls.Add(this.TxtBox_Demanda);
             this.Controls.Add(this.LblDataDist);
             this.Controls.Add(this.DataDistribuicao);
@@ -403,5 +429,7 @@
         private System.Windows.Forms.TextBox TxtBox_Demanda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox TxtBox_Cliente;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

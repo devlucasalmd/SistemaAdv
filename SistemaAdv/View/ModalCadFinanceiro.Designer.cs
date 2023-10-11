@@ -44,6 +44,10 @@
             this.LblDataPgnt = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.Btn_Confirmar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +61,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 37);
+            this.panel1.Size = new System.Drawing.Size(559, 37);
             this.panel1.TabIndex = 37;
             // 
             // Btn_Min
@@ -66,7 +70,7 @@
             this.Btn_Min.FlatAppearance.BorderSize = 0;
             this.Btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Min.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Min.Image")));
-            this.Btn_Min.Location = new System.Drawing.Point(333, 3);
+            this.Btn_Min.Location = new System.Drawing.Point(440, 3);
             this.Btn_Min.Name = "Btn_Min";
             this.Btn_Min.Size = new System.Drawing.Size(40, 28);
             this.Btn_Min.TabIndex = 7;
@@ -78,7 +82,7 @@
             this.Btn_Max.FlatAppearance.BorderSize = 0;
             this.Btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Max.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Max.Image")));
-            this.Btn_Max.Location = new System.Drawing.Point(373, 3);
+            this.Btn_Max.Location = new System.Drawing.Point(480, 3);
             this.Btn_Max.Name = "Btn_Max";
             this.Btn_Max.Size = new System.Drawing.Size(40, 28);
             this.Btn_Max.TabIndex = 6;
@@ -90,7 +94,7 @@
             this.Btn_Close.FlatAppearance.BorderSize = 0;
             this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Close.Image")));
-            this.Btn_Close.Location = new System.Drawing.Point(412, 3);
+            this.Btn_Close.Location = new System.Drawing.Point(519, 3);
             this.Btn_Close.Name = "Btn_Close";
             this.Btn_Close.Size = new System.Drawing.Size(40, 28);
             this.Btn_Close.TabIndex = 5;
@@ -157,7 +161,7 @@
             // 
             // TxtBoxDataPgnt
             // 
-            this.TxtBoxDataPgnt.Location = new System.Drawing.Point(7, 190);
+            this.TxtBoxDataPgnt.Location = new System.Drawing.Point(7, 250);
             this.TxtBoxDataPgnt.Name = "TxtBoxDataPgnt";
             this.TxtBoxDataPgnt.Size = new System.Drawing.Size(172, 20);
             this.TxtBoxDataPgnt.TabIndex = 79;
@@ -165,7 +169,7 @@
             // LblDataPgnt
             // 
             this.LblDataPgnt.AutoSize = true;
-            this.LblDataPgnt.Location = new System.Drawing.Point(4, 174);
+            this.LblDataPgnt.Location = new System.Drawing.Point(4, 234);
             this.LblDataPgnt.Name = "LblDataPgnt";
             this.LblDataPgnt.Size = new System.Drawing.Size(87, 13);
             this.LblDataPgnt.TabIndex = 78;
@@ -173,7 +177,7 @@
             // 
             // Btn_Clear
             // 
-            this.Btn_Clear.Location = new System.Drawing.Point(333, 220);
+            this.Btn_Clear.Location = new System.Drawing.Point(429, 292);
             this.Btn_Clear.Name = "Btn_Clear";
             this.Btn_Clear.Size = new System.Drawing.Size(97, 23);
             this.Btn_Clear.TabIndex = 81;
@@ -182,18 +186,72 @@
             // 
             // Btn_Confirmar
             // 
-            this.Btn_Confirmar.Location = new System.Drawing.Point(230, 220);
+            this.Btn_Confirmar.Location = new System.Drawing.Point(326, 292);
             this.Btn_Confirmar.Name = "Btn_Confirmar";
             this.Btn_Confirmar.Size = new System.Drawing.Size(97, 23);
             this.Btn_Confirmar.TabIndex = 80;
             this.Btn_Confirmar.Text = "Salvar";
             this.Btn_Confirmar.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16"});
+            this.comboBox1.Location = new System.Drawing.Point(237, 130);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 82;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(234, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Parcelas";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 190);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(172, 20);
+            this.textBox1.TabIndex = 85;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 174);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 84;
+            this.label2.Text = "Valor da Parcela";
+            // 
             // ModalCadFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 255);
+            this.ClientSize = new System.Drawing.Size(559, 340);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.Btn_Confirmar);
             this.Controls.Add(this.TxtBoxDataPgnt);
@@ -232,5 +290,9 @@
         private System.Windows.Forms.Label LblDataPgnt;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Button Btn_Confirmar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

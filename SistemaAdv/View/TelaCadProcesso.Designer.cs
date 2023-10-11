@@ -333,6 +333,7 @@
             this.PicBox_CadProcessos.Size = new System.Drawing.Size(28, 23);
             this.PicBox_CadProcessos.TabIndex = 21;
             this.PicBox_CadProcessos.TabStop = false;
+            this.PicBox_CadProcessos.Click += new System.EventHandler(this.PicBox_CadProcessos_Click);
             // 
             // TelaCadProcesso
             // 
@@ -350,6 +351,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadProcesso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadProcesso";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

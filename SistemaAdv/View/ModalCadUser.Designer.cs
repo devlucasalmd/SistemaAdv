@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadUser));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Min = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.LblNome = new System.Windows.Forms.Label();
             this.CmbBox_Cargo = new System.Windows.Forms.ComboBox();
             this.Btn_Confirmar = new System.Windows.Forms.Button();
+            this.modalEffect_Timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,6 +241,12 @@
             this.Btn_Confirmar.UseVisualStyleBackColor = true;
             this.Btn_Confirmar.Click += new System.EventHandler(this.Btn_Confirmar_Click);
             // 
+            // modalEffect_Timer
+            // 
+            this.modalEffect_Timer.Enabled = true;
+            this.modalEffect_Timer.Interval = 1;
+            this.modalEffect_Timer.Tick += new System.EventHandler(this.modalEffect_Timer_Tick);
+            // 
             // ModalCadUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +269,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModalCadUser";
+            this.Opacity = 0D;
             this.Text = "ModalCadUser";
+            this.Load += new System.EventHandler(this.ModalCadUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -290,5 +300,6 @@
         private System.Windows.Forms.Label LblNome;
         private System.Windows.Forms.ComboBox CmbBox_Cargo;
         private System.Windows.Forms.Button Btn_Confirmar;
+        private System.Windows.Forms.Timer modalEffect_Timer;
     }
 }

@@ -50,13 +50,13 @@
             this.Lbl_Usuarios = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CmbBox_User = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtGrid_User = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_User)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -273,6 +273,7 @@
             this.PicBox_CadUser.Size = new System.Drawing.Size(28, 23);
             this.PicBox_CadUser.TabIndex = 28;
             this.PicBox_CadUser.TabStop = false;
+            this.PicBox_CadUser.Click += new System.EventHandler(this.PicBox_CadUser_Click);
             // 
             // panel4
             // 
@@ -326,13 +327,13 @@
             this.CmbBox_User.Size = new System.Drawing.Size(209, 21);
             this.CmbBox_User.TabIndex = 23;
             // 
-            // dataGridView1
+            // dtGrid_User
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 160);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(780, 278);
-            this.dataGridView1.TabIndex = 22;
+            this.dtGrid_User.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrid_User.Location = new System.Drawing.Point(19, 160);
+            this.dtGrid_User.Name = "dtGrid_User";
+            this.dtGrid_User.Size = new System.Drawing.Size(780, 278);
+            this.dtGrid_User.TabIndex = 22;
             // 
             // TelaCadUser
             // 
@@ -344,13 +345,15 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Btn_Buscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtGrid_User);
             this.Controls.Add(this.Lbl_Usuarios);
             this.Controls.Add(this.CmbBox_User);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadUser";
+            this.Load += new System.EventHandler(this.TelaCadUser_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -358,7 +361,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_User)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,6 +390,6 @@
         private System.Windows.Forms.Label Lbl_Usuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox CmbBox_User;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtGrid_User;
     }
 }

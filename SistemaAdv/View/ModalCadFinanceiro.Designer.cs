@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadFinanceiro));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Min = new System.Windows.Forms.Button();
@@ -48,6 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.modalEffect_Timer = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,6 +246,12 @@
             this.label2.TabIndex = 84;
             this.label2.Text = "Valor da Parcela";
             // 
+            // modalEffect_Timer
+            // 
+            this.modalEffect_Timer.Enabled = true;
+            this.modalEffect_Timer.Interval = 1;
+            this.modalEffect_Timer.Tick += new System.EventHandler(this.modalEffect_Timer_Tick);
+            // 
             // ModalCadFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +275,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModalCadFinanceiro";
             this.Text = "ModalCadFinanceiro";
+            this.Load += new System.EventHandler(this.ModalCadFinanceiro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -294,5 +304,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer modalEffect_Timer;
+        private System.Windows.Forms.Timer timer1;
     }
 }

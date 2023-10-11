@@ -63,6 +63,34 @@ namespace SistemaAdv.View
             this.Close();
         }
 
+        
+        private void modalEffect_Timer_Tick(object sender, EventArgs e)
+        {
+            if(Opacity >= 1)
+            {
+                modalEffect_Timer.Stop();
+            }
+            else
+            {
+                Opacity += .03;
+            }
+
+            int y = TelaCadUser.parentY += 3;
+            this.Location = new Point(TelaCadUser.parentX + 220, y);
+            if( y >= i)
+            {
+                modalEffect_Timer.Stop();
+            }
+        }
+
+
+        int i; 
+        private void ModalCadUser_Load(object sender, EventArgs e)
+        {
+            i = TelaCadUser.parentY + 150;
+            this.Location = new Point(TelaCadUser.parentX + 160, TelaCadUser.parentY + 150);
+        }
+
 
         //Colocar est, sec, adm ou adv no campo UserName ao inserir o cargo no CmbBox_Cargo
     }

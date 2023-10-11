@@ -299,6 +299,7 @@
             this.PicBox_CadClientes.Size = new System.Drawing.Size(28, 23);
             this.PicBox_CadClientes.TabIndex = 35;
             this.PicBox_CadClientes.TabStop = false;
+            this.PicBox_CadClientes.Click += new System.EventHandler(this.PicBox_CadClientes_Click);
             // 
             // Btn_Buscar
             // 
@@ -338,6 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);

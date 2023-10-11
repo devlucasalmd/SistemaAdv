@@ -59,6 +59,33 @@ namespace SistemaAdv.Service
                 MessageBoxIcon.Information
                 );
         }
+
+        public void LerFuncionarios()
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios";
+
+            sqlCommand.
+            using SqlDataAdapter da = new SqlDataAdapter();
+            {
+                dt = sqlCommand;
+            }
+            try
+            {
+                //Insere o cliente
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
                 
     
     }

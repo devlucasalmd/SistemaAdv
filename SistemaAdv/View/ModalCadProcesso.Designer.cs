@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadProcesso));
             this.TxtBox_PC = new System.Windows.Forms.TextBox();
             this.LblPC = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.TxtBox_Cliente = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.modalEffect_Timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -356,6 +358,12 @@
             this.label1.TabIndex = 79;
             this.label1.Text = "Tipo do Processo";
             // 
+            // modalEffect_Timer
+            // 
+            this.modalEffect_Timer.Enabled = true;
+            this.modalEffect_Timer.Interval = 1;
+            this.modalEffect_Timer.Tick += new System.EventHandler(this.modalEffect_Timer_Tick);
+            // 
             // ModalCadProcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +396,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModalCadProcesso";
             this.Text = "ModalCadProcesso";
+            this.Load += new System.EventHandler(this.ModalCadProcesso_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -431,5 +440,6 @@
         private System.Windows.Forms.TextBox TxtBox_Cliente;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer modalEffect_Timer;
     }
 }

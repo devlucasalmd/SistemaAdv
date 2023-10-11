@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadAudiencia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Min = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.TxtBox_Cliente = new System.Windows.Forms.TextBox();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.Btn_Confirmar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,5 +234,6 @@
         private System.Windows.Forms.TextBox TxtBox_Cliente;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Button Btn_Confirmar;
+        private System.Windows.Forms.Timer timer1;
     }
 }

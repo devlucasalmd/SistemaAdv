@@ -264,6 +264,7 @@
             this.Btn_Close.Size = new System.Drawing.Size(40, 28);
             this.Btn_Close.TabIndex = 0;
             this.Btn_Close.UseVisualStyleBackColor = true;
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // PicBox_CadUser
             // 
@@ -300,6 +301,7 @@
             this.Btn_Buscar.TabIndex = 26;
             this.Btn_Buscar.Text = "Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = true;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // Lbl_Usuarios
             // 
@@ -322,6 +324,16 @@
             // CmbBox_User
             // 
             this.CmbBox_User.FormattingEnabled = true;
+            this.CmbBox_User.Items.AddRange(new object[] {
+            "---- Cargos ----",
+            "Estagiario (a)",
+            "Secretario (a)",
+            "Advogado (a)",
+            "Administrador (a)",
+            "",
+            "---- Status ----",
+            "Ativo",
+            "Inativo"});
             this.CmbBox_User.Location = new System.Drawing.Point(50, 92);
             this.CmbBox_User.Name = "CmbBox_User";
             this.CmbBox_User.Size = new System.Drawing.Size(209, 21);

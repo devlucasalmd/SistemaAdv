@@ -49,8 +49,9 @@ namespace SistemaAdv.View
             DateTime Data = DateTime.Now;
 
             var novoFuncionario = new Funcionario(Nome, UserName, Senha, Email, Cargo, Status, Data);
-            funcionarioService.CadastrarFuncionario(novoFuncionario);
+            funcionarioService.CreateFuncionario(novoFuncionario);
             LimparCampos();
+            this.Close();
         }
 
         private void Btn_Clear_Click(object sender, EventArgs e)

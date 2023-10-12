@@ -26,11 +26,38 @@ namespace SistemaAdv
             InitializeComponent();
             funcionarioService = new FuncionarioService();
         }
+
         public static int parentX, parentY;
 
+
+        public void UpdateDataGrid()
+        {
+            DataTable dt = new DataTable();
+            dt = funcionarioService.ReadFuncionarios();
+            dtGrid_User.DataSource = dt;
+        }
+
+        public void FilterFuncionario()
+        {
+            var txt = CmbBox_User;
+            DataTable dt = new DataTable();
+            dt = funcionarioService.FilterFuncionario(txt);
+            dtGrid_User.DataSource = dt;
+        }
+        
         private void TelaCadUser_Load(object sender, EventArgs e)
         {
-            funcionarioService.LerFuncionarios();
+            UpdateDataGrid();
+        }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_Buscar_Click(object sender, EventArgs e)
+        {
+            FilterFuncionario();
         }
 
         private void PicBox_CadUser_Click(object sender, EventArgs e)

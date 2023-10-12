@@ -2,6 +2,7 @@
 using SistemaAdv.View;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
@@ -19,7 +20,7 @@ namespace SistemaAdv.Service
         SqlCommand sqlCommand = new SqlCommand();
 
         //retornar int para devolver id do funcionario, para setar permissão
-        public void CadastrarFuncionario(Funcionario novoFuncionario)
+        public void CreateFuncionario(Funcionario novoFuncionario)
         {
                 connection.OpenConnection();
 
@@ -60,21 +61,20 @@ namespace SistemaAdv.Service
                 );
         }
 
-        public void LerFuncionarios()
+        public DataTable ReadFuncionarios()
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"SELECT * FROM Funcionarios";
+     
+            
 
-            sqlCommand.
-            using SqlDataAdapter da = new SqlDataAdapter();
-            {
-                dt = sqlCommand;
-            }
             try
             {
-                //Insere o cliente
-                sqlCommand.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
             }
             catch (Exception err)
             {
@@ -86,7 +86,35 @@ namespace SistemaAdv.Service
                 connection.CloseConnection();
             }
         }
-                
+
+
+        public DataTable FilterFuncionario(TelaCadUser txt)
+        {
+            var txt = TelaCadUser txt;
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios
+                                        WHERE CARGO LIKE '%{txt}'";
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            } 
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+
+        }
+}
     
     }
 }

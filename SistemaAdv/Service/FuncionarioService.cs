@@ -90,11 +90,11 @@ namespace SistemaAdv.Service
 
         public DataTable FilterFuncionario(string txt)
         {
-            var filter = txt;
+            string filter = txt;
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"SELECT * FROM Funcionarios
-                                        WHERE Cargo = ' " + txt + "'"; 
+                                        WHERE Cargo = ' " + filter + "'"; 
 
             try
             {

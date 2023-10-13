@@ -22,21 +22,21 @@ namespace SistemaAdv.Service
         //retornar int para devolver id do funcionario, para setar permissão
         public void CreateFuncionario(Funcionario novoFuncionario)
         {
-                connection.OpenConnection();
+            connection.OpenConnection();
 
-                // Criar um novo objeto Funcionario com os dados fornecidos.
-                sqlCommand.Connection = connection.ReturnConnection();
-                sqlCommand.CommandText = @"INSERT INTO Funcionarios VALUES (@Nome, @UserName, @Senha, @Email, @Cargo, @Status, @Data)"
-                ;
+            // Criar um novo objeto Funcionario com os dados fornecidos.
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"INSERT INTO Funcionarios VALUES (@Nome, @UserName, @Senha, @Email, @Cargo, @Status, @Data)"
+            ;
 
-                sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
-                sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
-                sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
-                sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
-                sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
-                sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
-                sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
-         
+            sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
+            sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
+            sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
+            sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
+            sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
+            sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
+            sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
+
             try
             {
                 //Insere o cliente
@@ -66,8 +66,8 @@ namespace SistemaAdv.Service
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"SELECT * FROM Funcionarios";
-     
-            
+
+
 
             try
             {
@@ -88,13 +88,13 @@ namespace SistemaAdv.Service
         }
 
 
-        public DataTable FilterFuncionario(TelaCadUser txt)
+        public DataTable FilterFuncionario(string txt)
         {
-            var txt = TelaCadUser txt;
+            var filter = txt;
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"SELECT * FROM Funcionarios
-                                        WHERE CARGO LIKE '%{txt}'";
+                                        WHERE Cargo = ' " + txt + "'"; 
 
             try
             {
@@ -102,7 +102,7 @@ namespace SistemaAdv.Service
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
-            } 
+            }
             catch (Exception err)
             {
                 throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
@@ -114,7 +114,6 @@ namespace SistemaAdv.Service
             }
 
         }
-}
-    
     }
-}
+} 
+    

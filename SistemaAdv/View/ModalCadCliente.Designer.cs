@@ -34,9 +34,7 @@
             this.LblCNPJ = new System.Windows.Forms.Label();
             this.TxtBox_CNPJ = new System.Windows.Forms.TextBox();
             this.LblCPF = new System.Windows.Forms.Label();
-            this.TxtBox_CPF = new System.Windows.Forms.TextBox();
             this.LblRG = new System.Windows.Forms.Label();
-            this.TxtBox_RG = new System.Windows.Forms.TextBox();
             this.TxtBox_Email = new System.Windows.Forms.TextBox();
             this.LblEmail = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
@@ -79,6 +77,8 @@
             this.TxtBox_Estado = new System.Windows.Forms.TextBox();
             this.mskdBox_CEP = new System.Windows.Forms.MaskedTextBox();
             this.Btn_BuscarCEP = new System.Windows.Forms.Button();
+            this.mskdBox_CPF = new System.Windows.Forms.MaskedTextBox();
+            this.mskdBox_RG = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,13 +123,6 @@
             this.LblCPF.TabIndex = 75;
             this.LblCPF.Text = "CPF";
             // 
-            // TxtBox_CPF
-            // 
-            this.TxtBox_CPF.Location = new System.Drawing.Point(141, 119);
-            this.TxtBox_CPF.Name = "TxtBox_CPF";
-            this.TxtBox_CPF.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_CPF.TabIndex = 74;
-            // 
             // LblRG
             // 
             this.LblRG.AutoSize = true;
@@ -138,13 +131,6 @@
             this.LblRG.Size = new System.Drawing.Size(23, 13);
             this.LblRG.TabIndex = 73;
             this.LblRG.Text = "RG";
-            // 
-            // TxtBox_RG
-            // 
-            this.TxtBox_RG.Location = new System.Drawing.Point(12, 119);
-            this.TxtBox_RG.Name = "TxtBox_RG";
-            this.TxtBox_RG.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_RG.TabIndex = 72;
             // 
             // TxtBox_Email
             // 
@@ -325,8 +311,11 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
+            "Solteiro (a)",
+            "Casado (a)",
+            "Separado judicialmente (a)",
+            "Divorciado (a)",
+            "Viúvo (a)"});
             this.comboBox2.Location = new System.Drawing.Point(12, 222);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -519,11 +508,29 @@
             this.Btn_BuscarCEP.UseVisualStyleBackColor = true;
             this.Btn_BuscarCEP.Click += new System.EventHandler(this.Btn_BuscarCEP_Click);
             // 
+            // mskdBox_CPF
+            // 
+            this.mskdBox_CPF.Location = new System.Drawing.Point(141, 119);
+            this.mskdBox_CPF.Mask = "000.000.000-00";
+            this.mskdBox_CPF.Name = "mskdBox_CPF";
+            this.mskdBox_CPF.Size = new System.Drawing.Size(100, 20);
+            this.mskdBox_CPF.TabIndex = 108;
+            // 
+            // mskdBox_RG
+            // 
+            this.mskdBox_RG.Location = new System.Drawing.Point(12, 119);
+            this.mskdBox_RG.Mask = "00.000.000-0";
+            this.mskdBox_RG.Name = "mskdBox_RG";
+            this.mskdBox_RG.Size = new System.Drawing.Size(100, 20);
+            this.mskdBox_RG.TabIndex = 109;
+            // 
             // ModalCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 529);
+            this.Controls.Add(this.mskdBox_RG);
+            this.Controls.Add(this.mskdBox_CPF);
             this.Controls.Add(this.Btn_BuscarCEP);
             this.Controls.Add(this.mskdBox_CEP);
             this.Controls.Add(this.label1);
@@ -556,9 +563,7 @@
             this.Controls.Add(this.LblCNPJ);
             this.Controls.Add(this.TxtBox_CNPJ);
             this.Controls.Add(this.LblCPF);
-            this.Controls.Add(this.TxtBox_CPF);
             this.Controls.Add(this.LblRG);
-            this.Controls.Add(this.TxtBox_RG);
             this.Controls.Add(this.TxtBox_Email);
             this.Controls.Add(this.LblEmail);
             this.Controls.Add(this.Btn_Clear);
@@ -587,9 +592,7 @@
         private System.Windows.Forms.Label LblCNPJ;
         private System.Windows.Forms.TextBox TxtBox_CNPJ;
         private System.Windows.Forms.Label LblCPF;
-        private System.Windows.Forms.TextBox TxtBox_CPF;
         private System.Windows.Forms.Label LblRG;
-        private System.Windows.Forms.TextBox TxtBox_RG;
         private System.Windows.Forms.TextBox TxtBox_Email;
         private System.Windows.Forms.Label LblEmail;
         private System.Windows.Forms.Button Btn_Clear;
@@ -632,5 +635,7 @@
         private System.Windows.Forms.TextBox TxtBox_Estado;
         private System.Windows.Forms.MaskedTextBox mskdBox_CEP;
         private System.Windows.Forms.Button Btn_BuscarCEP;
+        private System.Windows.Forms.MaskedTextBox mskdBox_CPF;
+        private System.Windows.Forms.MaskedTextBox mskdBox_RG;
     }
 }

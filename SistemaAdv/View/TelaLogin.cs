@@ -28,6 +28,10 @@ namespace SistemaAdv
              var pass = TxtBox_Password.Text;
           
             loginService.Login(user, pass);
+
+            // TelaInicial telaInicial = new TelaInicial();
+            //telaInicial.Show(); 
+            
         }
     }
 }

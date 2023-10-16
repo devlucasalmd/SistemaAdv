@@ -143,7 +143,7 @@
             // 
             // DataAudiencia
             // 
-            this.DataAudiencia.Location = new System.Drawing.Point(225, 72);
+            this.DataAudiencia.Location = new System.Drawing.Point(229, 153);
             this.DataAudiencia.Name = "DataAudiencia";
             this.DataAudiencia.Size = new System.Drawing.Size(200, 20);
             this.DataAudiencia.TabIndex = 52;
@@ -151,7 +151,7 @@
             // LblDataProcesso
             // 
             this.LblDataProcesso.AutoSize = true;
-            this.LblDataProcesso.Location = new System.Drawing.Point(222, 56);
+            this.LblDataProcesso.Location = new System.Drawing.Point(226, 137);
             this.LblDataProcesso.Name = "LblDataProcesso";
             this.LblDataProcesso.Size = new System.Drawing.Size(30, 13);
             this.LblDataProcesso.TabIndex = 53;
@@ -160,7 +160,7 @@
             // LblCliente
             // 
             this.LblCliente.AutoSize = true;
-            this.LblCliente.Location = new System.Drawing.Point(222, 137);
+            this.LblCliente.Location = new System.Drawing.Point(226, 56);
             this.LblCliente.Name = "LblCliente";
             this.LblCliente.Size = new System.Drawing.Size(39, 13);
             this.LblCliente.TabIndex = 55;
@@ -168,7 +168,7 @@
             // 
             // TxtBox_Cliente
             // 
-            this.TxtBox_Cliente.Location = new System.Drawing.Point(225, 153);
+            this.TxtBox_Cliente.Location = new System.Drawing.Point(229, 72);
             this.TxtBox_Cliente.Name = "TxtBox_Cliente";
             this.TxtBox_Cliente.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Cliente.TabIndex = 54;

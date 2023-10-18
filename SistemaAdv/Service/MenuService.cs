@@ -12,11 +12,11 @@ namespace SistemaAdv.Service
         public MenuService()
         {
 
-            public TelaCadProcesso OpenTelaProcesso()
-            {
-                TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
+            // public TelaCadProcesso OpenTelaProcesso()
+            
+            TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
                 telaCadProcesso.Show();
-            }
+           
         
         }
     }

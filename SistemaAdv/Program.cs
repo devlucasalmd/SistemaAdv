@@ -17,7 +17,7 @@ namespace SistemaAdv
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaCadUser());
+            Application.Run(new TelaCadCliente());
         }
     }
 }

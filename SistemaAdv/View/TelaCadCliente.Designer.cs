@@ -51,6 +51,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CmbBox_Status = new System.Windows.Forms.ComboBox();
+            this.LblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -67,6 +69,7 @@
             this.PicBox_CadClientes.Size = new System.Drawing.Size(28, 23);
             this.PicBox_CadClientes.TabIndex = 28;
             this.PicBox_CadClientes.TabStop = false;
+            this.PicBox_CadClientes.Click += new System.EventHandler(this.PicBox_CadClientes_Click);
             // 
             // Btn_Buscar
             // 
@@ -239,7 +242,6 @@
             this.Btn_Processos.Text = "Processos";
             this.Btn_Processos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Processos.UseVisualStyleBackColor = true;
-            this.Btn_Processos.Click += new System.EventHandler(this.Btn_Processos_Click);
             // 
             // panel1
             // 
@@ -335,11 +337,34 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // CmbBox_Status
+            // 
+            this.CmbBox_Status.FormattingEnabled = true;
+            this.CmbBox_Status.Items.AddRange(new object[] {
+            "Fisica",
+            "Juridica"});
+            this.CmbBox_Status.Location = new System.Drawing.Point(632, 93);
+            this.CmbBox_Status.Name = "CmbBox_Status";
+            this.CmbBox_Status.Size = new System.Drawing.Size(121, 21);
+            this.CmbBox_Status.TabIndex = 68;
+            this.CmbBox_Status.SelectedIndexChanged += new System.EventHandler(this.CmbBox_Status_SelectedIndexChanged);
+            // 
+            // LblStatus
+            // 
+            this.LblStatus.AutoSize = true;
+            this.LblStatus.Location = new System.Drawing.Point(629, 77);
+            this.LblStatus.Name = "LblStatus";
+            this.LblStatus.Size = new System.Drawing.Size(95, 13);
+            this.LblStatus.TabIndex = 69;
+            this.LblStatus.Text = "Tipo: O que fazer?";
+            // 
             // TelaCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LblStatus);
+            this.Controls.Add(this.CmbBox_Status);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.PicBox_CadClientes);
@@ -389,5 +414,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox CmbBox_Status;
+        private System.Windows.Forms.Label LblStatus;
     }
 }

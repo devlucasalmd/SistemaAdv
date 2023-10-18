@@ -13,7 +13,7 @@ namespace SistemaAdv.View
 {
     public partial class TelaCadAudiencia : Form
     {
-        private MenuService menuService;
+        // private MenuService menuService;
         public TelaCadAudiencia()
         {
             InitializeComponent();
@@ -22,10 +22,10 @@ namespace SistemaAdv.View
 
         public static int parentX, parentY;
 
-        private void Btn_Processos_Click(object sender, EventArgs e)
-        {
-            menuService.OpenTelaProcesso();
-        }
+         private void Btn_Processos_Click(object sender, EventArgs e)
+         {
+        // menuService.OpenTelaProcesso();
+         }
 
         private void PicBox_CadClientes_Click(object sender, EventArgs e)
         {

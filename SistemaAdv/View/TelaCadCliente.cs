@@ -13,16 +13,43 @@ namespace SistemaAdv.View
 {
     public partial class TelaCadCliente : Form
     {
-        private MenuService menuService;
+        // private MenuService menuService;
 
         public TelaCadCliente()
         {
             InitializeComponent();
         }
 
-        private void Btn_Processos_Click(object sender, EventArgs e)
+        private void PicBox_CadClientes_Click(object sender, EventArgs e)
         {
-            menuService.OpenTelaProcesso();
+            //   CmbBox_Status_SelectedValueChanged();
         }
+
+        private void CmbBox_Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string item = CmbBox_Status.SelectedItem.ToString();
+
+            if (item == "Fisica")
+            {
+                ModalCadCliente modalCliente = new ModalCadCliente();
+                modalCliente.Show();
+            }
+            else if (item == "Juridica")
+            {
+                ModalCadFinanceiro modalCadFinanceiro = new ModalCadFinanceiro();
+                modalCadFinanceiro.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um tipo para o cliente");
+            }
+        }
+
+
+        // private void Btn_Processos_Click(object sender, EventArgs e)
+        // {
+        //menuService.OpenTelaProcesso();
+        // }
     }
 }

@@ -88,17 +88,18 @@ namespace SistemaAdv.Service
         }
 
 
-        public DataTable FilterFuncionario(string txt)
+        public DataTable FilterFuncionario(string cargo)
         {
-            string filter = txt;
+            string filtro = cargo;
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"SELECT * FROM Funcionarios
-                                        WHERE Cargo = ' " + filter + "'"; 
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios WHERE Cargo = @Cargo";
+
+            sqlCommand.Parameters.AddWithValue("@Cargo", filtro);
 
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;

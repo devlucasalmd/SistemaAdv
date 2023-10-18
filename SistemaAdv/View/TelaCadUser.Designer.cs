@@ -49,7 +49,7 @@
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Lbl_Usuarios = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CmbBox_User = new System.Windows.Forms.ComboBox();
+            this.CmbBox_Filter = new System.Windows.Forms.ComboBox();
             this.dtGrid_User = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -322,10 +322,10 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
-            // CmbBox_User
+            // CmbBox_Filter
             // 
-            this.CmbBox_User.FormattingEnabled = true;
-            this.CmbBox_User.Items.AddRange(new object[] {
+            this.CmbBox_Filter.FormattingEnabled = true;
+            this.CmbBox_Filter.Items.AddRange(new object[] {
             "---- Cargos ----",
             "Estagiario (a)",
             "Secretario (a)",
@@ -335,10 +335,10 @@
             "---- Status ----",
             "Ativo",
             "Inativo"});
-            this.CmbBox_User.Location = new System.Drawing.Point(50, 92);
-            this.CmbBox_User.Name = "CmbBox_User";
-            this.CmbBox_User.Size = new System.Drawing.Size(209, 21);
-            this.CmbBox_User.TabIndex = 23;
+            this.CmbBox_Filter.Location = new System.Drawing.Point(50, 92);
+            this.CmbBox_Filter.Name = "CmbBox_Filter";
+            this.CmbBox_Filter.Size = new System.Drawing.Size(209, 21);
+            this.CmbBox_Filter.TabIndex = 23;
             // 
             // dtGrid_User
             // 
@@ -360,7 +360,7 @@
             this.Controls.Add(this.Btn_Buscar);
             this.Controls.Add(this.dtGrid_User);
             this.Controls.Add(this.Lbl_Usuarios);
-            this.Controls.Add(this.CmbBox_User);
+            this.Controls.Add(this.CmbBox_Filter);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadUser";
@@ -402,7 +402,7 @@
         private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.Label Lbl_Usuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox CmbBox_User;
+        private System.Windows.Forms.ComboBox CmbBox_Filter;
         private System.Windows.Forms.DataGridView dtGrid_User;
     }
 }

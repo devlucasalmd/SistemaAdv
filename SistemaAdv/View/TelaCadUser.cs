@@ -40,9 +40,8 @@ namespace SistemaAdv
 
         public void FilterFuncionario()
         {
-            var txt = CmbBox_User.Text;
-            DataTable dt = new DataTable();
-            dt = funcionarioService.FilterFuncionario(txt);
+            var cargo = CmbBox_Filter.Text;           
+            DataTable dt = funcionarioService.FilterFuncionario(cargo);        
             dtGrid_User.DataSource = dt;
         }
 

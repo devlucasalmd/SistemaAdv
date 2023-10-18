@@ -21,6 +21,7 @@ namespace SistemaAdv
     public partial class TelaCadUser : Form
     {
         private FuncionarioService funcionarioService;
+        private MenuService menuService;
         public TelaCadUser()
         {
             InitializeComponent();
@@ -44,11 +45,6 @@ namespace SistemaAdv
             dt = funcionarioService.FilterFuncionario(txt);
             dtGrid_User.DataSource = dt;
         }
-        
-        private void TelaCadUser_Load(object sender, EventArgs e)
-        {
-            UpdateDataGrid();
-        }
 
         private void Btn_Close_Click(object sender, EventArgs e)
         {
@@ -58,6 +54,16 @@ namespace SistemaAdv
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
             FilterFuncionario();
+        }
+
+        private void TelaCadUser_Load(object sender, EventArgs e)
+        {
+            UpdateDataGrid();
+        }
+
+        private void Btn_Processos_Click(object sender, EventArgs e)
+        {
+            menuService.OpenTelaProcesso();
         }
 
         private void PicBox_CadUser_Click(object sender, EventArgs e)

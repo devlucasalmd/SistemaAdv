@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaAdv.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace SistemaAdv
 {
     public partial class TelaInicial : Form
     {
+        private MenuService menuService;
         public TelaInicial()
         {
             InitializeComponent();
+        }
+
+        private void Btn_Processos_Click(object sender, EventArgs e)
+        {
+            menuService.OpenTelaProcesso();
         }
     }
 }

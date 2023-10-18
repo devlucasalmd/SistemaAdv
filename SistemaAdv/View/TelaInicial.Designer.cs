@@ -252,6 +252,7 @@
             this.Btn_Processos.Text = "Processos";
             this.Btn_Processos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Processos.UseVisualStyleBackColor = true;
+            this.Btn_Processos.Click += new System.EventHandler(this.Btn_Processos_Click);
             // 
             // TelaInicial
             // 

@@ -130,6 +130,7 @@
     <Compile Include="Service\FuncionarioService.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\MenuService.cs" />
     <Compile Include="View\ModalCadAudiencia.cs">
       <SubType>Form</SubType>
     </Compile>

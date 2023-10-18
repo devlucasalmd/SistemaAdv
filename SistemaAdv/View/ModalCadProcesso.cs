@@ -43,6 +43,9 @@ namespace SistemaAdv.View
             this.Location = new Point(TelaCadProcesso.parentX + 160, TelaCadProcesso.parentY + 150);
         }
 
-
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

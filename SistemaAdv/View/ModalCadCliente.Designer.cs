@@ -31,15 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalCadCliente));
             this.LblNatureza = new System.Windows.Forms.Label();
             this.TxtBox_Natureza = new System.Windows.Forms.TextBox();
-            this.LblCNPJ = new System.Windows.Forms.Label();
-            this.TxtBox_CNPJ = new System.Windows.Forms.TextBox();
             this.LblCPF = new System.Windows.Forms.Label();
             this.LblRG = new System.Windows.Forms.Label();
             this.TxtBox_Email = new System.Windows.Forms.TextBox();
             this.LblEmail = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
-            this.LblStatus = new System.Windows.Forms.Label();
-            this.CmbBox_Status = new System.Windows.Forms.ComboBox();
             this.LblNome = new System.Windows.Forms.Label();
             this.TxtBox_Telefone = new System.Windows.Forms.TextBox();
             this.LblTelefone = new System.Windows.Forms.Label();
@@ -51,7 +47,6 @@
             this.Btn_Close = new System.Windows.Forms.Button();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblPosicaoCliente = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.LblEstadoCivil = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +74,7 @@
             this.Btn_BuscarCEP = new System.Windows.Forms.Button();
             this.mskdBox_CPF = new System.Windows.Forms.MaskedTextBox();
             this.mskdBox_RG = new System.Windows.Forms.MaskedTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,22 +93,6 @@
             this.TxtBox_Natureza.Name = "TxtBox_Natureza";
             this.TxtBox_Natureza.Size = new System.Drawing.Size(121, 20);
             this.TxtBox_Natureza.TabIndex = 78;
-            // 
-            // LblCNPJ
-            // 
-            this.LblCNPJ.AutoSize = true;
-            this.LblCNPJ.Location = new System.Drawing.Point(262, 103);
-            this.LblCNPJ.Name = "LblCNPJ";
-            this.LblCNPJ.Size = new System.Drawing.Size(34, 13);
-            this.LblCNPJ.TabIndex = 77;
-            this.LblCNPJ.Text = "CNPJ";
-            // 
-            // TxtBox_CNPJ
-            // 
-            this.TxtBox_CNPJ.Location = new System.Drawing.Point(265, 119);
-            this.TxtBox_CNPJ.Name = "TxtBox_CNPJ";
-            this.TxtBox_CNPJ.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_CNPJ.TabIndex = 76;
             // 
             // LblCPF
             // 
@@ -156,26 +136,6 @@
             this.Btn_Clear.TabIndex = 69;
             this.Btn_Clear.Text = "Limpar";
             this.Btn_Clear.UseVisualStyleBackColor = true;
-            // 
-            // LblStatus
-            // 
-            this.LblStatus.AutoSize = true;
-            this.LblStatus.Location = new System.Drawing.Point(291, 199);
-            this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(95, 13);
-            this.LblStatus.TabIndex = 68;
-            this.LblStatus.Text = "Tipo: O que fazer?";
-            // 
-            // CmbBox_Status
-            // 
-            this.CmbBox_Status.FormattingEnabled = true;
-            this.CmbBox_Status.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
-            this.CmbBox_Status.Location = new System.Drawing.Point(294, 215);
-            this.CmbBox_Status.Name = "CmbBox_Status";
-            this.CmbBox_Status.Size = new System.Drawing.Size(121, 21);
-            this.CmbBox_Status.TabIndex = 67;
             // 
             // LblNome
             // 
@@ -266,6 +226,7 @@
             this.Btn_Close.Size = new System.Drawing.Size(40, 28);
             this.Btn_Close.TabIndex = 5;
             this.Btn_Close.UseVisualStyleBackColor = true;
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // LblTitulo
             // 
@@ -286,17 +247,6 @@
             this.LblPosicaoCliente.Size = new System.Drawing.Size(95, 13);
             this.LblPosicaoCliente.TabIndex = 81;
             this.LblPosicaoCliente.Text = "Posição do Cliente";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
-            this.comboBox1.Location = new System.Drawing.Point(159, 477);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 80;
             // 
             // LblEstadoCivil
             // 
@@ -524,11 +474,19 @@
             this.mskdBox_RG.Size = new System.Drawing.Size(100, 20);
             this.mskdBox_RG.TabIndex = 109;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(160, 475);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 110;
+            // 
             // ModalCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 529);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.mskdBox_RG);
             this.Controls.Add(this.mskdBox_CPF);
             this.Controls.Add(this.Btn_BuscarCEP);
@@ -557,18 +515,13 @@
             this.Controls.Add(this.LblEstadoCivil);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.LblPosicaoCliente);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.LblNatureza);
             this.Controls.Add(this.TxtBox_Natureza);
-            this.Controls.Add(this.LblCNPJ);
-            this.Controls.Add(this.TxtBox_CNPJ);
             this.Controls.Add(this.LblCPF);
             this.Controls.Add(this.LblRG);
             this.Controls.Add(this.TxtBox_Email);
             this.Controls.Add(this.LblEmail);
             this.Controls.Add(this.Btn_Clear);
-            this.Controls.Add(this.LblStatus);
-            this.Controls.Add(this.CmbBox_Status);
             this.Controls.Add(this.LblNome);
             this.Controls.Add(this.TxtBox_Telefone);
             this.Controls.Add(this.LblTelefone);
@@ -589,15 +542,11 @@
 
         private System.Windows.Forms.Label LblNatureza;
         private System.Windows.Forms.TextBox TxtBox_Natureza;
-        private System.Windows.Forms.Label LblCNPJ;
-        private System.Windows.Forms.TextBox TxtBox_CNPJ;
         private System.Windows.Forms.Label LblCPF;
         private System.Windows.Forms.Label LblRG;
         private System.Windows.Forms.TextBox TxtBox_Email;
         private System.Windows.Forms.Label LblEmail;
         private System.Windows.Forms.Button Btn_Clear;
-        private System.Windows.Forms.Label LblStatus;
-        private System.Windows.Forms.ComboBox CmbBox_Status;
         private System.Windows.Forms.Label LblNome;
         private System.Windows.Forms.TextBox TxtBox_Telefone;
         private System.Windows.Forms.Label LblTelefone;
@@ -609,7 +558,6 @@
         private System.Windows.Forms.Button Btn_Close;
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblPosicaoCliente;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label LblEstadoCivil;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -637,5 +585,6 @@
         private System.Windows.Forms.Button Btn_BuscarCEP;
         private System.Windows.Forms.MaskedTextBox mskdBox_CPF;
         private System.Windows.Forms.MaskedTextBox mskdBox_RG;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

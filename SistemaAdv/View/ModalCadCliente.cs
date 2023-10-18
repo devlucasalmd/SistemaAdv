@@ -48,5 +48,10 @@ namespace SistemaAdv.View
                 MessageBox.Show("Informe um CEP válido", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

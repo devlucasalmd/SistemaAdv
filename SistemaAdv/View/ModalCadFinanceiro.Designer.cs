@@ -102,6 +102,7 @@
             this.Btn_Close.Size = new System.Drawing.Size(40, 28);
             this.Btn_Close.TabIndex = 5;
             this.Btn_Close.UseVisualStyleBackColor = true;
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // LblTitulo
             // 

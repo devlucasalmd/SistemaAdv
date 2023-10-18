@@ -42,5 +42,10 @@ namespace SistemaAdv.View
             i = TelaCadAudiencia.parentY + 150;
             this.Location = new Point(TelaCadAudiencia.parentX + 160, TelaCadAudiencia.parentY + 150);
         }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

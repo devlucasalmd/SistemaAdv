@@ -58,8 +58,7 @@ namespace SistemaAdv.Service
                 }
                 catch (Exception err)
                 {
-                    MessageBox.Show("Erro: Problemas ao validar a senha.\n" + err.Message);
-                    return false;
+                    throw new Exception("Erro ao validar usuario e senha", err);                   
                 }
                 finally
                 {

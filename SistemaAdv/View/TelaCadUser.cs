@@ -22,6 +22,7 @@ namespace SistemaAdv
     {
         private FuncionarioService funcionarioService;
        // private MenuService menuService;
+
         public TelaCadUser()
         {
             InitializeComponent();
@@ -57,13 +58,18 @@ namespace SistemaAdv
 
         private void TelaCadUser_Load(object sender, EventArgs e)
         {
-            UpdateDataGrid();
+            // UpdateDataGrid();
         }
 
        private void Btn_Processos_Click(object sender, EventArgs e)
        {
          //   menuService.OpenTelaProcesso();
        }
+
+        private void TelaCadUser_Activated(object sender, EventArgs e)
+        {
+            UpdateDataGrid();
+        }
 
         private void PicBox_CadUser_Click(object sender, EventArgs e)
         {

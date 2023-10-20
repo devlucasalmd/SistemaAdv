@@ -27,24 +27,31 @@ namespace SistemaAdv
              var user = TxtBox_UserName.Text;
              var pass = TxtBox_Password.Text;
 
-
-            if (loginService.UserExists(user))
+            try
             {
-                if (loginService.ValidatePassword(user, pass))
+                if (loginService.UserExists(user))
                 {
-                    TelaInicial telaInicial = new TelaInicial();
-                    telaInicial.Show();
+                    if (loginService.ValidatePassword(user, pass))
+                    {
+                        TelaInicial telaInicial = new TelaInicial();
+                        telaInicial.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senha incorreta.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Senha incorreta.");
+                    MessageBox.Show("Usuário não cadastrado.");
                 }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("Usuário não cadastrado.");
-            }
 
+                MessageBox.Show(err.Message);
+            }
+            
         }
     }
 }

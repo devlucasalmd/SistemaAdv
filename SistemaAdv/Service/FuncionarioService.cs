@@ -67,8 +67,6 @@ namespace SistemaAdv.Service
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"SELECT * FROM Funcionarios";
 
-
-
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
@@ -93,9 +91,19 @@ namespace SistemaAdv.Service
             string filtro = cargo;
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"SELECT * FROM Funcionarios WHERE Cargo = @Cargo";
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios ";
 
+            if (!string.IsNullOrEmpty(cargo))
+            {
+                sqlCommand.CommandText += @"WHERE Cargo = @Cargo";
+            }
+            if (sqlCommand.Parameters.Contains("@Cargo"))
+            {
+                sqlCommand.Parameters.Clear();
+            }
+            
             sqlCommand.Parameters.AddWithValue("@Cargo", filtro);
+
 
             try
             {

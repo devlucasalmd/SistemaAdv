@@ -17,7 +17,6 @@ namespace SistemaAdv.Models
         public string Status;
         public DateTime Data;
 
-        // CREATE
         public Funcionario( string nome, string userName, string senha, string email, string cargo, string status, DateTime data)
         {
             Nome = nome;
@@ -28,20 +27,6 @@ namespace SistemaAdv.Models
             Status = status;
             Data = data;
         }
-
-        // READ & EDIT
-        public Funcionario(string id, string nome, string userName, string senha, string email, string cargo, string status, DateTime data): 
-                this(nome, userName, senha, email, cargo, status, data)
-        {
-            Id = id;
-        }
-
-        // DELETE
-        public Funcionario(string id) 
-        {
-            Id = id;
-        }
-
 
     }
 }

@@ -53,12 +53,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CmbBox_Status = new System.Windows.Forms.ComboBox();
             this.LblStatus = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // PicBox_CadClientes
@@ -358,11 +361,31 @@
             this.LblStatus.TabIndex = 69;
             this.LblStatus.Text = "Tipo: O que fazer?";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.radioButton1);
+            this.panel5.Location = new System.Drawing.Point(553, 200);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 100);
+            this.panel5.TabIndex = 70;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(16, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // TelaCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.LblStatus);
             this.Controls.Add(this.CmbBox_Status);
             this.Controls.Add(this.pictureBox1);
@@ -385,6 +408,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,5 +441,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox CmbBox_Status;
         private System.Windows.Forms.Label LblStatus;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

@@ -24,12 +24,13 @@ namespace SistemaAdv.View
         }
         private void LocalizarCEP()
         {
-            if (string.IsNullOrWhiteSpace(mskdBox_CEP.Text))
+
+            if (!string.IsNullOrWhiteSpace(mskdBox_CEP.Text))
             {
                 using(var ws = new WsCep.AtendeClienteClient())
                 {
                     try
-                    {
+                    {                        
                         var endereco = ws.consultaCEP(mskdBox_CEP.Text);
 
                         TxtBox_Logadouro.Text = endereco.end;

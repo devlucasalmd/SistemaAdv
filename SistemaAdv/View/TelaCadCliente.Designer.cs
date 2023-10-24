@@ -51,10 +51,9 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CmbBox_Status = new System.Windows.Forms.ComboBox();
-            this.LblStatus = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radBtn_Juridica = new System.Windows.Forms.RadioButton();
+            this.radBtn_Fisica = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -141,6 +140,7 @@
             this.Btn_Clientes.Text = "Clientes";
             this.Btn_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Clientes.UseVisualStyleBackColor = false;
+            this.Btn_Clientes.Click += new System.EventHandler(this.Btn_Clientes_Click);
             // 
             // Btn_Usuarios
             // 
@@ -159,6 +159,7 @@
             this.Btn_Usuarios.Text = "Usuarios";
             this.Btn_Usuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Usuarios.UseVisualStyleBackColor = false;
+            this.Btn_Usuarios.Click += new System.EventHandler(this.Btn_Usuarios_Click);
             // 
             // Btn_Relatorios
             // 
@@ -211,6 +212,7 @@
             this.Btn_Financeiro.Text = "Financeiro";
             this.Btn_Financeiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Financeiro.UseVisualStyleBackColor = true;
+            this.Btn_Financeiro.Click += new System.EventHandler(this.Btn_Financeiro_Click);
             // 
             // Btn_Inicio
             // 
@@ -228,6 +230,7 @@
             this.Btn_Inicio.Text = "Início";
             this.Btn_Inicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Inicio.UseVisualStyleBackColor = true;
+            this.Btn_Inicio.Click += new System.EventHandler(this.Btn_Inicio_Click);
             // 
             // Btn_Processos
             // 
@@ -245,6 +248,7 @@
             this.Btn_Processos.Text = "Processos";
             this.Btn_Processos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Processos.UseVisualStyleBackColor = true;
+            this.Btn_Processos.Click += new System.EventHandler(this.Btn_Processos_Click);
             // 
             // panel1
             // 
@@ -340,45 +344,36 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // CmbBox_Status
-            // 
-            this.CmbBox_Status.FormattingEnabled = true;
-            this.CmbBox_Status.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
-            this.CmbBox_Status.Location = new System.Drawing.Point(632, 93);
-            this.CmbBox_Status.Name = "CmbBox_Status";
-            this.CmbBox_Status.Size = new System.Drawing.Size(121, 21);
-            this.CmbBox_Status.TabIndex = 68;
-            this.CmbBox_Status.SelectedIndexChanged += new System.EventHandler(this.CmbBox_Status_SelectedIndexChanged);
-            // 
-            // LblStatus
-            // 
-            this.LblStatus.AutoSize = true;
-            this.LblStatus.Location = new System.Drawing.Point(629, 77);
-            this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(95, 13);
-            this.LblStatus.TabIndex = 69;
-            this.LblStatus.Text = "Tipo: O que fazer?";
-            // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.radioButton1);
-            this.panel5.Location = new System.Drawing.Point(553, 200);
+            this.panel5.Controls.Add(this.radBtn_Juridica);
+            this.panel5.Controls.Add(this.radBtn_Fisica);
+            this.panel5.Location = new System.Drawing.Point(671, 82);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 100);
+            this.panel5.Size = new System.Drawing.Size(82, 42);
             this.panel5.TabIndex = 70;
             // 
-            // radioButton1
+            // radBtn_Juridica
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radBtn_Juridica.AutoSize = true;
+            this.radBtn_Juridica.Location = new System.Drawing.Point(12, 24);
+            this.radBtn_Juridica.Name = "radBtn_Juridica";
+            this.radBtn_Juridica.Size = new System.Drawing.Size(61, 17);
+            this.radBtn_Juridica.TabIndex = 1;
+            this.radBtn_Juridica.TabStop = true;
+            this.radBtn_Juridica.Text = "Juridica";
+            this.radBtn_Juridica.UseVisualStyleBackColor = true;
+            // 
+            // radBtn_Fisica
+            // 
+            this.radBtn_Fisica.AutoSize = true;
+            this.radBtn_Fisica.Location = new System.Drawing.Point(12, 1);
+            this.radBtn_Fisica.Name = "radBtn_Fisica";
+            this.radBtn_Fisica.Size = new System.Drawing.Size(52, 17);
+            this.radBtn_Fisica.TabIndex = 0;
+            this.radBtn_Fisica.TabStop = true;
+            this.radBtn_Fisica.Text = "Fisica";
+            this.radBtn_Fisica.UseVisualStyleBackColor = true;
             // 
             // TelaCadCliente
             // 
@@ -386,8 +381,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.LblStatus);
-            this.Controls.Add(this.CmbBox_Status);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.PicBox_CadClientes);
@@ -439,9 +432,8 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox CmbBox_Status;
-        private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radBtn_Fisica;
+        private System.Windows.Forms.RadioButton radBtn_Juridica;
     }
 }

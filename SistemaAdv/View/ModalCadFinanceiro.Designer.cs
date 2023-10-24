@@ -37,17 +37,17 @@
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblNumProcesso = new System.Windows.Forms.Label();
             this.TxtBox_NumProcesso = new System.Windows.Forms.TextBox();
-            this.TxtBoxAcordo = new System.Windows.Forms.TextBox();
+            this.TxtBox_Acordo = new System.Windows.Forms.TextBox();
             this.LblAcordo = new System.Windows.Forms.Label();
-            this.TxtBoxHonorarios = new System.Windows.Forms.TextBox();
+            this.TxtBox_Honorarios = new System.Windows.Forms.TextBox();
             this.LblHonorarios = new System.Windows.Forms.Label();
-            this.TxtBoxDataPgnt = new System.Windows.Forms.TextBox();
+            this.TxtBox_DataPgnt = new System.Windows.Forms.TextBox();
             this.LblDataPgnt = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.Btn_Confirmar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtBox_ValorParcela = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.modalEffect_Timer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -131,12 +131,12 @@
             this.TxtBox_NumProcesso.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_NumProcesso.TabIndex = 46;
             // 
-            // TxtBoxAcordo
+            // TxtBox_Acordo
             // 
-            this.TxtBoxAcordo.Location = new System.Drawing.Point(237, 70);
-            this.TxtBoxAcordo.Name = "TxtBoxAcordo";
-            this.TxtBoxAcordo.Size = new System.Drawing.Size(172, 20);
-            this.TxtBoxAcordo.TabIndex = 72;
+            this.TxtBox_Acordo.Location = new System.Drawing.Point(237, 70);
+            this.TxtBox_Acordo.Name = "TxtBox_Acordo";
+            this.TxtBox_Acordo.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Acordo.TabIndex = 72;
             // 
             // LblAcordo
             // 
@@ -147,12 +147,12 @@
             this.LblAcordo.TabIndex = 71;
             this.LblAcordo.Text = "Acordo";
             // 
-            // TxtBoxHonorarios
+            // TxtBox_Honorarios
             // 
-            this.TxtBoxHonorarios.Location = new System.Drawing.Point(7, 132);
-            this.TxtBoxHonorarios.Name = "TxtBoxHonorarios";
-            this.TxtBoxHonorarios.Size = new System.Drawing.Size(172, 20);
-            this.TxtBoxHonorarios.TabIndex = 77;
+            this.TxtBox_Honorarios.Location = new System.Drawing.Point(7, 132);
+            this.TxtBox_Honorarios.Name = "TxtBox_Honorarios";
+            this.TxtBox_Honorarios.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_Honorarios.TabIndex = 77;
             // 
             // LblHonorarios
             // 
@@ -163,12 +163,12 @@
             this.LblHonorarios.TabIndex = 76;
             this.LblHonorarios.Text = "Honorarios";
             // 
-            // TxtBoxDataPgnt
+            // TxtBox_DataPgnt
             // 
-            this.TxtBoxDataPgnt.Location = new System.Drawing.Point(7, 250);
-            this.TxtBoxDataPgnt.Name = "TxtBoxDataPgnt";
-            this.TxtBoxDataPgnt.Size = new System.Drawing.Size(172, 20);
-            this.TxtBoxDataPgnt.TabIndex = 79;
+            this.TxtBox_DataPgnt.Location = new System.Drawing.Point(7, 250);
+            this.TxtBox_DataPgnt.Name = "TxtBox_DataPgnt";
+            this.TxtBox_DataPgnt.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_DataPgnt.TabIndex = 79;
             // 
             // LblDataPgnt
             // 
@@ -231,12 +231,12 @@
             this.label1.TabIndex = 83;
             this.label1.Text = "Parcelas";
             // 
-            // textBox1
+            // TxtBox_ValorParcela
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 85;
+            this.TxtBox_ValorParcela.Location = new System.Drawing.Point(7, 190);
+            this.TxtBox_ValorParcela.Name = "TxtBox_ValorParcela";
+            this.TxtBox_ValorParcela.Size = new System.Drawing.Size(172, 20);
+            this.TxtBox_ValorParcela.TabIndex = 85;
             // 
             // label2
             // 
@@ -258,17 +258,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 340);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtBox_ValorParcela);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.Btn_Confirmar);
-            this.Controls.Add(this.TxtBoxDataPgnt);
+            this.Controls.Add(this.TxtBox_DataPgnt);
             this.Controls.Add(this.LblDataPgnt);
-            this.Controls.Add(this.TxtBoxHonorarios);
+            this.Controls.Add(this.TxtBox_Honorarios);
             this.Controls.Add(this.LblHonorarios);
-            this.Controls.Add(this.TxtBoxAcordo);
+            this.Controls.Add(this.TxtBox_Acordo);
             this.Controls.Add(this.LblAcordo);
             this.Controls.Add(this.LblNumProcesso);
             this.Controls.Add(this.TxtBox_NumProcesso);
@@ -293,17 +293,17 @@
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblNumProcesso;
         private System.Windows.Forms.TextBox TxtBox_NumProcesso;
-        private System.Windows.Forms.TextBox TxtBoxAcordo;
+        private System.Windows.Forms.TextBox TxtBox_Acordo;
         private System.Windows.Forms.Label LblAcordo;
-        private System.Windows.Forms.TextBox TxtBoxHonorarios;
+        private System.Windows.Forms.TextBox TxtBox_Honorarios;
         private System.Windows.Forms.Label LblHonorarios;
-        private System.Windows.Forms.TextBox TxtBoxDataPgnt;
+        private System.Windows.Forms.TextBox TxtBox_DataPgnt;
         private System.Windows.Forms.Label LblDataPgnt;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Button Btn_Confirmar;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBox_ValorParcela;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer modalEffect_Timer;
         private System.Windows.Forms.Timer timer1;

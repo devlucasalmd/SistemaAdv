@@ -239,7 +239,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAeJJREFUSEvt1D9IVlEch/GrllsYJFSWg9CWQ9LQUi1KNdRgo7qVOgT92QpqqCHB
+        DQAACw0B7QfALAAAAeJJREFUSEvt1D9IVlEch/GrllsYJFSWg9CWQ9LQUi1KNdRgo7qVOgT92QpqqCHB
         HMoth8QhClJMsK3CpWjIIVsToiXQGrSCiqCe53gO3Nf3fUPebptf+PCe37n3HM57zr0328z/yj48xFs8
         iHWh2YVlrOIpvsR6JwrLFfzGgVBlWQesL4eqhrTjLmZwHltxGz/RCOOvtf1evwDvd9x+/DUH8R3f8B6u
         9hFOxfY9HMZ4rE9iKra933GOd56qcTXu9Z5QZdkQnOAMPAfbiXV/bN+EcZzjH4eqShbwbK0ZchRpUgeP
@@ -250,7 +250,7 @@
         z/tAqMozCK9732aKSJb9AWq3gO+7eTzoAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PicBox_CadClientes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PicBox_CadAudiencia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAASxJREFUSEvllUFKw0AUQLNUb6H2KqIXsXttRTyJulS78gJ6AHuittCKoO9BB4bk

@@ -48,7 +48,7 @@
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblPosicaoCliente = new System.Windows.Forms.Label();
             this.LblEstadoCivil = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.LblPIS = new System.Windows.Forms.Label();
             this.TxtBox_PIS = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.Btn_BuscarCEP = new System.Windows.Forms.Button();
             this.mskdBox_CPF = new System.Windows.Forms.MaskedTextBox();
             this.mskdBox_RG = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtBox_PosicaoCliente = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,19 +257,19 @@
             this.LblEstadoCivil.TabIndex = 83;
             this.LblEstadoCivil.Text = "Estado Civil";
             // 
-            // comboBox2
+            // cmbBox_EstadoCivil
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbBox_EstadoCivil.FormattingEnabled = true;
+            this.cmbBox_EstadoCivil.Items.AddRange(new object[] {
             "Solteiro (a)",
             "Casado (a)",
             "Separado judicialmente (a)",
             "Divorciado (a)",
             "Viúvo (a)"});
-            this.comboBox2.Location = new System.Drawing.Point(12, 222);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 82;
+            this.cmbBox_EstadoCivil.Location = new System.Drawing.Point(12, 222);
+            this.cmbBox_EstadoCivil.Name = "cmbBox_EstadoCivil";
+            this.cmbBox_EstadoCivil.Size = new System.Drawing.Size(121, 21);
+            this.cmbBox_EstadoCivil.TabIndex = 82;
             // 
             // dateTimePicker1
             // 
@@ -474,19 +474,19 @@
             this.mskdBox_RG.Size = new System.Drawing.Size(100, 20);
             this.mskdBox_RG.TabIndex = 109;
             // 
-            // textBox1
+            // TxtBox_PosicaoCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(160, 475);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 110;
+            this.TxtBox_PosicaoCliente.Location = new System.Drawing.Point(160, 475);
+            this.TxtBox_PosicaoCliente.Name = "TxtBox_PosicaoCliente";
+            this.TxtBox_PosicaoCliente.Size = new System.Drawing.Size(121, 20);
+            this.TxtBox_PosicaoCliente.TabIndex = 110;
             // 
             // ModalCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 529);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtBox_PosicaoCliente);
             this.Controls.Add(this.mskdBox_RG);
             this.Controls.Add(this.mskdBox_CPF);
             this.Controls.Add(this.Btn_BuscarCEP);
@@ -513,7 +513,7 @@
             this.Controls.Add(this.TxtBox_PIS);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.LblEstadoCivil);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbBox_EstadoCivil);
             this.Controls.Add(this.LblPosicaoCliente);
             this.Controls.Add(this.LblNatureza);
             this.Controls.Add(this.TxtBox_Natureza);
@@ -559,7 +559,7 @@
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblPosicaoCliente;
         private System.Windows.Forms.Label LblEstadoCivil;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbBox_EstadoCivil;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label LblPIS;
         private System.Windows.Forms.TextBox TxtBox_PIS;
@@ -585,6 +585,6 @@
         private System.Windows.Forms.Button Btn_BuscarCEP;
         private System.Windows.Forms.MaskedTextBox mskdBox_CPF;
         private System.Windows.Forms.MaskedTextBox mskdBox_RG;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBox_PosicaoCliente;
     }
 }

@@ -45,7 +45,7 @@
             this.LblAdvPC = new System.Windows.Forms.Label();
             this.TxtBox_AdvPC = new System.Windows.Forms.TextBox();
             this.LblJuizo = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBox_Juizo = new System.Windows.Forms.ComboBox();
             this.LblCliente = new System.Windows.Forms.Label();
             this.TxtBox_LastAndamento = new System.Windows.Forms.TextBox();
             this.LblLastAndamento = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.TxtBox_Demanda = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TxtBox_Cliente = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbBox_TipoProcesso = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.modalEffect_Timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -212,16 +212,16 @@
             this.LblJuizo.TabIndex = 60;
             this.LblJuizo.Text = "Juízo";
             // 
-            // comboBox1
+            // cmbBox_Juizo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbBox_Juizo.FormattingEnabled = true;
+            this.cmbBox_Juizo.Items.AddRange(new object[] {
             "Fisica",
             "Juridica"});
-            this.comboBox1.Location = new System.Drawing.Point(236, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 21);
-            this.comboBox1.TabIndex = 59;
+            this.cmbBox_Juizo.Location = new System.Drawing.Point(236, 126);
+            this.cmbBox_Juizo.Name = "cmbBox_Juizo";
+            this.cmbBox_Juizo.Size = new System.Drawing.Size(171, 21);
+            this.cmbBox_Juizo.TabIndex = 59;
             // 
             // LblCliente
             // 
@@ -337,18 +337,18 @@
             this.TxtBox_Cliente.Size = new System.Drawing.Size(172, 20);
             this.TxtBox_Cliente.TabIndex = 77;
             // 
-            // comboBox2
+            // cmbBox_TipoProcesso
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbBox_TipoProcesso.FormattingEnabled = true;
+            this.cmbBox_TipoProcesso.Items.AddRange(new object[] {
             "Familia",
             "Civel",
             "Administrativo",
             "Trabalhista"});
-            this.comboBox2.Location = new System.Drawing.Point(12, 65);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 78;
+            this.cmbBox_TipoProcesso.Location = new System.Drawing.Point(12, 65);
+            this.cmbBox_TipoProcesso.Name = "cmbBox_TipoProcesso";
+            this.cmbBox_TipoProcesso.Size = new System.Drawing.Size(121, 21);
+            this.cmbBox_TipoProcesso.TabIndex = 78;
             // 
             // label1
             // 
@@ -371,7 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbBox_TipoProcesso);
             this.Controls.Add(this.TxtBox_Cliente);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TxtBox_Demanda);
@@ -383,7 +383,7 @@
             this.Controls.Add(this.LblFinalizacao);
             this.Controls.Add(this.LblCliente);
             this.Controls.Add(this.LblJuizo);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbBox_Juizo);
             this.Controls.Add(this.LblAdvPC);
             this.Controls.Add(this.TxtBox_AdvPC);
             this.Controls.Add(this.TxtBox_PC);
@@ -424,7 +424,7 @@
         private System.Windows.Forms.Label LblAdvPC;
         private System.Windows.Forms.TextBox TxtBox_AdvPC;
         private System.Windows.Forms.Label LblJuizo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBox_Juizo;
         private System.Windows.Forms.Label LblCliente;
         private System.Windows.Forms.TextBox TxtBox_LastAndamento;
         private System.Windows.Forms.Label LblLastAndamento;
@@ -439,7 +439,7 @@
         private System.Windows.Forms.TextBox TxtBox_Demanda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox TxtBox_Cliente;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbBox_TipoProcesso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer modalEffect_Timer;
     }

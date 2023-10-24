@@ -166,6 +166,7 @@
             this.Btn_Usuarios.Text = "Usuarios";
             this.Btn_Usuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Usuarios.UseVisualStyleBackColor = false;
+            this.Btn_Usuarios.Click += new System.EventHandler(this.Btn_Usuarios_Click);
             // 
             // Btn_Relatorios
             // 
@@ -218,6 +219,7 @@
             this.Btn_Financeiro.Text = "Financeiro";
             this.Btn_Financeiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Financeiro.UseVisualStyleBackColor = true;
+            this.Btn_Financeiro.Click += new System.EventHandler(this.Btn_Financeiro_Click);
             // 
             // Btn_Inicio
             // 
@@ -235,6 +237,7 @@
             this.Btn_Inicio.Text = "Início";
             this.Btn_Inicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Inicio.UseVisualStyleBackColor = true;
+            this.Btn_Inicio.Click += new System.EventHandler(this.Btn_Inicio_Click);
             // 
             // Btn_Processos
             // 

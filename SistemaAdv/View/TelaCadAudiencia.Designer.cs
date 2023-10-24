@@ -46,16 +46,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.PicBox_CadClientes = new System.Windows.Forms.PictureBox();
+            this.PicBox_CadAudiencia = new System.Windows.Forms.PictureBox();
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Lbl_Clientes = new System.Windows.Forms.Label();
-            this.CmbBox_Clientes = new System.Windows.Forms.ComboBox();
+            this.CmbBox_Audiencia = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadAudiencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.Btn_Clientes.Text = "Clientes";
             this.Btn_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Clientes.UseVisualStyleBackColor = false;
+            this.Btn_Clientes.Click += new System.EventHandler(this.Btn_Clientes_Click);
             // 
             // Btn_Usuarios
             // 
@@ -110,6 +111,7 @@
             this.Btn_Usuarios.Text = "Usuarios";
             this.Btn_Usuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Usuarios.UseVisualStyleBackColor = false;
+            this.Btn_Usuarios.Click += new System.EventHandler(this.Btn_Usuarios_Click);
             // 
             // Btn_Relatorios
             // 
@@ -162,6 +164,7 @@
             this.Btn_Financeiro.Text = "Financeiro";
             this.Btn_Financeiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Financeiro.UseVisualStyleBackColor = true;
+            this.Btn_Financeiro.Click += new System.EventHandler(this.Btn_Financeiro_Click);
             // 
             // Btn_Inicio
             // 
@@ -179,6 +182,7 @@
             this.Btn_Inicio.Text = "Início";
             this.Btn_Inicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Inicio.UseVisualStyleBackColor = true;
+            this.Btn_Inicio.Click += new System.EventHandler(this.Btn_Inicio_Click);
             // 
             // Btn_Processos
             // 
@@ -292,15 +296,15 @@
             this.checkBox1.TabIndex = 19;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // PicBox_CadClientes
+            // PicBox_CadAudiencia
             // 
-            this.PicBox_CadClientes.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadClientes.Image")));
-            this.PicBox_CadClientes.Location = new System.Drawing.Point(758, 89);
-            this.PicBox_CadClientes.Name = "PicBox_CadClientes";
-            this.PicBox_CadClientes.Size = new System.Drawing.Size(28, 23);
-            this.PicBox_CadClientes.TabIndex = 35;
-            this.PicBox_CadClientes.TabStop = false;
-            this.PicBox_CadClientes.Click += new System.EventHandler(this.PicBox_CadClientes_Click);
+            this.PicBox_CadAudiencia.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadAudiencia.Image")));
+            this.PicBox_CadAudiencia.Location = new System.Drawing.Point(758, 89);
+            this.PicBox_CadAudiencia.Name = "PicBox_CadAudiencia";
+            this.PicBox_CadAudiencia.Size = new System.Drawing.Size(28, 23);
+            this.PicBox_CadAudiencia.TabIndex = 35;
+            this.PicBox_CadAudiencia.TabStop = false;
+            this.PicBox_CadAudiencia.Click += new System.EventHandler(this.PicBox_CadClientes_Click);
             // 
             // Btn_Buscar
             // 
@@ -320,13 +324,13 @@
             this.Lbl_Clientes.TabIndex = 33;
             this.Lbl_Clientes.Text = "Audiencia";
             // 
-            // CmbBox_Clientes
+            // CmbBox_Audiencia
             // 
-            this.CmbBox_Clientes.FormattingEnabled = true;
-            this.CmbBox_Clientes.Location = new System.Drawing.Point(43, 91);
-            this.CmbBox_Clientes.Name = "CmbBox_Clientes";
-            this.CmbBox_Clientes.Size = new System.Drawing.Size(209, 21);
-            this.CmbBox_Clientes.TabIndex = 32;
+            this.CmbBox_Audiencia.FormattingEnabled = true;
+            this.CmbBox_Audiencia.Location = new System.Drawing.Point(43, 91);
+            this.CmbBox_Audiencia.Name = "CmbBox_Audiencia";
+            this.CmbBox_Audiencia.Size = new System.Drawing.Size(209, 21);
+            this.CmbBox_Audiencia.TabIndex = 32;
             // 
             // dataGridView1
             // 
@@ -344,10 +348,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.PicBox_CadClientes);
+            this.Controls.Add(this.PicBox_CadAudiencia);
             this.Controls.Add(this.Btn_Buscar);
             this.Controls.Add(this.Lbl_Clientes);
-            this.Controls.Add(this.CmbBox_Clientes);
+            this.Controls.Add(this.CmbBox_Audiencia);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -360,7 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadAudiencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -386,10 +390,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.PictureBox PicBox_CadClientes;
+        private System.Windows.Forms.PictureBox PicBox_CadAudiencia;
         private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.Label Lbl_Clientes;
-        private System.Windows.Forms.ComboBox CmbBox_Clientes;
+        private System.Windows.Forms.ComboBox CmbBox_Audiencia;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

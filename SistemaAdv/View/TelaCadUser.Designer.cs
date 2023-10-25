@@ -51,6 +51,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CmbBox_Filter = new System.Windows.Forms.ComboBox();
             this.dtGrid_User = new System.Windows.Forms.DataGridView();
+            this.BtnEdit = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).BeginInit();
@@ -72,7 +74,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 30);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(808, 33);
+            this.panel3.Size = new System.Drawing.Size(911, 33);
             this.panel3.TabIndex = 10;
             // 
             // Btn_Clientes
@@ -140,7 +142,7 @@
             this.Btn_Sair.ForeColor = System.Drawing.Color.Black;
             this.Btn_Sair.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Sair.Image")));
             this.Btn_Sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Sair.Location = new System.Drawing.Point(738, 0);
+            this.Btn_Sair.Location = new System.Drawing.Point(841, 0);
             this.Btn_Sair.Name = "Btn_Sair";
             this.Btn_Sair.Size = new System.Drawing.Size(70, 33);
             this.Btn_Sair.TabIndex = 5;
@@ -213,7 +215,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 30);
+            this.panel1.Size = new System.Drawing.Size(911, 30);
             this.panel1.TabIndex = 9;
             // 
             // label1
@@ -240,7 +242,7 @@
             this.Btn_Min.FlatAppearance.BorderSize = 0;
             this.Btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Min.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Min.Image")));
-            this.Btn_Min.Location = new System.Drawing.Point(688, 0);
+            this.Btn_Min.Location = new System.Drawing.Point(791, 0);
             this.Btn_Min.Name = "Btn_Min";
             this.Btn_Min.Size = new System.Drawing.Size(40, 28);
             this.Btn_Min.TabIndex = 2;
@@ -252,7 +254,7 @@
             this.Btn_Max.FlatAppearance.BorderSize = 0;
             this.Btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Max.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Max.Image")));
-            this.Btn_Max.Location = new System.Drawing.Point(728, 0);
+            this.Btn_Max.Location = new System.Drawing.Point(831, 0);
             this.Btn_Max.Name = "Btn_Max";
             this.Btn_Max.Size = new System.Drawing.Size(40, 28);
             this.Btn_Max.TabIndex = 1;
@@ -264,7 +266,7 @@
             this.Btn_Close.FlatAppearance.BorderSize = 0;
             this.Btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Close.Image")));
-            this.Btn_Close.Location = new System.Drawing.Point(767, 0);
+            this.Btn_Close.Location = new System.Drawing.Point(870, 0);
             this.Btn_Close.Name = "Btn_Close";
             this.Btn_Close.Size = new System.Drawing.Size(40, 28);
             this.Btn_Close.TabIndex = 0;
@@ -274,7 +276,7 @@
             // PicBox_CadUser
             // 
             this.PicBox_CadUser.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadUser.Image")));
-            this.PicBox_CadUser.Location = new System.Drawing.Point(765, 90);
+            this.PicBox_CadUser.Location = new System.Drawing.Point(871, 92);
             this.PicBox_CadUser.Name = "PicBox_CadUser";
             this.PicBox_CadUser.Size = new System.Drawing.Size(28, 23);
             this.PicBox_CadUser.TabIndex = 28;
@@ -286,7 +288,7 @@
             this.panel4.Controls.Add(this.checkBox1);
             this.panel4.Location = new System.Drawing.Point(13, 119);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(780, 18);
+            this.panel4.Size = new System.Drawing.Size(886, 18);
             this.panel4.TabIndex = 27;
             // 
             // checkBox1
@@ -311,7 +313,7 @@
             // Lbl_Usuarios
             // 
             this.Lbl_Usuarios.AutoSize = true;
-            this.Lbl_Usuarios.Location = new System.Drawing.Point(50, 73);
+            this.Lbl_Usuarios.Location = new System.Drawing.Point(50, 78);
             this.Lbl_Usuarios.Name = "Lbl_Usuarios";
             this.Lbl_Usuarios.Size = new System.Drawing.Size(48, 13);
             this.Lbl_Usuarios.TabIndex = 25;
@@ -320,7 +322,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 92);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 90);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 37);
             this.pictureBox1.TabIndex = 24;
@@ -347,16 +349,37 @@
             // dtGrid_User
             // 
             this.dtGrid_User.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrid_User.Location = new System.Drawing.Point(19, 160);
+            this.dtGrid_User.Location = new System.Drawing.Point(32, 143);
             this.dtGrid_User.Name = "dtGrid_User";
-            this.dtGrid_User.Size = new System.Drawing.Size(780, 278);
+            this.dtGrid_User.Size = new System.Drawing.Size(848, 294);
             this.dtGrid_User.TabIndex = 22;
+            // 
+            // BtnEdit
+            // 
+            this.BtnEdit.Location = new System.Drawing.Point(724, 444);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(75, 23);
+            this.BtnEdit.TabIndex = 29;
+            this.BtnEdit.Text = "Editar";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Location = new System.Drawing.Point(805, 444);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(75, 23);
+            this.BtnDelete.TabIndex = 30;
+            this.BtnDelete.Text = "Excluir";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // TelaCadUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 450);
+            this.ClientSize = new System.Drawing.Size(911, 500);
+            this.Controls.Add(this.BtnDelete);
+            this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.PicBox_CadUser);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -409,5 +432,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox CmbBox_Filter;
         private System.Windows.Forms.DataGridView dtGrid_User;
+        private System.Windows.Forms.Button BtnEdit;
+        private System.Windows.Forms.Button BtnDelete;
     }
 }

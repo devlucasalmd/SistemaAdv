@@ -88,7 +88,18 @@ namespace SistemaAdv
                 modalBackground.Dispose();
             }
         }
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                    "Deseja excluir o Usuario selecionado?");
+            //MessageBoxIcon.Warning,
+            //MessageBoxButtons.OKCancel );            
+        }
 
+
+
+        //Menu
+        // menuService.OpenTelaProcesso();
         private void Btn_Inicio_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -100,8 +111,7 @@ namespace SistemaAdv
         {
             TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
             telaCadProcesso.Show();
-            this.Visible = false;
-            // menuService.OpenTelaProcesso();
+            this.Visible = false;            
         }
 
         private void Btn_Usuarios_Click(object sender, EventArgs e)
@@ -118,6 +128,7 @@ namespace SistemaAdv
             telaCadCliente.Show();
         }
 
+
         private void Btn_Financeiro_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -125,5 +136,6 @@ namespace SistemaAdv
             telaCadAudiencia.Show();
             //this.
         }
+        // Fim Menu
     }
 }

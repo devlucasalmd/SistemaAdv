@@ -8,7 +8,7 @@ namespace SistemaAdv.Models
 {
     internal class Funcionario
     {
-        public string Id;
+        public int Id;
         public string Nome;
         public string UserName;
         public string Senha;
@@ -17,7 +17,7 @@ namespace SistemaAdv.Models
         public string Status;
         public DateTime Data;
 
-        public Funcionario( string nome, string userName, string senha, string email, string cargo, string status, DateTime data)
+        public Funcionario(string nome, string userName, string senha, string email, string cargo, string status, DateTime data)
         {
             Nome = nome;
             UserName = userName;
@@ -26,6 +26,10 @@ namespace SistemaAdv.Models
             Cargo = cargo;
             Status = status;
             Data = data;
+        }
+        public Funcionario(int id, string nome, string userName, string senha, string email, string cargo, string status, DateTime data):this(nome, userName, senha, email, cargo, status, data)
+        {
+            Id = id;            
         }
 
     }

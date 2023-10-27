@@ -30,8 +30,13 @@ namespace SistemaAdv
         private void Btn_Processos_Click(object sender, EventArgs e)
         {
             TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
+            telaCadProcesso.MdiParent = this;
+
             telaCadProcesso.Show();
-            this.Visible = false;
+
+
+
+            //this.Visible = false;
             // menuService.OpenTelaProcesso();
         }
 

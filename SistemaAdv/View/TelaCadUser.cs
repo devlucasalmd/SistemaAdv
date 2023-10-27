@@ -37,6 +37,7 @@ namespace SistemaAdv
             DataTable dt = new DataTable();
             dt = funcionarioService.ReadFuncionarios();
             dtGrid_User.DataSource = dt;
+            dtGrid_User.Columns.Remove("Id");
         }
 
         public void FilterFuncionario()
@@ -91,9 +92,10 @@ namespace SistemaAdv
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                    "Deseja excluir o Usuario selecionado?");
-            //MessageBoxIcon.Warning,
-            //MessageBoxButtons.OKCancel );            
+            "Deseja excluir o Usuario selecionado?", "Aviso",
+            MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Warning          
+            );            
         }
 
 

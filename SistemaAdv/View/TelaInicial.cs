@@ -14,7 +14,7 @@ namespace SistemaAdv
 {
     public partial class TelaInicial : Form
     {
-       // private MenuService menuService;
+        private TelaCadProcesso telaprocesso;
         public TelaInicial()
         {
             InitializeComponent();
@@ -27,23 +27,10 @@ namespace SistemaAdv
             telaInicial.Show();
         }
 
-        private void Btn_Processos_Click(object sender, EventArgs e)
-        {
-            TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
-            telaCadProcesso.MdiParent = this;
-
-            telaCadProcesso.Show();
-
-
-
-            //this.Visible = false;
-            // menuService.OpenTelaProcesso();
-        }
-
         private void Btn_Usuarios_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            TelaCadUser telaCadUser = new TelaCadUser();
+            TelaCadUser telaCadUser = new TelaCadUser(0);
             telaCadUser.Show();
         }
 
@@ -59,7 +46,34 @@ namespace SistemaAdv
             this.Visible = false;
             TelaCadAudiencia telaCadAudiencia = new TelaCadAudiencia();
             telaCadAudiencia.Show();
-            //this.
         }
-    }
+
+        private void processosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                FormCollection fc = Application.OpenForms;
+                bool isOpened = false;
+                foreach (Form frm in fc)
+                {
+                    if (frm.Name == "TelaCadProcessos")
+                    {
+                        isOpened = true;
+                        break;
+                    }
+                }
+                if (isOpened)
+                {
+                    MessageBox.Show("Já esta aberta");
+                }
+                else
+                {
+                    telaprocesso = new TelaCadProcesso()
+                    {
+                        MdiParent = this,
+                        Width = this.Width - 21,
+                        Height = this.Height - 90,
+                    };
+                    telaprocesso.Show();
+                }
+            }
+        }
 }

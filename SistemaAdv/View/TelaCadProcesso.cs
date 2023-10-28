@@ -41,41 +41,5 @@ namespace SistemaAdv.View
                 modalBackground.Dispose();
             }
         }
-        private void Btn_Processos_Click(object sender, EventArgs e)
-        {
-            TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
-            telaCadProcesso.Show();
-            this.Visible = false;
-            // menuService.OpenTelaProcesso();
-        }
-
-        private void Btn_Inicio_Click(object sender, EventArgs e)
-        {
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.Show();
-            this.Visible = false;
-        }
-
-        private void Btn_Usuarios_Click(object sender, EventArgs e)
-        {
-            TelaCadUser telaCadUser = new TelaCadUser();
-            telaCadUser.Show();
-            this.Visible = false;
-        }
-
-        private void Btn_Clientes_Click(object sender, EventArgs e)
-        {
-            TelaCadCliente telaCadCliente = new TelaCadCliente();
-            telaCadCliente.Show();
-            this.Visible = false;
-        }
-
-        private void Btn_Financeiro_Click(object sender, EventArgs e)
-        {
-
-            TelaCadAudiencia telaCadAudiencia = new TelaCadAudiencia();
-            telaCadAudiencia.Show();
-            this.Visible = false;
-        }
     }
 }

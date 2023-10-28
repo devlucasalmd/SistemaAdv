@@ -101,7 +101,7 @@ namespace SistemaAdv.Service
             {
                 sqlCommand.Parameters.Clear();
             }
-            
+
             sqlCommand.Parameters.AddWithValue("@Cargo", filtro);
 
 
@@ -123,6 +123,14 @@ namespace SistemaAdv.Service
             }
 
         }
+
+        // public datatable editfuncionario(int index)
+        //{
+           // connection.openconnection();
+           // sqlcommand.connection = connection.returnconnection();
+
+           // sqlcommand.commandtext = @"select * from funcionarios ";
+       // }
     }
 } 
     

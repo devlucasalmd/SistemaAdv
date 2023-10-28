@@ -15,13 +15,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection;
 
 namespace SistemaAdv
 {
     public partial class TelaCadUser : Form
     {
         private FuncionarioService funcionarioService;
-       // private MenuService menuService;
+        // private MenuService menuService;
+
 
         public TelaCadUser()
         {
@@ -30,7 +32,6 @@ namespace SistemaAdv
         }
 
         public static int parentX, parentY;
-
 
         public void UpdateDataGrid()
         {
@@ -47,9 +48,14 @@ namespace SistemaAdv
             dtGrid_User.DataSource = dt;
         }
 
-        private void Btn_Close_Click(object sender, EventArgs e)
+        public void EditFuncionario()
         {
-            this.Close();
+            //funcionarioService.EditFuncionario();
+        }
+
+        private void TelaCadUser_Activated(object sender, EventArgs e)
+        {
+            UpdateDataGrid();
         }
 
         private void Btn_Buscar_Click(object sender, EventArgs e)
@@ -57,15 +63,22 @@ namespace SistemaAdv
             FilterFuncionario();
         }
 
-        private void TelaCadUser_Load(object sender, EventArgs e)
+        //int index = dtGrid_User.S
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
-            // UpdateDataGrid();
+            EditFuncionario();
         }
 
-        private void TelaCadUser_Activated(object sender, EventArgs e)
+
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
-            UpdateDataGrid();
+            MessageBox.Show(
+            "Deseja excluir o Usuario selecionado?", "Aviso",
+            MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Warning
+            );
         }
+
 
         private void PicBox_CadUser_Click(object sender, EventArgs e)
         {
@@ -89,55 +102,6 @@ namespace SistemaAdv
                 modalBackground.Dispose();
             }
         }
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(
-            "Deseja excluir o Usuario selecionado?", "Aviso",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Warning          
-            );            
-        }
 
-
-
-        //Menu
-        // menuService.OpenTelaProcesso();
-        private void Btn_Inicio_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.Show();
-        }
-
-        private void Btn_Processos_Click(object sender, EventArgs e)
-        {
-            TelaCadProcesso telaCadProcesso = new TelaCadProcesso();
-            telaCadProcesso.Show();
-            this.Visible = false;            
-        }
-
-        private void Btn_Usuarios_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaCadUser telaCadUser = new TelaCadUser();
-            telaCadUser.Show();
-        }
-
-        private void Btn_Clientes_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaCadCliente telaCadCliente = new TelaCadCliente();
-            telaCadCliente.Show();
-        }
-
-
-        private void Btn_Financeiro_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaCadAudiencia telaCadAudiencia = new TelaCadAudiencia();
-            telaCadAudiencia.Show();
-            //this.
-        }
-        // Fim Menu
     }
 }

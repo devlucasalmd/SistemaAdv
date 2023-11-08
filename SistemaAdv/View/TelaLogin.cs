@@ -22,6 +22,11 @@ namespace SistemaAdv
             loginService = new LoginService();
         }
 
+        private void LimparCampos()
+        {
+            TxtBox_UserName.Clear();
+            TxtBox_Password.Clear();
+        }
         private void Btn_Login_Click(object sender, EventArgs e)
         {
              var user = TxtBox_UserName.Text;
@@ -34,16 +39,19 @@ namespace SistemaAdv
                     if (loginService.ValidatePassword(user, pass))
                     {
                         TelaInicial telaInicial = new TelaInicial();
-                        telaInicial.Show();
+                        telaInicial.Show();                             
+                        LimparCampos();
                     }
                     else
                     {
                         MessageBox.Show("Senha incorreta.");
+                        LimparCampos();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Usuário não cadastrado.");
+                    LimparCampos();
                 }
             }
             catch (Exception err)

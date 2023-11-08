@@ -50,7 +50,24 @@ namespace SistemaAdv
 
         public void EditFuncionario()
         {
-            //funcionarioService.EditFuncionario();
+            if (dtGrid_User.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
+                int id;
+                if(int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+                {
+                    OpenModal();
+                    //funcionarioService.EditFuncionario();
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "Nenhum usuario selecionado", "Aviso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+            }
         }
 
         private void TelaCadUser_Activated(object sender, EventArgs e)
@@ -63,7 +80,7 @@ namespace SistemaAdv
             FilterFuncionario();
         }
 
-        //int index = dtGrid_User.S
+        
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             EditFuncionario();
@@ -79,11 +96,10 @@ namespace SistemaAdv
             );
         }
 
-
-        private void PicBox_CadUser_Click(object sender, EventArgs e)
+        public void OpenModal()
         {
             Form modalBackground = new Form();
-            using(ModalCadUser modal = new ModalCadUser())
+            using (ModalCadUser modal = new ModalCadUser())
             {
                 modalBackground.StartPosition = FormStartPosition.Manual;
                 modalBackground.FormBorderStyle = FormBorderStyle.None;
@@ -101,6 +117,11 @@ namespace SistemaAdv
                 modal.ShowDialog();
                 modalBackground.Dispose();
             }
+
+        }
+        private void PicBox_CadUser_Click(object sender, EventArgs e)
+        {
+           OpenModal();
         }
 
     }

@@ -14,40 +14,17 @@ namespace SistemaAdv
 {
     public partial class TelaInicial : Form
     {
+        private TelaInicial telainrdcrical;
         private TelaCadProcesso telaprocesso;
+        private TelaCadUser telauser;
+        private TelaCadCliente telacliente;
+        private TelaCadAudiencia telaaudiencia;
+        
         public TelaInicial()
         {
             InitializeComponent();
         }
-
-        private void Btn_Inicio_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.Show();
-        }
-
-        private void Btn_Usuarios_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaCadUser telaCadUser = new TelaCadUser(0);
-            telaCadUser.Show();
-        }
-
-        private void Btn_Clientes_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaCadCliente telaCadCliente = new TelaCadCliente();
-            telaCadCliente.Show();
-        }
-
-        private void Btn_Financeiro_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            TelaCadAudiencia telaCadAudiencia = new TelaCadAudiencia();
-            telaCadAudiencia.Show();
-        }
-
+     
         private void processosToolStripMenuItem_Click(object sender, EventArgs e)
         {
                 FormCollection fc = Application.OpenForms;
@@ -75,5 +52,89 @@ namespace SistemaAdv
                     telaprocesso.Show();
                 }
             }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                FormCollection fc = Application.OpenForms;
+                bool isOpened = false;
+                foreach (Form frm in fc)
+                {
+                    if (frm.Name == "TelaCadUser")
+                    {
+                        isOpened = true;
+                        break;
+                    }
+                }
+                if (isOpened)
+                {
+                    MessageBox.Show("Já esta aberta");
+                }
+                else
+                {
+                    telauser = new TelaCadUser()
+                    {
+                        MdiParent = this,
+                        Width = this.Width - 21,
+                        Height = this.Height - 90,
+                    };
+                    telauser.Show();
+                }
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+            bool isOpened = false;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "TelaCadUser")
+                {
+                    isOpened = true;
+                    break;
+                }
+            }
+            if (isOpened)
+            {
+                MessageBox.Show("Já esta aberta");
+            }
+            else
+            {
+                telacliente = new TelaCadCliente()
+                {
+                    MdiParent = this,
+                    Width = this.Width - 21,
+                    Height = this.Height - 90,
+                };
+                telacliente.Show();
+            }
+        }
+
+        private void audienciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+            bool isOpened = false;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "TelaCadUser")
+                {
+                    isOpened = true;
+                    break;
+                }
+            }
+            if (isOpened)
+            {
+                MessageBox.Show("Já esta aberta");
+            }
+            else
+            {
+                telaaudiencia = new TelaCadAudiencia()
+                {
+                    MdiParent = this,
+                    Width = this.Width - 21,
+                    Height = this.Height - 90,
+                };
+                telaaudiencia.Show();
+            }
+        }
+    }
 }

@@ -124,13 +124,13 @@ namespace SistemaAdv.Service
 
         }
 
-        // public datatable editfuncionario(int index)
+        //public datatable editfuncionario(int id)
         //{
-           // connection.openconnection();
-           // sqlcommand.connection = connection.returnconnection();
+        //    connection.openconnection();
+        //    sqlcommand.connection = connection.returnconnection();
 
-           // sqlcommand.commandtext = @"select * from funcionarios ";
-       // }
+        //    sqlcommand.commandtext = @"select * from funcionarios ";
+        //}
     }
 } 
     

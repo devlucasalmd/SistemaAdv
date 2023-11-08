@@ -49,6 +49,7 @@ namespace SistemaAdv.View
             DateTime Data = DateTime.Now;
 
             var novoFuncionario = new Funcionario(Nome, UserName, Senha, Email, Cargo, Status, Data);
+            VerificarCampos();
             funcionarioService.CreateFuncionario(novoFuncionario);
             LimparCampos();
             this.Close();
@@ -92,6 +93,33 @@ namespace SistemaAdv.View
             this.Location = new Point(TelaCadUser.parentX + 160, TelaCadUser.parentY + 150);
         }
 
+        private void VerificarCampos()
+        {
+            if (string.IsNullOrEmpty(TxtBox_Name.Text))
+            {
+                MessageBox.Show("O campo do Nome não pode estar vazio");
+            }
+            else if (string.IsNullOrEmpty(TxtBox_UserName.Text))
+            {
+                MessageBox.Show("O campo do User Name não pode estar vazio");
+            }
+            else if (string.IsNullOrEmpty(TxtBox_Password.Text))
+            {
+                MessageBox.Show("O campo da Senha não pode estar vazio");
+            }
+            else if (string.IsNullOrEmpty(TxtBox_Email.Text))
+            {
+                MessageBox.Show("O campo do Email não pode estar vazio");
+            }
+            else if (string.IsNullOrEmpty(CmbBox_Cargo.Text))
+            {
+                MessageBox.Show("O campo do Cargo não pode estar vazio");
+            }
+            else if (string.IsNullOrEmpty(CmbBox_Status.Text))
+            {
+                MessageBox.Show("O campo do Status não pode estar vazio");
+            }
+        }
 
         //Colocar est, sec, adm ou adv no campo UserName ao inserir o cargo no CmbBox_Cargo
     }

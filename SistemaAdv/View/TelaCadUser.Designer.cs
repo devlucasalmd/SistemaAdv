@@ -109,10 +109,7 @@
             "Secretario (a)",
             "Advogado (a)",
             "Administrador (a)",
-            "",
-            "---- Status ----",
-            "Ativo",
-            "Inativo"});
+            ""});
             this.CmbBox_Filter.Location = new System.Drawing.Point(40, 23);
             this.CmbBox_Filter.Name = "CmbBox_Filter";
             this.CmbBox_Filter.Size = new System.Drawing.Size(209, 21);

@@ -14,7 +14,7 @@ namespace SistemaAdv
 {
     public partial class TelaInicial : Form
     {
-        private TelaInicial telainrdcrical;
+        //private TelaInicial telainicial;
         private TelaCadProcesso telaprocesso;
         private TelaCadUser telauser;
         private TelaCadCliente telacliente;

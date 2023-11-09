@@ -85,6 +85,77 @@ namespace SistemaAdv.Service
             }
         }
 
+        public DataTable GetFuncionario(int id)
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+
+            sqlCommand.CommandText = @"select * from funcionarios where Id = 1";
+
+            //sqlCommand.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
+        public bool UpdateFuncionario(Funcionario novoFuncionario)
+        {
+            try
+            {
+                connection.OpenConnection();
+
+                sqlCommand.Connection = connection.ReturnConnection();
+                sqlCommand.CommandText = @"Update Funcionarios SET Nome = teste, UserName = teste, Senha = teste, Email = teste, Cargo = teste, Status = teste, Data = teste WHERE Id = 1"
+                ;
+
+               // sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
+               // sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
+               // sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
+               // sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
+               // sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
+               // sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
+               // sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
+
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+        public bool DeleteFuncionario(int id)
+        {
+            try
+            {
+                connection.OpenConnection();
+                sqlCommand.Connection = connection.ReturnConnection();
+
+                sqlCommand.CommandText = @"Update Funcionarios SET status = inativo WHERE Id = @id";
+                sqlCommand.Parameters.AddWithValue("@id", id);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }            
+         }
 
         public DataTable FilterFuncionario(string cargo)
         {
@@ -124,13 +195,7 @@ namespace SistemaAdv.Service
 
         }
 
-        //public datatable editfuncionario(int id)
-        //{
-        //    connection.openconnection();
-        //    sqlcommand.connection = connection.returnconnection();
 
-        //    sqlcommand.commandtext = @"select * from funcionarios ";
-        //}
     }
 } 
     

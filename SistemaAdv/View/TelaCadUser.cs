@@ -38,7 +38,8 @@ namespace SistemaAdv
             DataTable dt = new DataTable();
             dt = funcionarioService.ReadFuncionarios();
             dtGrid_User.DataSource = dt;
-            dtGrid_User.Columns.Remove("Id");
+            dtGrid_User.Columns[0].Visible = false;
+            
         }
 
         public void FilterFuncionario()
@@ -46,6 +47,40 @@ namespace SistemaAdv
             var cargo = CmbBox_Filter.Text;           
             DataTable dt = funcionarioService.FilterFuncionario(cargo);        
             dtGrid_User.DataSource = dt;
+        }
+
+        public void DeleteFuncionario()
+        {
+            if (dtGrid_User.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
+                int id;
+                if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+                {
+                    if (funcionarioService.DeleteFuncionario(id))
+                    {
+                        MessageBox.Show(
+                        "Deletado com sucesso!", "Aviso",
+                        MessageBoxButtons.OK
+                         );
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                        "Erro ao deletar funcionario!", "Aviso",
+                        MessageBoxButtons.OK
+                         );
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "Nenhum usuario selecionado", "Aviso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+            }
         }
 
         public void EditFuncionario()
@@ -56,8 +91,8 @@ namespace SistemaAdv
                 int id;
                 if(int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
                 {
-                    OpenModal();
-                    //funcionarioService.EditFuncionario();
+                    OpenModal(id);
+                    UpdateDataGrid();
                 }
             }
             else
@@ -94,12 +129,14 @@ namespace SistemaAdv
             MessageBoxButtons.OKCancel,
             MessageBoxIcon.Warning
             );
+
+            DeleteFuncionario();
         }
 
-        public void OpenModal()
+        public void OpenModal(int id = 0)
         {
             Form modalBackground = new Form();
-            using (ModalCadUser modal = new ModalCadUser())
+            using (ModalCadUser modal = new ModalCadUser(id))
             {
                 modalBackground.StartPosition = FormStartPosition.Manual;
                 modalBackground.FormBorderStyle = FormBorderStyle.None;

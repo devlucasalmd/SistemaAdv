@@ -38,8 +38,7 @@ namespace SistemaAdv
             DataTable dt = new DataTable();
             dt = funcionarioService.ReadFuncionarios();
             dtGrid_User.DataSource = dt;
-            dtGrid_User.Columns[0].Visible = false;
-            
+            dtGrid_User.Columns[0].Visible = false;            
         }
 
         public void FilterFuncionario()

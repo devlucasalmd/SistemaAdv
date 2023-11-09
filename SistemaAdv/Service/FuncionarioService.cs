@@ -90,7 +90,7 @@ namespace SistemaAdv.Service
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
 
-            sqlCommand.CommandText = @"select * from funcionarios where Id = 1";
+            sqlCommand.CommandText = @"select * from funcionarios where Id = 5";
 
             //sqlCommand.Parameters.AddWithValue("@id", id);
 

@@ -34,6 +34,7 @@ namespace SistemaAdv
 
             try
             {
+                
                 if (loginService.UserExists(user))
                 {
                     if (loginService.ValidatePassword(user, pass))
@@ -41,6 +42,7 @@ namespace SistemaAdv
                         TelaInicial telaInicial = new TelaInicial();
                         telaInicial.Show();                             
                         LimparCampos();
+                        loginService.IsLoggedIn = true;
                     }
                     else
                     {

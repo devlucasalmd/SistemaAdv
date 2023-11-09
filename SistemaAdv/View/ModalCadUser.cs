@@ -25,6 +25,7 @@ namespace SistemaAdv.View
         {
             InitializeComponent();
             funcionarioService = new FuncionarioService();
+            CmbBox_Status.SelectedItem = "Ativo";
             this.id = id;
             if(id != 0)
             {
@@ -34,7 +35,7 @@ namespace SistemaAdv.View
                 TxtBox_UserName.Text = dt.Rows[0]["UserName"].ToString();
                 TxtBox_Email.Text = dt.Rows[0]["Email"].ToString();
                 CmbBox_Cargo.Text = dt.Rows[0]["Cargo"].ToString();
-                CmbBox_Status.Text = dt.Rows[0]["Status"].ToString();
+                CmbBox_Status.SelectedItem = dt.Rows[0]["Status"].ToString();
             }
         }
 
@@ -79,7 +80,6 @@ namespace SistemaAdv.View
                     this.Close();
                 }
             }
-                    
         }
 
         private void Btn_Clear_Click(object sender, EventArgs e)

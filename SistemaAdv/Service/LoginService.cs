@@ -15,7 +15,20 @@ namespace SistemaAdv.Service
         Connection connection = new Connection();
         SqlCommand sqlCommand = new SqlCommand();
 
-        public bool UserExists(string user)
+        public bool isLoggedIn = false;
+
+        public bool IsLoggedIn
+        {
+            get { return isLoggedIn; }
+            set { isLoggedIn = value; }
+        }
+
+        public void Logoff() 
+        { 
+            isLoggedIn = false;
+        }
+
+    public bool UserExists(string user)
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
@@ -23,6 +36,7 @@ namespace SistemaAdv.Service
             try
             {
                 sqlCommand.CommandText = @"SELECT COUNT(*) FROM Funcionarios WHERE UserName = @user";
+                sqlCommand.Parameters.Clear();
                 sqlCommand.Parameters.AddWithValue("@user", user);
 
                 int count = (int)sqlCommand.ExecuteScalar();
@@ -43,12 +57,13 @@ namespace SistemaAdv.Service
             public bool ValidatePassword(string user, string pass)
             {
                 connection.OpenConnection();
-                SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = connection.ReturnConnection();
 
                 try
                 {
                     sqlCommand.CommandText = "SELECT COUNT(*) FROM Funcionarios WHERE UserName = @user AND Senha = @pass";
+                    sqlCommand.Parameters.Clear();
+
                     sqlCommand.Parameters.AddWithValue("@user", user);
                     sqlCommand.Parameters.AddWithValue("@pass", pass);
 

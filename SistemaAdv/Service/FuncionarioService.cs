@@ -89,10 +89,10 @@ namespace SistemaAdv.Service
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
-
-            sqlCommand.CommandText = @"select * from funcionarios where Id = 5";
-
-            //sqlCommand.Parameters.AddWithValue("@id", id);
+            //sqlCommand.Parameters.Clear();
+            sqlCommand.CommandText = @"select * from Funcionarios where Id = " + id;
+            
+            sqlCommand.Parameters.AddWithValue("@cod", id);
 
             try
             {
@@ -119,22 +119,25 @@ namespace SistemaAdv.Service
                 connection.OpenConnection();
 
                 sqlCommand.Connection = connection.ReturnConnection();
-                sqlCommand.CommandText = @"Update Funcionarios SET Nome = teste, UserName = teste, Senha = teste, Email = teste, Cargo = teste, Status = teste, Data = teste WHERE Id = 1"
-                ;
+                //sqlCommand.CommandText = @"Update Funcionarios SET Nome = @Nome, UserName = teste, Senha = teste, Email = teste, Cargo = teste, Status = teste, Data = teste WHERE Id = @id"
+                //;
+                sqlCommand.CommandText = @"Update Funcionarios SET Nome = @Nome WHERE Id = @id";
 
-               // sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
-               // sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
-               // sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
-               // sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
-               // sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
-               // sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
-               // sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
+                sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
+                // sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
+                // sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
+                // sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
+                // sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
+                // sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
+                // sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
+                sqlCommand.Parameters.AddWithValue("@id", novoFuncionario.Id);
 
                 sqlCommand.ExecuteNonQuery();
                 return true;
             }
-            catch
+            catch(Exception er)
             {
+                Console.WriteLine(er.Message);
                 return false;
             }
             
@@ -147,12 +150,14 @@ namespace SistemaAdv.Service
                 connection.OpenConnection();
                 sqlCommand.Connection = connection.ReturnConnection();
 
-                sqlCommand.CommandText = @"Update Funcionarios SET status = inativo WHERE Id = @id";
+                sqlCommand.CommandText = @"Update Funcionarios SET status = 'inativo' WHERE Id = @id";
                 sqlCommand.Parameters.AddWithValue("@id", id);
+                sqlCommand.ExecuteNonQuery();
                 return true;
             }
-            catch
+            catch(Exception er)
             {
+                Console.WriteLine(er.Message);
                 return false;
             }            
          }
@@ -170,7 +175,7 @@ namespace SistemaAdv.Service
             }
             if (sqlCommand.Parameters.Contains("@Cargo"))
             {
-                sqlCommand.Parameters.Clear();
+               // sqlCommand.Parameters.Clear();
             }
 
             sqlCommand.Parameters.AddWithValue("@Cargo", filtro);

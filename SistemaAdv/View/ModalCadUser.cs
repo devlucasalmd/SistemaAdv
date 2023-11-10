@@ -21,7 +21,7 @@ namespace SistemaAdv.View
         private FuncionarioService funcionarioService;
         int id;
 
-        public ModalCadUser(int id = 0)
+        public ModalCadUser(int id)
         {
             InitializeComponent();
             funcionarioService = new FuncionarioService();
@@ -62,7 +62,7 @@ namespace SistemaAdv.View
             string Status = CmbBox_Status.Text;
             DateTime Data = DateTime.Now;
 
-            var novoFuncionario = new Funcionario(Nome, UserName, Senha, Email, Cargo, Status, Data);
+            var novoFuncionario = new Funcionario(id, Nome, UserName, Senha, Email, Cargo, Status, Data);
             if (VerificarCampos())
             {
                 if (id != 0)
@@ -79,6 +79,10 @@ namespace SistemaAdv.View
                     LimparCampos();
                     this.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("E");
             }
         }
 

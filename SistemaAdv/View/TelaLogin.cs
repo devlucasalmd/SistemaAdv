@@ -32,9 +32,19 @@ namespace SistemaAdv
              var user = TxtBox_UserName.Text;
              var pass = TxtBox_Password.Text;
 
+            if (string.IsNullOrEmpty(user))
+            {
+                MessageBox.Show("O campo do Usuario não pode estar vazio");
+            }
+
+            else if (string.IsNullOrEmpty(pass))
+            {
+                MessageBox.Show("A senha não pode estar vazia");
+            }
+
             try
             {
-                
+
                 if (loginService.UserExists(user))
                 {
                     if (loginService.ValidatePassword(user, pass))

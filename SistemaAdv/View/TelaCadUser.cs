@@ -91,7 +91,6 @@ namespace SistemaAdv
                 if(int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
                 {
                     OpenModal(id);
-                    UpdateDataGrid();
                 }
             }
             else
@@ -123,11 +122,7 @@ namespace SistemaAdv
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-            "Deseja excluir o Usuario selecionado?", "Aviso",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Warning
-            );
+
 
             DeleteFuncionario();
         }

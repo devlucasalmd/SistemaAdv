@@ -127,10 +127,12 @@
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Processo.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\MenuService.cs" />
+    <Compile Include="Service\ProcessoService.cs" />
     <Compile Include="View\ModalCadAudiencia.cs">
       <SubType>Form</SubType>
     </Compile>

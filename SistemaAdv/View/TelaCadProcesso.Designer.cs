@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadProcesso));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtGrid_Processos = new System.Windows.Forms.DataGridView();
             this.CmbBox_Processos = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_Processos = new System.Windows.Forms.Label();
@@ -37,22 +37,22 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PicBox_CadProcessos = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_Processos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadProcessos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtGrid_Processos
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtGrid_Processos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1086, 403);
-            this.dataGridView1.TabIndex = 13;
+            this.dtGrid_Processos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGrid_Processos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrid_Processos.Location = new System.Drawing.Point(8, 87);
+            this.dtGrid_Processos.Name = "dtGrid_Processos";
+            this.dtGrid_Processos.Size = new System.Drawing.Size(777, 309);
+            this.dtGrid_Processos.TabIndex = 13;
             // 
             // CmbBox_Processos
             // 
@@ -113,7 +113,7 @@
             this.PicBox_CadProcessos.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadProcessos.Image")));
             this.PicBox_CadProcessos.Location = new System.Drawing.Point(757, 22);
             this.PicBox_CadProcessos.Name = "PicBox_CadProcessos";
-            this.PicBox_CadProcessos.Size = new System.Drawing.Size(28, 23);
+            this.PicBox_CadProcessos.Size = new System.Drawing.Size(0, 23);
             this.PicBox_CadProcessos.TabIndex = 21;
             this.PicBox_CadProcessos.TabStop = false;
             this.PicBox_CadProcessos.Click += new System.EventHandler(this.PicBox_CadProcessos_Click);
@@ -122,20 +122,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 528);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.PicBox_CadProcessos);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.Btn_Buscar);
             this.Controls.Add(this.Lbl_Processos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CmbBox_Processos);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtGrid_Processos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadProcesso";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TelaCadProcesso";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_Processos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -146,7 +145,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtGrid_Processos;
         private System.Windows.Forms.ComboBox CmbBox_Processos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_Processos;

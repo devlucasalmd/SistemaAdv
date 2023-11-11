@@ -80,10 +80,6 @@ namespace SistemaAdv.View
                     this.Close();
                 }
             }
-            else
-            {
-                MessageBox.Show("E");
-            }
         }
 
         private void Btn_Clear_Click(object sender, EventArgs e)

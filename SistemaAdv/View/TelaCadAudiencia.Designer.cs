@@ -128,6 +128,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadAudiencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TelaCadAudiencia";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);

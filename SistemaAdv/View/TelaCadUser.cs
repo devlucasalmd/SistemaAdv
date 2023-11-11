@@ -62,6 +62,7 @@ namespace SistemaAdv
                         "Deletado com sucesso!", "Aviso",
                         MessageBoxButtons.OK
                          );
+                        UpdateDataGrid();
                     }
                     else
                     {
@@ -91,6 +92,7 @@ namespace SistemaAdv
                 if(int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
                 {
                     OpenModal(id);
+                    UpdateDataGrid();
                 }
             }
             else

@@ -185,6 +185,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TelaCadCliente";
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -14,12 +14,13 @@ namespace SistemaAdv
 {
     public partial class TelaInicial : Form
     {
-        //private TelaInicial telainic ial;
+        //private TelaInicial telainicial;
         private TelaCadProcesso telaprocesso;
         private TelaCadUser telauser;
         private TelaCadCliente telacliente;
         private TelaCadAudiencia telaaudiencia;
         private LoginService loginService;
+        private Form formul;
 
         public TelaInicial()
         {
@@ -32,7 +33,7 @@ namespace SistemaAdv
                 bool isOpened = false;
                 foreach (Form frm in fc)
                 {
-                    if (frm.Name == "TelaCadProcessos")
+                    if (frm.Name == "TelaCadProcesso")
                     {
                         isOpened = true;
                         break;
@@ -88,7 +89,7 @@ namespace SistemaAdv
             bool isOpened = false;
             foreach (Form frm in fc)
             {
-                if (frm.Name == "TelaCadClientes")
+                if (frm.Name == "TelaCadCliente")
                 {
                     isOpened = true;
                     break;
@@ -145,24 +146,36 @@ namespace SistemaAdv
                  MessageBoxButtons.OKCancel,
                  MessageBoxIcon.Warning
                  );
-            loginService = new  LoginService();
+            loginService = new LoginService();
             loginService.Logoff();
             this.Close();
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
             FormCollection fc = Application.OpenForms;
 
             // Percorra todos os formulários abertos no aplicativo
-            foreach (Form frm in fc)
+            if(fc.Count > 1) 
             {
-                // Certifique-se de não fechar o formulário principal (se houver)
-                if (frm.Name != "TelaInicial")
+                foreach (Form frm in fc)
                 {
-                    frm.Close(); // Fecha o formulário
+                    // Certifique-se de não fechar o formulário principal (se houver)
+                    if (frm.Name != "TelaInicial" && frm.Name != "TelaLogin")
+                    {
+                        frm.Close(); // Fecha o formulário
+                    }
+                    if(fc.Count == 2)
+                    {
+                        break;
+                    }
                 }
             }
+            
         }
     }
 }

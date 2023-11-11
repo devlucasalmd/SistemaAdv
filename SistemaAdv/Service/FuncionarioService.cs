@@ -65,7 +65,7 @@ namespace SistemaAdv.Service
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"SELECT * FROM Funcionarios";
+            sqlCommand.CommandText = "SELECT * FROM Funcionarios";
 
             try
             {
@@ -89,17 +89,18 @@ namespace SistemaAdv.Service
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
-            //sqlCommand.Parameters.Clear();
-            sqlCommand.CommandText = @"select * from Funcionarios where Id = " + id;
+            sqlCommand.Parameters.Clear();
+            sqlCommand.CommandText = @"select * from Funcionarios where Id = @id";
             
-            sqlCommand.Parameters.AddWithValue("@cod", id);
+            sqlCommand.Parameters.AddWithValue("@id", id);
 
             try
-            {
-                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+            {              
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
+
             }
             catch (Exception err)
             {
@@ -119,17 +120,18 @@ namespace SistemaAdv.Service
                 connection.OpenConnection();
 
                 sqlCommand.Connection = connection.ReturnConnection();
-                //sqlCommand.CommandText = @"Update Funcionarios SET Nome = @Nome, UserName = teste, Senha = teste, Email = teste, Cargo = teste, Status = teste, Data = teste WHERE Id = @id"
-                //;
-                sqlCommand.CommandText = @"Update Funcionarios SET Nome = @Nome WHERE Id = @id";
+                sqlCommand.Parameters.Clear();
+                sqlCommand.CommandText = @"Update Funcionarios SET Nome = @Nome, UserName = @UserName, Senha = @Senha, Email = @Email, Cargo = @Cargo, Status = @Status, Data = @Data WHERE Id = @id"
+                ;
+                
 
                 sqlCommand.Parameters.AddWithValue("@Nome", novoFuncionario.Nome);
-                // sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
-                // sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
-                // sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
-                // sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
-                // sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
-                // sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
+                sqlCommand.Parameters.AddWithValue("@UserName", novoFuncionario.UserName);
+                sqlCommand.Parameters.AddWithValue("@Senha", novoFuncionario.Senha);
+                sqlCommand.Parameters.AddWithValue("@Email", novoFuncionario.Email);
+                sqlCommand.Parameters.AddWithValue("@Cargo", novoFuncionario.Cargo);
+                sqlCommand.Parameters.AddWithValue("@Status", novoFuncionario.Status);
+                sqlCommand.Parameters.AddWithValue("@Data", novoFuncionario.Data);
                 sqlCommand.Parameters.AddWithValue("@id", novoFuncionario.Id);
 
                 sqlCommand.ExecuteNonQuery();

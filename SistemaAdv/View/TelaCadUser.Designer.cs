@@ -159,7 +159,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadUser";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TelaCadUser";
             this.Activated += new System.EventHandler(this.TelaCadUser_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).EndInit();

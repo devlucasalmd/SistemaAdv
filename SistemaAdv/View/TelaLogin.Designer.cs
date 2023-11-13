@@ -43,11 +43,19 @@
             this.Lbl_Login = new System.Windows.Forms.Label();
             this.TxtBox_UserName = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.forgotPassPanel = new System.Windows.Forms.Panel();
+            this.BtnSendEmail = new System.Windows.Forms.Button();
+            this.TxtBox_Email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Btn_ClosePanel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.forgotPassPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +92,7 @@
             this.Btn_Close.Size = new System.Drawing.Size(38, 37);
             this.Btn_Close.TabIndex = 0;
             this.Btn_Close.UseVisualStyleBackColor = true;
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
             // 
             // panel2
             // 
@@ -135,6 +144,7 @@
             this.LnkLbl_EsqueciSenha.TabIndex = 7;
             this.LnkLbl_EsqueciSenha.TabStop = true;
             this.LnkLbl_EsqueciSenha.Text = "Esqueci a senha";
+            this.LnkLbl_EsqueciSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkLbl_EsqueciSenha_LinkClicked);
             // 
             // Btn_Login
             // 
@@ -206,16 +216,80 @@
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
             // 
+            // forgotPassPanel
+            // 
+            this.forgotPassPanel.Controls.Add(this.panel3);
+            this.forgotPassPanel.Controls.Add(this.BtnSendEmail);
+            this.forgotPassPanel.Controls.Add(this.TxtBox_Email);
+            this.forgotPassPanel.Controls.Add(this.label1);
+            this.forgotPassPanel.Location = new System.Drawing.Point(286, 160);
+            this.forgotPassPanel.Name = "forgotPassPanel";
+            this.forgotPassPanel.Size = new System.Drawing.Size(183, 139);
+            this.forgotPassPanel.TabIndex = 10;
+            this.forgotPassPanel.Visible = false;
+            // 
+            // BtnSendEmail
+            // 
+            this.BtnSendEmail.Location = new System.Drawing.Point(58, 103);
+            this.BtnSendEmail.Name = "BtnSendEmail";
+            this.BtnSendEmail.Size = new System.Drawing.Size(75, 23);
+            this.BtnSendEmail.TabIndex = 2;
+            this.BtnSendEmail.Text = "Confirmar";
+            this.BtnSendEmail.UseVisualStyleBackColor = true;
+            this.BtnSendEmail.Click += new System.EventHandler(this.BtnSendEmail_Click);
+            // 
+            // TxtBox_Email
+            // 
+            this.TxtBox_Email.Location = new System.Drawing.Point(12, 65);
+            this.TxtBox_Email.Name = "TxtBox_Email";
+            this.TxtBox_Email.Size = new System.Drawing.Size(161, 20);
+            this.TxtBox_Email.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Digite seu email:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Firebrick;
+            this.panel3.Controls.Add(this.Btn_ClosePanel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(183, 29);
+            this.panel3.TabIndex = 8;
+            // 
+            // Btn_ClosePanel
+            // 
+            this.Btn_ClosePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_ClosePanel.BackgroundImage")));
+            this.Btn_ClosePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Btn_ClosePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_ClosePanel.FlatAppearance.BorderSize = 0;
+            this.Btn_ClosePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ClosePanel.Location = new System.Drawing.Point(145, 0);
+            this.Btn_ClosePanel.Name = "Btn_ClosePanel";
+            this.Btn_ClosePanel.Size = new System.Drawing.Size(38, 29);
+            this.Btn_ClosePanel.TabIndex = 0;
+            this.Btn_ClosePanel.UseVisualStyleBackColor = true;
+            this.Btn_ClosePanel.Click += new System.EventHandler(this.Btn_ClosePanel_Click);
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 439);
+            this.Controls.Add(this.forgotPassPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -224,6 +298,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_User)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.forgotPassPanel.ResumeLayout(false);
+            this.forgotPassPanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,6 +321,12 @@
         private System.Windows.Forms.Label Lbl_Login;
         private System.Windows.Forms.TextBox TxtBox_UserName;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel forgotPassPanel;
+        private System.Windows.Forms.Button BtnSendEmail;
+        private System.Windows.Forms.TextBox TxtBox_Email;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button Btn_ClosePanel;
     }
 }
 

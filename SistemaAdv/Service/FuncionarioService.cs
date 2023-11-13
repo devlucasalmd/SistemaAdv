@@ -151,7 +151,7 @@ namespace SistemaAdv.Service
             {
                 connection.OpenConnection();
                 sqlCommand.Connection = connection.ReturnConnection();
-
+                sqlCommand.Parameters.Clear();
                 sqlCommand.CommandText = @"Update Funcionarios SET status = 'inativo' WHERE Id = @id";
                 sqlCommand.Parameters.AddWithValue("@id", id);
                 sqlCommand.ExecuteNonQuery();
@@ -169,6 +169,8 @@ namespace SistemaAdv.Service
             string filtro = cargo;
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.Parameters.Clear();
+
             sqlCommand.CommandText = @"SELECT * FROM Funcionarios ";
 
             if (!string.IsNullOrEmpty(cargo))
@@ -177,7 +179,7 @@ namespace SistemaAdv.Service
             }
             if (sqlCommand.Parameters.Contains("@Cargo"))
             {
-               // sqlCommand.Parameters.Clear();
+                sqlCommand.Parameters.Clear();
             }
 
             sqlCommand.Parameters.AddWithValue("@Cargo", filtro);

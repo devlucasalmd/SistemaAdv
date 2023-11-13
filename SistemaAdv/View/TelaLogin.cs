@@ -16,6 +16,7 @@ namespace SistemaAdv
     public partial class TelaLogin : Form
     {
         private LoginService loginService;
+
         public TelaLogin()
         {
             InitializeComponent();
@@ -72,6 +73,38 @@ namespace SistemaAdv
                 MessageBox.Show(err.Message);
             }
             
+        }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LnkLbl_EsqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            forgotPassPanel.Visible = true;
+        }
+
+        private void BtnSendEmail_Click(object sender, EventArgs e)
+        {
+            //if(TxtBox_Email.Text == @Email)
+            if(string.IsNullOrEmpty(TxtBox_Email.Text))
+            {
+                MessageBox.Show(
+                    "Insira um email");
+            }
+            else
+            {
+                MessageBox.Show(
+                   "Senha enviada para o email");
+                TxtBox_Email.Clear();
+                forgotPassPanel.Visible = false;
+            }
+        }
+
+        private void Btn_ClosePanel_Click(object sender, EventArgs e)
+        {
+            forgotPassPanel.Visible = false;
         }
     }
 }

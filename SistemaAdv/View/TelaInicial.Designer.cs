@@ -122,6 +122,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advocacia";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

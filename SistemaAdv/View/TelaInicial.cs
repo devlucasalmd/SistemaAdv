@@ -25,6 +25,7 @@ namespace SistemaAdv
         public TelaInicial()
         {
             InitializeComponent();
+
         }
      
         private void processosToolStripMenuItem_Click(object sender, EventArgs e)

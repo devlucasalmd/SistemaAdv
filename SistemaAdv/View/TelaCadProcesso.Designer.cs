@@ -35,46 +35,47 @@
             this.Lbl_Processos = new System.Windows.Forms.Label();
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.PicBox_CadProcessos = new System.Windows.Forms.PictureBox();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_Processos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadProcessos)).BeginInit();
             this.SuspendLayout();
             // 
             // dtGrid_Processos
             // 
-            this.dtGrid_Processos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtGrid_Processos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtGrid_Processos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGrid_Processos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrid_Processos.Location = new System.Drawing.Point(8, 87);
+            this.dtGrid_Processos.Location = new System.Drawing.Point(20, 87);
             this.dtGrid_Processos.Name = "dtGrid_Processos";
-            this.dtGrid_Processos.Size = new System.Drawing.Size(777, 309);
-            this.dtGrid_Processos.TabIndex = 13;
+            this.dtGrid_Processos.Size = new System.Drawing.Size(760, 273);
+            this.dtGrid_Processos.TabIndex = 22;
             // 
             // CmbBox_Processos
             // 
             this.CmbBox_Processos.FormattingEnabled = true;
-            this.CmbBox_Processos.Location = new System.Drawing.Point(42, 24);
+            this.CmbBox_Processos.Location = new System.Drawing.Point(47, 23);
             this.CmbBox_Processos.Name = "CmbBox_Processos";
             this.CmbBox_Processos.Size = new System.Drawing.Size(209, 21);
-            this.CmbBox_Processos.TabIndex = 14;
+            this.CmbBox_Processos.TabIndex = 23;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 23);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // Lbl_Processos
             // 
             this.Lbl_Processos.AutoSize = true;
-            this.Lbl_Processos.Location = new System.Drawing.Point(42, 5);
+            this.Lbl_Processos.Location = new System.Drawing.Point(44, 6);
             this.Lbl_Processos.Name = "Lbl_Processos";
             this.Lbl_Processos.Size = new System.Drawing.Size(56, 13);
             this.Lbl_Processos.TabIndex = 16;
@@ -82,7 +83,7 @@
             // 
             // Btn_Buscar
             // 
-            this.Btn_Buscar.Location = new System.Drawing.Point(269, 22);
+            this.Btn_Buscar.Location = new System.Drawing.Point(274, 21);
             this.Btn_Buscar.Name = "Btn_Buscar";
             this.Btn_Buscar.Size = new System.Drawing.Size(75, 23);
             this.Btn_Buscar.TabIndex = 17;
@@ -92,39 +93,51 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 2);
+            this.checkBox1.Location = new System.Drawing.Point(23, 66);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 19;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.checkBox1);
-            this.panel4.Location = new System.Drawing.Point(5, 51);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(780, 18);
-            this.panel4.TabIndex = 20;
-            // 
             // PicBox_CadProcessos
             // 
-            this.PicBox_CadProcessos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicBox_CadProcessos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PicBox_CadProcessos.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadProcessos.Image")));
-            this.PicBox_CadProcessos.Location = new System.Drawing.Point(757, 22);
+            this.PicBox_CadProcessos.Location = new System.Drawing.Point(752, 21);
             this.PicBox_CadProcessos.Name = "PicBox_CadProcessos";
-            this.PicBox_CadProcessos.Size = new System.Drawing.Size(0, 23);
-            this.PicBox_CadProcessos.TabIndex = 21;
+            this.PicBox_CadProcessos.Size = new System.Drawing.Size(30, 23);
+            this.PicBox_CadProcessos.TabIndex = 22;
             this.PicBox_CadProcessos.TabStop = false;
-            this.PicBox_CadProcessos.Click += new System.EventHandler(this.PicBox_CadProcessos_Click);
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDelete.Location = new System.Drawing.Point(705, 415);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(75, 23);
+            this.BtnDelete.TabIndex = 32;
+            this.BtnDelete.Text = "Excluir";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            // 
+            // BtnEdit
+            // 
+            this.BtnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEdit.Location = new System.Drawing.Point(624, 415);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(75, 23);
+            this.BtnEdit.TabIndex = 31;
+            this.BtnEdit.Text = "Editar";
+            this.BtnEdit.UseVisualStyleBackColor = true;
             // 
             // TelaCadProcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnDelete);
+            this.Controls.Add(this.BtnEdit);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.PicBox_CadProcessos);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.Btn_Buscar);
             this.Controls.Add(this.Lbl_Processos);
             this.Controls.Add(this.pictureBox1);
@@ -136,8 +149,6 @@
             this.Text = "TelaCadProcesso";
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_Processos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadProcessos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,7 +162,8 @@
         private System.Windows.Forms.Label Lbl_Processos;
         private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox PicBox_CadProcessos;
+        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.Button BtnEdit;
     }
 }

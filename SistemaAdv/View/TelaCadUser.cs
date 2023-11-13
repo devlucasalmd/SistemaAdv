@@ -43,9 +43,18 @@ namespace SistemaAdv
 
         public void FilterFuncionario()
         {
-            var cargo = CmbBox_Filter.Text;           
-            DataTable dt = funcionarioService.FilterFuncionario(cargo);        
-            dtGrid_User.DataSource = dt;
+            var cargo = CmbBox_Filter.Text;
+
+            if (CheckBox_Inativo.Checked)
+            {
+                DataTable dt = funcionarioService.FilterFuncionarioInativo(cargo);
+                dtGrid_User.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = funcionarioService.FilterFuncionario(cargo);
+                dtGrid_User.DataSource = dt;
+            }
         }
 
         public void DeleteFuncionario()

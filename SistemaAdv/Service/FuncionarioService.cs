@@ -203,7 +203,49 @@ namespace SistemaAdv.Service
             }
 
         }
+        public DataTable FilterFuncionarioInativo(string cargo)
+        {
+            string filtro = cargo;
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.Parameters.Clear();
 
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios ";
+
+            if (!string.IsNullOrEmpty(cargo))
+            {
+                sqlCommand.CommandText += @"WHERE Cargo = @Cargo AND Status = 'Inativo' ";
+            }
+            else
+            {
+                sqlCommand.CommandText += @"WHERE Status = 'Inativo' ";
+            }
+            if (sqlCommand.Parameters.Contains("@Cargo"))
+            {
+                sqlCommand.Parameters.Clear();
+            }
+
+            sqlCommand.Parameters.AddWithValue("@Cargo", filtro);
+
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+
+        }
 
     }
 } 

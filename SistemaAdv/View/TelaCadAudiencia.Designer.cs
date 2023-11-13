@@ -30,111 +30,123 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadAudiencia));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.PicBox_CadAudiencia = new System.Windows.Forms.PictureBox();
+            this.dtGrid_User = new System.Windows.Forms.DataGridView();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnEdit = new System.Windows.Forms.Button();
+            this.PicBox_CadUser = new System.Windows.Forms.PictureBox();
             this.Btn_Buscar = new System.Windows.Forms.Button();
-            this.Lbl_Clientes = new System.Windows.Forms.Label();
-            this.CmbBox_Audiencia = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CmbBox_Filter = new System.Windows.Forms.ComboBox();
+            this.Lbl_Usuarios = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadAudiencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_User)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 24);
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
             // 
-            // panel4
+            // dtGrid_User
             // 
-            this.panel4.Controls.Add(this.checkBox1);
-            this.panel4.Location = new System.Drawing.Point(8, 86);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(780, 18);
-            this.panel4.TabIndex = 36;
+            this.dtGrid_User.AllowUserToAddRows = false;
+            this.dtGrid_User.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtGrid_User.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrid_User.Location = new System.Drawing.Point(20, 87);
+            this.dtGrid_User.Name = "dtGrid_User";
+            this.dtGrid_User.Size = new System.Drawing.Size(760, 273);
+            this.dtGrid_User.TabIndex = 22;
             // 
-            // checkBox1
+            // BtnDelete
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDelete.Location = new System.Drawing.Point(705, 415);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(75, 23);
+            this.BtnDelete.TabIndex = 39;
+            this.BtnDelete.Text = "Excluir";
+            this.BtnDelete.UseVisualStyleBackColor = true;
             // 
-            // PicBox_CadAudiencia
+            // BtnEdit
             // 
-            this.PicBox_CadAudiencia.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadAudiencia.Image")));
-            this.PicBox_CadAudiencia.Location = new System.Drawing.Point(755, 35);
-            this.PicBox_CadAudiencia.Name = "PicBox_CadAudiencia";
-            this.PicBox_CadAudiencia.Size = new System.Drawing.Size(28, 23);
-            this.PicBox_CadAudiencia.TabIndex = 35;
-            this.PicBox_CadAudiencia.TabStop = false;
-            this.PicBox_CadAudiencia.Click += new System.EventHandler(this.PicBox_CadClientes_Click);
+            this.BtnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEdit.Location = new System.Drawing.Point(624, 415);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(75, 23);
+            this.BtnEdit.TabIndex = 38;
+            this.BtnEdit.Text = "Editar";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            // 
+            // PicBox_CadUser
+            // 
+            this.PicBox_CadUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicBox_CadUser.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadUser.Image")));
+            this.PicBox_CadUser.Location = new System.Drawing.Point(752, 21);
+            this.PicBox_CadUser.Name = "PicBox_CadUser";
+            this.PicBox_CadUser.Size = new System.Drawing.Size(28, 23);
+            this.PicBox_CadUser.TabIndex = 40;
+            this.PicBox_CadUser.TabStop = false;
             // 
             // Btn_Buscar
             // 
-            this.Btn_Buscar.Location = new System.Drawing.Point(267, 35);
+            this.Btn_Buscar.Location = new System.Drawing.Point(274, 21);
             this.Btn_Buscar.Name = "Btn_Buscar";
             this.Btn_Buscar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Buscar.TabIndex = 34;
+            this.Btn_Buscar.TabIndex = 41;
             this.Btn_Buscar.Text = "Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = true;
             // 
-            // Lbl_Clientes
+            // CmbBox_Filter
             // 
-            this.Lbl_Clientes.AutoSize = true;
-            this.Lbl_Clientes.Location = new System.Drawing.Point(40, 18);
-            this.Lbl_Clientes.Name = "Lbl_Clientes";
-            this.Lbl_Clientes.Size = new System.Drawing.Size(54, 13);
-            this.Lbl_Clientes.TabIndex = 33;
-            this.Lbl_Clientes.Text = "Audiencia";
+            this.CmbBox_Filter.FormattingEnabled = true;
+            this.CmbBox_Filter.Items.AddRange(new object[] {
+            "---- Cargos ----",
+            "Estagiario (a)",
+            "Secretario (a)",
+            "Advogado (a)",
+            "Administrador (a)",
+            ""});
+            this.CmbBox_Filter.Location = new System.Drawing.Point(47, 23);
+            this.CmbBox_Filter.Name = "CmbBox_Filter";
+            this.CmbBox_Filter.Size = new System.Drawing.Size(209, 21);
+            this.CmbBox_Filter.TabIndex = 42;
             // 
-            // CmbBox_Audiencia
+            // Lbl_Usuarios
             // 
-            this.CmbBox_Audiencia.FormattingEnabled = true;
-            this.CmbBox_Audiencia.Location = new System.Drawing.Point(40, 37);
-            this.CmbBox_Audiencia.Name = "CmbBox_Audiencia";
-            this.CmbBox_Audiencia.Size = new System.Drawing.Size(209, 21);
-            this.CmbBox_Audiencia.TabIndex = 32;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(780, 278);
-            this.dataGridView1.TabIndex = 31;
+            this.Lbl_Usuarios.AutoSize = true;
+            this.Lbl_Usuarios.Location = new System.Drawing.Point(44, 6);
+            this.Lbl_Usuarios.Name = "Lbl_Usuarios";
+            this.Lbl_Usuarios.Size = new System.Drawing.Size(54, 13);
+            this.Lbl_Usuarios.TabIndex = 43;
+            this.Lbl_Usuarios.Text = "Audiencia";
             // 
             // TelaCadAudiencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 408);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.PicBox_CadAudiencia);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Lbl_Usuarios);
+            this.Controls.Add(this.CmbBox_Filter);
             this.Controls.Add(this.Btn_Buscar);
-            this.Controls.Add(this.Lbl_Clientes);
-            this.Controls.Add(this.CmbBox_Audiencia);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.PicBox_CadUser);
+            this.Controls.Add(this.BtnDelete);
+            this.Controls.Add(this.BtnEdit);
+            this.Controls.Add(this.dtGrid_User);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadAudiencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TelaCadAudiencia";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadAudiencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_User)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,12 +154,12 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.PictureBox PicBox_CadAudiencia;
+        private System.Windows.Forms.DataGridView dtGrid_User;
+        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.Button BtnEdit;
+        private System.Windows.Forms.PictureBox PicBox_CadUser;
         private System.Windows.Forms.Button Btn_Buscar;
-        private System.Windows.Forms.Label Lbl_Clientes;
-        private System.Windows.Forms.ComboBox CmbBox_Audiencia;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox CmbBox_Filter;
+        private System.Windows.Forms.Label Lbl_Usuarios;
     }
 }

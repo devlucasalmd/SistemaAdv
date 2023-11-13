@@ -42,6 +42,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Firebrick;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.processosToolStripMenuItem,
@@ -53,62 +54,70 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1160, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1160, 29);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuToolStripMenuItem
             // 
+            this.menuToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.menuToolStripMenuItem.Text = "Inicio";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // processosToolStripMenuItem
             // 
+            this.processosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.processosToolStripMenuItem.Name = "processosToolStripMenuItem";
-            this.processosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.processosToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
             this.processosToolStripMenuItem.Text = "Processos";
             this.processosToolStripMenuItem.Click += new System.EventHandler(this.processosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
+            this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
+            this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // audienciaToolStripMenuItem
             // 
+            this.audienciaToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.audienciaToolStripMenuItem.Name = "audienciaToolStripMenuItem";
-            this.audienciaToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.audienciaToolStripMenuItem.Size = new System.Drawing.Size(91, 25);
             this.audienciaToolStripMenuItem.Text = "Audiencia";
             this.audienciaToolStripMenuItem.Click += new System.EventHandler(this.audienciaToolStripMenuItem_Click);
             // 
             // financeiroToolStripMenuItem
             // 
+            this.financeiroToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
-            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
             // 
             // relatoriosToolStripMenuItem
             // 
+            this.relatoriosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(90, 25);
             this.relatoriosToolStripMenuItem.Text = "Relatorios";
             // 
             // sairToolStripMenuItem
             // 
+            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 

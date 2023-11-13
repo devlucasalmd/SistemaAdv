@@ -51,8 +51,9 @@
             // 
             // PicBox_CadClientes
             // 
+            this.PicBox_CadClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PicBox_CadClientes.Image = ((System.Drawing.Image)(resources.GetObject("PicBox_CadClientes.Image")));
-            this.PicBox_CadClientes.Location = new System.Drawing.Point(757, 22);
+            this.PicBox_CadClientes.Location = new System.Drawing.Point(752, 21);
             this.PicBox_CadClientes.Name = "PicBox_CadClientes";
             this.PicBox_CadClientes.Size = new System.Drawing.Size(28, 23);
             this.PicBox_CadClientes.TabIndex = 28;
@@ -61,7 +62,7 @@
             // 
             // Btn_Buscar
             // 
-            this.Btn_Buscar.Location = new System.Drawing.Point(269, 22);
+            this.Btn_Buscar.Location = new System.Drawing.Point(274, 21);
             this.Btn_Buscar.Name = "Btn_Buscar";
             this.Btn_Buscar.Size = new System.Drawing.Size(75, 23);
             this.Btn_Buscar.TabIndex = 27;
@@ -71,7 +72,7 @@
             // Lbl_Clientes
             // 
             this.Lbl_Clientes.AutoSize = true;
-            this.Lbl_Clientes.Location = new System.Drawing.Point(42, 5);
+            this.Lbl_Clientes.Location = new System.Drawing.Point(44, 6);
             this.Lbl_Clientes.Name = "Lbl_Clientes";
             this.Lbl_Clientes.Size = new System.Drawing.Size(44, 13);
             this.Lbl_Clientes.TabIndex = 26;
@@ -80,17 +81,20 @@
             // CmbBox_Clientes
             // 
             this.CmbBox_Clientes.FormattingEnabled = true;
-            this.CmbBox_Clientes.Location = new System.Drawing.Point(42, 24);
+            this.CmbBox_Clientes.Location = new System.Drawing.Point(47, 23);
             this.CmbBox_Clientes.Name = "CmbBox_Clientes";
             this.CmbBox_Clientes.Size = new System.Drawing.Size(209, 21);
             this.CmbBox_Clientes.TabIndex = 25;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 87);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(780, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(760, 273);
             this.dataGridView1.TabIndex = 24;
             // 
             // checkBox1
@@ -105,22 +109,23 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.checkBox1);
-            this.panel4.Location = new System.Drawing.Point(10, 73);
+            this.panel4.Location = new System.Drawing.Point(20, 64);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(780, 18);
-            this.panel4.TabIndex = 29;
+            this.panel4.Size = new System.Drawing.Size(562, 18);
+            this.panel4.TabIndex = 27;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 23);
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.radBtn_Juridica);
             this.panel5.Controls.Add(this.radBtn_Fisica);
             this.panel5.Location = new System.Drawing.Point(669, 13);
@@ -152,7 +157,8 @@
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(710, 391);
+            this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDelete.Location = new System.Drawing.Point(705, 415);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(75, 23);
             this.BtnDelete.TabIndex = 72;
@@ -161,7 +167,8 @@
             // 
             // BtnEdit
             // 
-            this.BtnEdit.Location = new System.Drawing.Point(629, 391);
+            this.BtnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEdit.Location = new System.Drawing.Point(624, 415);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(75, 23);
             this.BtnEdit.TabIndex = 71;

@@ -37,6 +37,10 @@ namespace SistemaAdv.View
                 CmbBox_Cargo.Text = dt.Rows[0]["Cargo"].ToString();
                 CmbBox_Status.SelectedItem = dt.Rows[0]["Status"].ToString();
             }
+            if(CmbBox_Cargo.Text == "Estagiario (a)")
+            {
+                TxtBox_UserName.Text = "est";
+            }
         }
 
 
@@ -157,6 +161,24 @@ namespace SistemaAdv.View
             return true;
         }
 
-        //Colocar est, sec, adm ou adv no campo UserName ao inserir o cargo no CmbBox_Cargo
+        private void CmbBox_Cargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbBox_Cargo.SelectedItem != null)
+            {
+                string cargo = CmbBox_Cargo.SelectedItem.ToString();
+                
+                if(cargo == "Administrador (a)")
+                TxtBox_UserName.Text = "adm-";
+                
+                if(cargo == "Advogado (a)")
+                TxtBox_UserName.Text = "adv-";
+                
+                if(cargo == "Estagiario (a)")
+                TxtBox_UserName.Text = "est-";
+
+                if(cargo == "Secretario (a)")
+                TxtBox_UserName.Text = "sec-";
+            }
+        }
     }
 }

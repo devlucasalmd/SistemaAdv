@@ -230,6 +230,7 @@
             this.CmbBox_Cargo.Name = "CmbBox_Cargo";
             this.CmbBox_Cargo.Size = new System.Drawing.Size(119, 21);
             this.CmbBox_Cargo.TabIndex = 23;
+            this.CmbBox_Cargo.SelectedIndexChanged += new System.EventHandler(this.CmbBox_Cargo_SelectedIndexChanged);
             // 
             // Btn_Confirmar
             // 

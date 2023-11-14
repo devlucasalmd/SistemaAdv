@@ -49,7 +49,7 @@
             this.LblPosicaoCliente = new System.Windows.Forms.Label();
             this.LblEstadoCivil = new System.Windows.Forms.Label();
             this.cmbBox_EstadoCivil = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtTime_DataNasc = new System.Windows.Forms.DateTimePicker();
             this.LblPIS = new System.Windows.Forms.Label();
             this.TxtBox_PIS = new System.Windows.Forms.TextBox();
             this.LblNacionalidade = new System.Windows.Forms.Label();
@@ -273,12 +273,12 @@
             this.cmbBox_EstadoCivil.Size = new System.Drawing.Size(121, 21);
             this.cmbBox_EstadoCivil.TabIndex = 82;
             // 
-            // dateTimePicker1
+            // dtTime_DataNasc
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 173);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 84;
+            this.dtTime_DataNasc.Location = new System.Drawing.Point(12, 173);
+            this.dtTime_DataNasc.Name = "dtTime_DataNasc";
+            this.dtTime_DataNasc.Size = new System.Drawing.Size(200, 20);
+            this.dtTime_DataNasc.TabIndex = 84;
             // 
             // LblPIS
             // 
@@ -513,7 +513,7 @@
             this.Controls.Add(this.TxtBox_Nacionalidade);
             this.Controls.Add(this.LblPIS);
             this.Controls.Add(this.TxtBox_PIS);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtTime_DataNasc);
             this.Controls.Add(this.LblEstadoCivil);
             this.Controls.Add(this.cmbBox_EstadoCivil);
             this.Controls.Add(this.LblPosicaoCliente);
@@ -563,7 +563,7 @@
         private System.Windows.Forms.Label LblPosicaoCliente;
         private System.Windows.Forms.Label LblEstadoCivil;
         private System.Windows.Forms.ComboBox cmbBox_EstadoCivil;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtTime_DataNasc;
         private System.Windows.Forms.Label LblPIS;
         private System.Windows.Forms.TextBox TxtBox_PIS;
         private System.Windows.Forms.Label LblNacionalidade;

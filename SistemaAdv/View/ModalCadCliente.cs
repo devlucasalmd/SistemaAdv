@@ -1,22 +1,29 @@
 ﻿using Correios.Net;
+using SistemaAdv.Models;
+using SistemaAdv.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SistemaAdv.View
 {
     public partial class ModalCadCliente : Form
     {
+
+        private ClienteService clienteService;
         public ModalCadCliente()
         {
             InitializeComponent();
+            clienteService = new ClienteService();
         }
 
         private void Btn_BuscarCEP_Click(object sender, EventArgs e)
@@ -50,7 +57,7 @@ namespace SistemaAdv.View
                 MessageBox.Show("Informe um CEP válido", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LimparCamposDetalhados()
+        private void LimparCampos()
         {
             TxtBox_Natureza.Clear();
             TxtBox_Email.Clear();
@@ -70,7 +77,7 @@ namespace SistemaAdv.View
             mskdBox_RG.Clear();
             TxtBox_PosicaoCliente.Clear();
             cmbBox_EstadoCivil.SelectedIndex = -1; // Limpa a seleção do ComboBox
-            dateTimePicker1.Value = DateTime.Now; // Define a data atual
+            dtTime_DataNasc.Value = DateTime.Now; // Define a data atual
         }
 
         private void Btn_Close_Click(object sender, EventArgs e)
@@ -80,22 +87,50 @@ namespace SistemaAdv.View
 
         private void Btn_Clear_Click(object sender, EventArgs e)
         {
-            LimparCamposDetalhados();
+            LimparCampos();
         }
 
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            string cpf = mskdBox_CPF.Text;
-            string rg = mskdBox_RG.ToString();
+            DateTime dataEscolhida = dtTime_DataNasc.Value.Date;
+            string dataFormatada = dtTime_DataNasc.Value.ToString("yyyy-MM-dd");
             
-            VerificarCPF(cpf);           
-            VerificarRG(rg);
+            string CPF = mskdBox_CPF.Text;
+            string Nome = TxtBox_Name.Text;
+            string RG = mskdBox_RG.Text;
+            string Telefone = TxtBox_Telefone.Text;
+            string Email = TxtBox_Email.Text;
+            string EstadoCivil = cmbBox_EstadoCivil.Text;
+            string DataNasc = dataFormatada;
+            string Profissao = TxtBox_Profissao.Text;
+            string Pis = TxtBox_PIS.Text;
+            string Nacionalidade = TxtBox_Nacionalidade.Text;
+            string Posicao = TxtBox_PosicaoCliente.Text;
+            string Natureza = TxtBox_Natureza.Text;
+            string CEP = mskdBox_CEP.Text;
+            string Logradouro = TxtBox_Logadouro.Text;
+            string Bairro = TxtBox_Bairro.Text;
+            string Municipio = TxtBox_Municipio.Text ;
+            string Estado = TxtBox_Estado.Text;
+            string Numero = TxtBox_Numero.Text;
+            string Complemento = TxtBox_Comple.Text;
             
-            if (VerificarCampos())
-            {
-                MessageBox.Show("Erro");
-            }
+            var novocliente = new Cliente(CPF, Nome,  RG,  Telefone,  Email,  EstadoCivil,
+                       DataNasc,  Profissao,  Pis,  Nacionalidade,
+                       Posicao,  Natureza,  CEP,  Logradouro,  Bairro,
+                       Municipio,  Estado,  Numero,  Complemento);
+            //if(VerificarRG(RG))
+            //{
+                clienteService.CreateCliente(novocliente);
+                LimparCampos();
+                this.Close();
+            //}            
+            
+            //if (VerificarCampos())
+            //{
+            //    MessageBox.Show("Erro");
+            //}
         }
 
         private bool VerificarCampos()
@@ -190,7 +225,7 @@ namespace SistemaAdv.View
                 MessageBox.Show("Selecione um estado civil");
                 return false;
             }
-            else if (dateTimePicker1.Value == DateTime.Now)
+            else if (dtTime_DataNasc.Value == DateTime.Now)
             {
                 MessageBox.Show("Selecione uma data de nascimento válida");
                 return false;
@@ -222,7 +257,7 @@ namespace SistemaAdv.View
         {
             // Utilize uma expressão regular para validar o formato do CPF
             // A expressão regular abaixo considera um CPF no formato "XXX.XXX.XXX-XX" ou "XXXXXXXXXXX"
-            string cpfPattern = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$";
+            string cpfPattern = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
 
             if (Regex.IsMatch(cpf, cpfPattern))
             {

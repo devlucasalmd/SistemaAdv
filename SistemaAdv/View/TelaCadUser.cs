@@ -133,8 +133,6 @@ namespace SistemaAdv
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-
-
             DeleteFuncionario();
         }
 

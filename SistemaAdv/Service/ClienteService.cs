@@ -2,6 +2,7 @@
 using SistemaAdv.View;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -24,8 +25,8 @@ namespace SistemaAdv.Service
 
             sqlCommand.CommandText = @"INSERT INTO ClientesFisicos VALUES (@CPF, @Nome, @RG, @Telefone, @Email, @EstadoCivil,
             @DataNasc, @Profissao, @Pis, @Nacionalidade, @Posicao, @Natureza, @CEP, @Logradouro, @Bairro, @Municipio,
-            @Estado, @Numero, @Complemento)";            
-                
+            @Estado, @Numero, @Complemento)";
+
             sqlCommand.Parameters.AddWithValue("@CPF", novoCliente.CPF);
             sqlCommand.Parameters.AddWithValue("@Nome", novoCliente.Nome);
             sqlCommand.Parameters.AddWithValue("@RG", novoCliente.RG);
@@ -60,13 +61,76 @@ namespace SistemaAdv.Service
             {
                 connection.CloseConnection();
             }
-            
+
             MessageBox.Show(
             "Cadastrado com Sucesso",
             "CADASTRO",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information
             );
+        }
+        public DataTable ReadFuncionarios()
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = "SELECT * FROM ClientesFisicos";
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
+        public bool DeleteFuncionario(string cpf)
+        {
+            try
+            {
+                connection.OpenConnection();
+                sqlCommand.Connection = connection.ReturnConnection();
+                sqlCommand.Parameters.Clear();
+                sqlCommand.CommandText = @"DELETE FROM ClientesFisicos WHERE CPF = @cpf";
+                sqlCommand.Parameters.AddWithValue("@cpf", cpf);
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine(er.Message);
+                return false;
+            }
+        }
+
+        public DataTable FilterClienteFisico()
+        {
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
         }
     }
 }

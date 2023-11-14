@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,12 +56,23 @@ namespace SistemaAdv.View
             CmbBox_Status.ResetText();
         }
 
+        public static string CriptografarSenha(string senha)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(senha);
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
+        }
+
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            
+            string senhaCriptografada = CriptografarSenha(TxtBox_Password.Text);
+
             string Nome = TxtBox_Name.Text;
             string UserName = TxtBox_UserName.Text;
-            string Senha = TxtBox_Password.Text;
+            string Senha = senhaCriptografada;
             string Email = TxtBox_Email.Text;
             string Cargo = CmbBox_Cargo.Text;
             string Status = CmbBox_Status.Text;

@@ -22,7 +22,12 @@ namespace SistemaAdv.Models
         public string Nacionalidade;
         public string Posição;
         public string Natureza;
-        public string Id_TipoCliente;
+
+        public Cliente() 
+        { 
+        
+        
+        }
 
 
         /*  CPF_Cliente;

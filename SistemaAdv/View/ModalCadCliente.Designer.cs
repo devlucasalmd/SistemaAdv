@@ -40,7 +40,7 @@
             this.TxtBox_Telefone = new System.Windows.Forms.TextBox();
             this.LblTelefone = new System.Windows.Forms.Label();
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
-            this.Btn_Confirmar = new System.Windows.Forms.Button();
+            this.BtnConfirmar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Min = new System.Windows.Forms.Button();
             this.Btn_Max = new System.Windows.Forms.Button();
@@ -136,6 +136,7 @@
             this.Btn_Clear.TabIndex = 69;
             this.Btn_Clear.Text = "Limpar";
             this.Btn_Clear.UseVisualStyleBackColor = true;
+            this.Btn_Clear.Click += new System.EventHandler(this.Btn_Clear_Click);
             // 
             // LblNome
             // 
@@ -169,14 +170,15 @@
             this.TxtBox_Name.Size = new System.Drawing.Size(206, 20);
             this.TxtBox_Name.TabIndex = 61;
             // 
-            // Btn_Confirmar
+            // BtnConfirmar
             // 
-            this.Btn_Confirmar.Location = new System.Drawing.Point(707, 494);
-            this.Btn_Confirmar.Name = "Btn_Confirmar";
-            this.Btn_Confirmar.Size = new System.Drawing.Size(97, 23);
-            this.Btn_Confirmar.TabIndex = 60;
-            this.Btn_Confirmar.Text = "Salvar";
-            this.Btn_Confirmar.UseVisualStyleBackColor = true;
+            this.BtnConfirmar.Location = new System.Drawing.Point(707, 494);
+            this.BtnConfirmar.Name = "BtnConfirmar";
+            this.BtnConfirmar.Size = new System.Drawing.Size(97, 23);
+            this.BtnConfirmar.TabIndex = 60;
+            this.BtnConfirmar.Text = "Salvar";
+            this.BtnConfirmar.UseVisualStyleBackColor = true;
+            this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
             // panel1
             // 
@@ -526,10 +528,11 @@
             this.Controls.Add(this.TxtBox_Telefone);
             this.Controls.Add(this.LblTelefone);
             this.Controls.Add(this.TxtBox_Name);
-            this.Controls.Add(this.Btn_Confirmar);
+            this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModalCadCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModalCadCliente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -551,7 +554,7 @@
         private System.Windows.Forms.TextBox TxtBox_Telefone;
         private System.Windows.Forms.Label LblTelefone;
         private System.Windows.Forms.TextBox TxtBox_Name;
-        private System.Windows.Forms.Button Btn_Confirmar;
+        private System.Windows.Forms.Button BtnConfirmar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_Min;
         private System.Windows.Forms.Button Btn_Max;

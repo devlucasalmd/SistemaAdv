@@ -193,7 +193,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "TelaCadCliente";
+            this.Text = "8";
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);

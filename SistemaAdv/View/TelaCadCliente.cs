@@ -20,38 +20,65 @@ namespace SistemaAdv.View
             InitializeComponent();
         }
 
+        //private void PicBox_CadClientes_Click(object sender, EventArgs e)
+        //{
+        //    CmbBox_Status_SelectedIndexChanged(sender, e);
+        //}
+
+        //private void CmbBox_Status_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+
+        //    if (radBtn_Fisica.ToString() == "Fisica")
+        //    {
+        //        ClienteFisicoSelected();
+        //    }
+        //    else if (radBtn_Juridica.ToString() == "Juridica")
+        //    {
+        //        ClienteJuridicoSelected();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Selecione um tipo para o cliente");
+        //    }            
+        //}
+
+        //private void ClienteFisicoSelected()
+        //{
+        //    ModalCadCliente modalCliente = new ModalCadCliente();
+        //    modalCliente.Show();
+        //}
+
+        //private void ClienteJuridicoSelected()
+        //{
+        //    ModalCadFinanceiro modalCadFinanceiro = new ModalCadFinanceiro();
+        //    modalCadFinanceiro.Show();
+        //}
         private void PicBox_CadClientes_Click(object sender, EventArgs e)
         {
-            //   CmbBox_Status_SelectedValueChanged();
+            if (radBtn_Fisica.Checked)
+            {
+                AbrirModalClienteFisico();
+            }
+            else if (radBtn_Juridica.Checked)
+            {
+                AbrirModalClienteJuridico();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um tipo para o cliente");
+            }
         }
 
-        private void CmbBox_Status_SelectedIndexChanged(object sender, EventArgs e)
+        private void AbrirModalClienteFisico()
         {
-
-           // string fisica = radBtn_Fisica.;
-           // string juridica = radBtn_Juridica.ToString();
-
-            //if (fisica)
-            //{
-            //    ModalCadCliente modalCliente = new ModalCadCliente();
-            //    modalCliente.Show();
-            //}
-            //else if (item == "Juridica")
-            //{
-            //    ModalCadFinanceiro modalCadFinanceiro = new ModalCadFinanceiro();
-            //    modalCadFinanceiro.Show();
-            //}
-            //else
-            //{
-            //   MessageBox.Show("Selecione um tipo para o cliente");
-            //}
+            ModalCadCliente modalCliente = new ModalCadCliente();
+            modalCliente.ShowDialog();
         }
 
-
-        // private void Btn_Processos_Click(object sender, EventArgs e)
-        // {
-        //menuService.OpenTelaProcesso();
-        // }
-
+        private void AbrirModalClienteJuridico()
+        {
+            ModalCadFinanceiro modalCadFinanceiro = new ModalCadFinanceiro();
+            modalCadFinanceiro.ShowDialog();
+        }
     }
 }

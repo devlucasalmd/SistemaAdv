@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PicBox_CadUser = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Lbl_Inativo = new System.Windows.Forms.Label();
             this.CheckBox_Inativo = new System.Windows.Forms.CheckBox();
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Lbl_Usuarios = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.dtGrid_User = new System.Windows.Forms.DataGridView();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
-            this.Lbl_Inativo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +68,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(562, 18);
             this.panel4.TabIndex = 27;
+            // 
+            // Lbl_Inativo
+            // 
+            this.Lbl_Inativo.AutoSize = true;
+            this.Lbl_Inativo.Location = new System.Drawing.Point(16, 2);
+            this.Lbl_Inativo.Name = "Lbl_Inativo";
+            this.Lbl_Inativo.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Inativo.TabIndex = 20;
+            this.Lbl_Inativo.Text = "Inativo";
             // 
             // CheckBox_Inativo
             // 
@@ -123,10 +132,10 @@
             // 
             // dtGrid_User
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dtGrid_User.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGrid_User.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -137,17 +146,17 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtGrid_User.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGrid_User.ColumnHeadersHeight = 35;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtGrid_User.DefaultCellStyle = dataGridViewCellStyle3;
@@ -180,15 +189,6 @@
             this.BtnDelete.Text = "Excluir";
             this.BtnDelete.UseVisualStyleBackColor = true;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
-            // 
-            // Lbl_Inativo
-            // 
-            this.Lbl_Inativo.AutoSize = true;
-            this.Lbl_Inativo.Location = new System.Drawing.Point(16, 2);
-            this.Lbl_Inativo.Name = "Lbl_Inativo";
-            this.Lbl_Inativo.Size = new System.Drawing.Size(39, 13);
-            this.Lbl_Inativo.TabIndex = 20;
-            this.Lbl_Inativo.Text = "Inativo";
             // 
             // TelaCadUser
             // 

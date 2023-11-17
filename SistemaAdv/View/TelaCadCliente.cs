@@ -53,9 +53,9 @@ namespace SistemaAdv.View
         public void UpdateDataGrid()
         {
             DataTable dt = new DataTable();
-            dt = clienteService.ReadFuncionarios();
+            dt = clienteService.ReadCliente();
             dtGrid_Cliente.DataSource = dt;
-            //dtGrid_Cliente.Columns[0].Visible = false;
+            dtGrid_Cliente.Columns[0].Visible = false;
         }
         public void DeleteCliente()
         {
@@ -71,7 +71,7 @@ namespace SistemaAdv.View
 
                 if (!string.IsNullOrEmpty(cpf))
                 {
-                    if (clienteService.DeleteFuncionario(cpf))
+                    if (clienteService.DeleteCliente(cpf))
                     {
                         MessageBox.Show("Deletado com sucesso!", "Aviso", MessageBoxButtons.OK);
                         UpdateDataGrid();

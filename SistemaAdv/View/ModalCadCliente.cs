@@ -123,6 +123,7 @@ namespace SistemaAdv.View
             //if(VerificarRG(RG))
             //{
                 clienteService.CreateCliente(novocliente);
+
                 LimparCampos();
                 this.Close();
             //}            

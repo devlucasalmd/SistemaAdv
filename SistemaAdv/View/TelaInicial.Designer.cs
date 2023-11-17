@@ -62,6 +62,7 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.menuToolStripMenuItem.Text = "Inicio";
@@ -70,6 +71,7 @@
             // processosToolStripMenuItem
             // 
             this.processosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.processosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.processosToolStripMenuItem.Name = "processosToolStripMenuItem";
             this.processosToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
             this.processosToolStripMenuItem.Text = "Processos";
@@ -78,6 +80,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
@@ -86,6 +89,7 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.clientesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -94,6 +98,7 @@
             // audienciaToolStripMenuItem
             // 
             this.audienciaToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.audienciaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.audienciaToolStripMenuItem.Name = "audienciaToolStripMenuItem";
             this.audienciaToolStripMenuItem.Size = new System.Drawing.Size(91, 25);
             this.audienciaToolStripMenuItem.Text = "Audiencia";
@@ -102,6 +107,7 @@
             // financeiroToolStripMenuItem
             // 
             this.financeiroToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.financeiroToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
             this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
@@ -109,6 +115,7 @@
             // relatoriosToolStripMenuItem
             // 
             this.relatoriosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.relatoriosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(90, 25);
             this.relatoriosToolStripMenuItem.Text = "Relatorios";
@@ -116,6 +123,7 @@
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F);
+            this.sairToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
             this.sairToolStripMenuItem.Text = "Sair";

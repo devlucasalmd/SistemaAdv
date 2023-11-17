@@ -69,7 +69,7 @@ namespace SistemaAdv.Service
             MessageBoxIcon.Information
             );
         }
-        public DataTable ReadFuncionarios()
+        public DataTable ReadCliente()
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
@@ -93,7 +93,7 @@ namespace SistemaAdv.Service
             }
         }
 
-        public bool DeleteFuncionario(string cpf)
+        public bool DeleteCliente(string cpf)
         {
             try
             {

@@ -129,6 +129,7 @@
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Processo.cs" />
     <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Service\EnderecoService.cs" />
     <Compile Include="Service\FuncionarioService.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Service\LoginService.cs" />

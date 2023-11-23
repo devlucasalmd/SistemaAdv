@@ -42,6 +42,7 @@
             this.radBtn_Fisica = new System.Windows.Forms.RadioButton();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
+            this.LnkLbl_Enderecos = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_Cliente)).BeginInit();
             this.panel4.SuspendLayout();
@@ -180,11 +181,24 @@
             this.BtnEdit.Text = "Editar";
             this.BtnEdit.UseVisualStyleBackColor = true;
             // 
+            // LnkLbl_Enderecos
+            // 
+            this.LnkLbl_Enderecos.ActiveLinkColor = System.Drawing.SystemColors.ScrollBar;
+            this.LnkLbl_Enderecos.AutoSize = true;
+            this.LnkLbl_Enderecos.LinkColor = System.Drawing.Color.Black;
+            this.LnkLbl_Enderecos.Location = new System.Drawing.Point(722, 71);
+            this.LnkLbl_Enderecos.Name = "LnkLbl_Enderecos";
+            this.LnkLbl_Enderecos.Size = new System.Drawing.Size(58, 13);
+            this.LnkLbl_Enderecos.TabIndex = 73;
+            this.LnkLbl_Enderecos.TabStop = true;
+            this.LnkLbl_Enderecos.Text = "Endereços";
+            // 
             // TelaCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LnkLbl_Enderecos);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.panel5);
@@ -227,5 +241,6 @@
         private System.Windows.Forms.RadioButton radBtn_Juridica;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnEdit;
+        private System.Windows.Forms.LinkLabel LnkLbl_Enderecos;
     }
 }

@@ -17,15 +17,20 @@ namespace SistemaAdv.Service
         Connection connection = new Connection();
         SqlCommand sqlCommand = new SqlCommand();
 
+        private EnderecoService enderecoService;
+
         //retornar int para devolver id do funcionario, para setar permissão
         public void CreateCliente(Cliente novoCliente)
         {
+            //if (ClienteExiste(novoCliente.CPF))
+            //{
+            //    throw new Exception("Erro: CPF já existe na base de dados.");
+            //}
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
 
             sqlCommand.CommandText = @"INSERT INTO ClientesFisicos VALUES (@CPF, @Nome, @RG, @Telefone, @Email, @EstadoCivil,
-            @DataNasc, @Profissao, @Pis, @Nacionalidade, @Posicao, @Natureza, @CEP, @Logradouro, @Bairro, @Municipio,
-            @Estado, @Numero, @Complemento)";
+            @DataNasc, @Profissao, @Pis, @Nacionalidade, @Posicao, @Natureza)";
 
             sqlCommand.Parameters.AddWithValue("@CPF", novoCliente.CPF);
             sqlCommand.Parameters.AddWithValue("@Nome", novoCliente.Nome);
@@ -39,13 +44,6 @@ namespace SistemaAdv.Service
             sqlCommand.Parameters.AddWithValue("@Nacionalidade", novoCliente.Nacionalidade);
             sqlCommand.Parameters.AddWithValue("@Posicao", novoCliente.Posicao);
             sqlCommand.Parameters.AddWithValue("@Natureza", novoCliente.Natureza);
-            sqlCommand.Parameters.AddWithValue("@CEP", novoCliente.CEP);
-            sqlCommand.Parameters.AddWithValue("@Logradouro", novoCliente.Logradouro);
-            sqlCommand.Parameters.AddWithValue("@Bairro", novoCliente.Bairro);
-            sqlCommand.Parameters.AddWithValue("@Municipio", novoCliente.Municipio);
-            sqlCommand.Parameters.AddWithValue("@Estado", novoCliente.Estado);
-            sqlCommand.Parameters.AddWithValue("@Numero", novoCliente.Numero);
-            sqlCommand.Parameters.AddWithValue("@Complemento", novoCliente.Complemento);
 
             try
             {
@@ -61,7 +59,8 @@ namespace SistemaAdv.Service
             {
                 connection.CloseConnection();
             }
-
+            //EnderecoService enderecoService = new EnderecoService();  // Certifique-se de inicializar a instância corretamente
+            //enderecoService.CreateEndereco(novoCliente.EnderecoCliente);
             MessageBox.Show(
             "Cadastrado com Sucesso",
             "CADASTRO",
@@ -69,6 +68,16 @@ namespace SistemaAdv.Service
             MessageBoxIcon.Information
             );
         }
+
+        private bool ClienteExiste(string cpf)
+        {
+            // Verificar se o CPF já existe na tabela ClientesFisicos
+            sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
+            sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+            int count = 1;
+            return count > 0;
+        }
+
         public DataTable ReadCliente()
         {
             connection.OpenConnection();

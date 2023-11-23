@@ -20,6 +20,7 @@ namespace SistemaAdv.View
     {
 
         private ClienteService clienteService;
+        private EnderecoService enderecoService;
         public ModalCadCliente()
         {
             InitializeComponent();
@@ -115,16 +116,27 @@ namespace SistemaAdv.View
             string Estado = TxtBox_Estado.Text;
             string Numero = TxtBox_Numero.Text;
             string Complemento = TxtBox_Comple.Text;
-            
+
+            Cliente.Endereco enderecoCliente = new Cliente.Endereco
+            {
+                CEP = CEP,
+                Logradouro = Logradouro,
+                Bairro = Bairro,
+                Municipio = Municipio,
+                Estado = Estado,
+                Numero = Numero,
+                Complemento = Complemento
+            };
+
             var novocliente = new Cliente(CPF, Nome,  RG,  Telefone,  Email,  EstadoCivil,
                        DataNasc,  Profissao,  Pis,  Nacionalidade,
-                       Posicao,  Natureza,  CEP,  Logradouro,  Bairro,
-                       Municipio,  Estado,  Numero,  Complemento);
+                       Posicao,  Natureza, enderecoCliente);
             //if(VerificarRG(RG))
             //{
-                clienteService.CreateCliente(novocliente);
+            clienteService.CreateCliente(novocliente);
+            //enderecoService.CreateEndereco(novocliente.EnderecoCliente);
 
-                LimparCampos();
+            LimparCampos();
                 this.Close();
             //}            
             

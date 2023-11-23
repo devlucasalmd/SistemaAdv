@@ -22,13 +22,6 @@ namespace SistemaAdv.Models
         public string Posicao;
         public string Natureza;
         public Endereco EnderecoCliente;
-        //public string CEP;
-        //public string Logradouro; 
-        //public string Bairro;
-        //public string Municipio;
-        //public string Estado;
-        //public string Numero;
-        //public string Complemento;
 
         public Cliente(string cpf, string nome, string rg, string telefone, string email, string estadoCivil,
                       string dataNascimento, string profissao, string pis, string nacionalidade,
@@ -47,15 +40,9 @@ namespace SistemaAdv.Models
             Posicao = posicao;
             Natureza = natureza;
             EnderecoCliente = endereco;
-            //CEP = cep;
-            //Logradouro = logradouro;
-            //Bairro = bairro;
-            //Municipio = municipio;
-            //Estado = estado;
-            //Numero = numero;
-            //Complemento = complemento;
         }
 
+        //Isso é igual a um Struct
         public class Endereco
         {
             public string CEP { get; set; }

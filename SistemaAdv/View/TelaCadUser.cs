@@ -35,6 +35,7 @@ namespace SistemaAdv
 
         public void UpdateDataGrid()
         {
+            //InvisibleInativo();
             DataTable dt = new DataTable();
             dt = funcionarioService.ReadFuncionarios();
             dtGrid_User.DataSource = dt;
@@ -91,7 +92,11 @@ namespace SistemaAdv
             );
             }
         }
-
+        public void InvisibleInativo()
+        {
+            if (dtGrid_User.SelectedRows.ToString() == "Inativo")
+            { dtGrid_User.Visible = false;}
+        }
         public void EditFuncionario()
         {
             if (dtGrid_User.SelectedRows.Count == 1)

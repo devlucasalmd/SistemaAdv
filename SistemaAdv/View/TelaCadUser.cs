@@ -35,9 +35,8 @@ namespace SistemaAdv
 
         public void UpdateDataGrid()
         {
-            //InvisibleInativo();
             DataTable dt = new DataTable();
-            dt = funcionarioService.ReadFuncionarios();
+            dt = funcionarioService.ReadFuncionariosAtivos();
             dtGrid_User.DataSource = dt;
             dtGrid_User.Columns[0].Visible = false;            
         }
@@ -92,11 +91,7 @@ namespace SistemaAdv
             );
             }
         }
-        public void InvisibleInativo()
-        {
-            if (dtGrid_User.SelectedRows.ToString() == "Inativo")
-            { dtGrid_User.Visible = false;}
-        }
+
         public void EditFuncionario()
         {
             if (dtGrid_User.SelectedRows.Count == 1)
@@ -115,7 +110,7 @@ namespace SistemaAdv
                 "Nenhum usuario selecionado", "Aviso",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
-            );
+                );
             }
         }
 
@@ -126,6 +121,14 @@ namespace SistemaAdv
 
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
+            //if (string.IsNullOrEmpty(CmbBox_Filter.Text))
+            //{
+            //    UpdateDataGrid();
+            //}                
+            //else
+            //{
+            //    FilterFuncionario();
+            //}
             FilterFuncionario();
         }
 

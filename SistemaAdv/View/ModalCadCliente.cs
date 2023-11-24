@@ -137,7 +137,7 @@ namespace SistemaAdv.View
             //enderecoService.CreateEndereco(novocliente.EnderecoCliente);
 
             LimparCampos();
-                this.Close();
+            this.Close();
             //}            
             
             //if (VerificarCampos())

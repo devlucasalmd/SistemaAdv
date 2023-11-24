@@ -184,6 +184,7 @@
             // LnkLbl_Enderecos
             // 
             this.LnkLbl_Enderecos.ActiveLinkColor = System.Drawing.SystemColors.ScrollBar;
+            this.LnkLbl_Enderecos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LnkLbl_Enderecos.AutoSize = true;
             this.LnkLbl_Enderecos.LinkColor = System.Drawing.Color.Black;
             this.LnkLbl_Enderecos.Location = new System.Drawing.Point(722, 71);
@@ -192,6 +193,7 @@
             this.LnkLbl_Enderecos.TabIndex = 73;
             this.LnkLbl_Enderecos.TabStop = true;
             this.LnkLbl_Enderecos.Text = "Endereços";
+            this.LnkLbl_Enderecos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkLbl_Enderecos_LinkClicked);
             // 
             // TelaCadCliente
             // 

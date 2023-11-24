@@ -171,11 +171,11 @@ namespace SistemaAdv.Service
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.Parameters.Clear();
 
-            sqlCommand.CommandText = @"SELECT * FROM Funcionarios ";
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios WHERE Status = 'Ativo'";
 
             if (!string.IsNullOrEmpty(cargo))
             {
-                sqlCommand.CommandText += @"WHERE Cargo = @Cargo";
+                sqlCommand.CommandText += @"AND Cargo = @Cargo";
             }
             if (sqlCommand.Parameters.Contains("@Cargo"))
             {
@@ -245,6 +245,30 @@ namespace SistemaAdv.Service
                 connection.CloseConnection();
             }
 
+        }
+
+        public DataTable ReadFuncionariosAtivos()
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = "SELECT * FROM Funcionarios WHERE Status = 'Ativo'";
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
         }
 
     }

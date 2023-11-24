@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace SistemaAdv.View
 
         private ClienteService clienteService;
 
+        public static int parentX, parentY;
         public TelaCadCliente()
         {
             InitializeComponent();
@@ -50,13 +52,14 @@ namespace SistemaAdv.View
             ModalCadFinanceiro modalCadFinanceiro = new ModalCadFinanceiro();
             modalCadFinanceiro.ShowDialog();
         }
+
         public void UpdateDataGrid()
         {
             DataTable dt = new DataTable();
             dt = clienteService.ReadCliente();
             dtGrid_Cliente.DataSource = dt;
-            dtGrid_Cliente.Columns[0].Visible = false;
         }
+
         public void DeleteCliente()
         {
             if (dtGrid_Cliente.SelectedRows.Count == 1)
@@ -87,6 +90,7 @@ namespace SistemaAdv.View
                 MessageBox.Show("Nenhum usuario selecionado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         public void FilterCliente()
         {
             var tipo = CmbBox_Clientes.Text;
@@ -118,12 +122,17 @@ namespace SistemaAdv.View
             DeleteCliente();
         }
 
-        private void LnkLbl_Enderecos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void EditEnderecoCliente()
         {
             if (dtGrid_Cliente.SelectedRows.Count == 1)
             {
-                    AbrirModalClienteFisico();
+                DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
+                int id;
+                if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+                {
+                    OpenModal();
                     UpdateDataGrid();
+                }
             }
             else
             {
@@ -132,7 +141,56 @@ namespace SistemaAdv.View
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
                 );
-            }
+            }   
+        }
+
+        private void LnkLbl_Enderecos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
+            //int cpf;
+            //if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString(), out cpf))
+            //    if (dtGrid_Cliente.SelectedRows.Count == 1)
+            //    {
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show(
+            //    "Nenhum usuario selecionado", "Aviso",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Warning
+            //    );
+            //}
+
+            OpenModal();
+            UpdateDataGrid();
+        }
+
+        public void OpenModal()
+        {
+            ModalViewEndereco modal = new ModalViewEndereco();
+            modal.Show();
+
+            //Form modalBackground = new Form();
+            ////using (ModalViewEndereco modal = new ModalViewEndereco(cpf))
+            //using (ModalViewEndereco modal = new ModalViewEndereco())
+            //{
+            //    modalBackground.StartPosition = FormStartPosition.Manual;
+            //    modalBackground.FormBorderStyle = FormBorderStyle.None;
+            //    modalBackground.Opacity = .50d;
+            //    modalBackground.BackColor = Color.Black;
+            //    modalBackground.Size = this.Size;
+            //    modalBackground.Location = this.Location;
+            //    modalBackground.ShowInTaskbar = false;
+            //    modalBackground.Show();
+            //    modal.Owner = modalBackground;
+
+            //    parentX = this.Location.X;
+            //    parentY = this.Location.Y;
+
+            //    modal.ShowDialog();
+            //    modalBackground.Dispose();
+            //}
         }
     }
 }

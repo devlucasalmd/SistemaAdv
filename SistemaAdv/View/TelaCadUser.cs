@@ -24,24 +24,19 @@ namespace SistemaAdv
         private FuncionarioService funcionarioService;
         // private MenuService menuService;
 
+        public static int parentX, parentY;
         string cargo = "";
         string status = "Ativo";
         public TelaCadUser()
         {
             InitializeComponent();
             funcionarioService = new FuncionarioService();
-        }
-
-        public static int parentX, parentY;
+        }        
 
         public void UpdateDataGrid()
         {
             DataTable dt = new DataTable();
-<<<<<<< HEAD
             dt = funcionarioService.FilterFuncionario(cargo, status);
-=======
-            dt = funcionarioService.ReadFuncionariosAtivos();
->>>>>>> 650c7ae01fc861ac5ba51c64b300f54bd19e1e3b
             dtGrid_User.DataSource = dt;
             dtGrid_User.Columns[0].Visible = false;            
         }
@@ -98,10 +93,7 @@ namespace SistemaAdv
             );
             }
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 650c7ae01fc861ac5ba51c64b300f54bd19e1e3b
         public void EditFuncionario()
         {
             if (dtGrid_User.SelectedRows.Count == 1)

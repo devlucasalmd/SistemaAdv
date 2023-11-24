@@ -15,10 +15,24 @@ namespace SistemaAdv.View
     public partial class ModalViewEndereco : Form
     {
         private EnderecoService enderecoService;
+        int cpf;
 
         public ModalViewEndereco()
         {
             InitializeComponent();
+            //this.cpf = cpf;
+            //if (cpf != 0)
+            //{
+            //    DataTable dt = new DataTable();
+            //    dt = enderecoService.ReadEndereco();
+            //    mskdBox_CEP.Text = dt.Rows[0]["CEP"].ToString();
+            //    TxtBox_Logadouro.Text = dt.Rows[0]["Logadouro"].ToString();
+            //    TxtBox_Numero.Text = dt.Rows[0]["Numero"].ToString();
+            //    TxtBox_Comple.Text = dt.Rows[0]["Complemento"].ToString();
+            //    TxtBox_Bairro.Text = dt.Rows[0]["Bairro"].ToString();
+            //    TxtBox_Municipio.Text = dt.Rows[0]["Municipio"].ToString();
+            //    TxtBox_Estado.Text = dt.Rows[0]["Estado"].ToString();
+            //}
         }
 
         private void Btn_BuscarCEP_Click(object sender, EventArgs e)

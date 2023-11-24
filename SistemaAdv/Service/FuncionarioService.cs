@@ -61,29 +61,6 @@ namespace SistemaAdv.Service
                 );
         }
 
-        public DataTable ReadFuncionarios()
-        {
-            connection.OpenConnection();
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = "SELECT * FROM Funcionarios";
-
-            try
-            {
-                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
-                    + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
-            }
-        }
 
         public DataTable GetFuncionario(int id)
         {
@@ -164,26 +141,27 @@ namespace SistemaAdv.Service
             }            
          }
 
-        public DataTable FilterFuncionario(string cargo)
+        public DataTable FilterFuncionario(string cargo, string status)
         {
-            string filtro = cargo;
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.Parameters.Clear();
 
-            sqlCommand.CommandText = @"SELECT * FROM Funcionarios ";
+            sqlCommand.CommandText = @"SELECT * FROM Funcionarios WHERE 1 = 1";
+
+            //if(cargo == "Todos")
 
             if (!string.IsNullOrEmpty(cargo))
             {
-                sqlCommand.CommandText += @"WHERE Cargo = @Cargo";
+                sqlCommand.CommandText += @" AND Cargo = @Cargo";
+                sqlCommand.Parameters.AddWithValue("@Cargo", cargo);
             }
-            if (sqlCommand.Parameters.Contains("@Cargo"))
+
+            if (!string.IsNullOrEmpty(status))
             {
-                sqlCommand.Parameters.Clear();
+                sqlCommand.CommandText += @" AND Status = @Status";
+                sqlCommand.Parameters.AddWithValue("@Status", status);
             }
-
-            sqlCommand.Parameters.AddWithValue("@Cargo", filtro);
-
 
             try
             {
@@ -194,57 +172,12 @@ namespace SistemaAdv.Service
             }
             catch (Exception err)
             {
-                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
-                    + err.Message);
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n" + err.Message);
             }
             finally
             {
                 connection.CloseConnection();
             }
-
-        }
-        public DataTable FilterFuncionarioInativo(string cargo)
-        {
-            string filtro = cargo;
-            connection.OpenConnection();
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.Parameters.Clear();
-
-            sqlCommand.CommandText = @"SELECT * FROM Funcionarios ";
-
-            if (!string.IsNullOrEmpty(cargo))
-            {
-                sqlCommand.CommandText += @"WHERE Cargo = @Cargo AND Status = 'Inativo' ";
-            }
-            else
-            {
-                sqlCommand.CommandText += @"WHERE Status = 'Inativo' ";
-            }
-            if (sqlCommand.Parameters.Contains("@Cargo"))
-            {
-                sqlCommand.Parameters.Clear();
-            }
-
-            sqlCommand.Parameters.AddWithValue("@Cargo", filtro);
-
-
-            try
-            {
-                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
-                    + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
-            }
-
         }
 
     }

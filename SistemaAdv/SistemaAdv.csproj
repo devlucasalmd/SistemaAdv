@@ -165,6 +165,12 @@
     <Compile Include="View\ModalCadUser.Designer.cs">
       <DependentUpon>ModalCadUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ModalViewEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModalViewEndereco.Designer.cs">
+      <DependentUpon>ModalViewEndereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaCadAudiencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ModalCadUser.resx">
       <DependentUpon>ModalCadUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModalViewEndereco.resx">
+      <DependentUpon>ModalViewEndereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaCadAudiencia.resx">
       <DependentUpon>TelaCadAudiencia.cs</DependentUpon>

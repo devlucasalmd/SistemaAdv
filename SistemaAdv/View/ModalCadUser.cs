@@ -40,7 +40,7 @@ namespace SistemaAdv.View
             }
             if(CmbBox_Cargo.Text == "Estagiario (a)")
             {
-                TxtBox_UserName.Text = "est";
+                TxtBox_UserName.Text = "est-";
             }
         }
 

@@ -98,7 +98,7 @@ namespace SistemaAdv.View
             }
             //else
             //{
-            //    DataTable dt = clienteService.FilterFuncionarioJuridico(tipo);
+            //    DataTable dt = clienteService.FilterFuncionarioJuridico();
             //    dtGrid_Cliente.DataSource = dt;
             //}
         }
@@ -116,6 +116,23 @@ namespace SistemaAdv.View
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             DeleteCliente();
+        }
+
+        private void LnkLbl_Enderecos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (dtGrid_Cliente.SelectedRows.Count == 1)
+            {
+                    AbrirModalClienteFisico();
+                    UpdateDataGrid();
+            }
+            else
+            {
+                MessageBox.Show(
+                "Nenhum usuario selecionado", "Aviso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+                );
+            }
         }
     }
 }

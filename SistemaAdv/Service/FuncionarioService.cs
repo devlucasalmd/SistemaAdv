@@ -180,6 +180,30 @@ namespace SistemaAdv.Service
             }
         }
 
+        public DataTable ReadFuncionariosAtivos()
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = "SELECT * FROM Funcionarios WHERE Status = 'Ativo'";
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand.CommandText, sqlCommand.Connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
     }
 } 
     

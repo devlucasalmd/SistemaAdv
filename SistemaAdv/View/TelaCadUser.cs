@@ -37,7 +37,11 @@ namespace SistemaAdv
         public void UpdateDataGrid()
         {
             DataTable dt = new DataTable();
+<<<<<<< HEAD
             dt = funcionarioService.FilterFuncionario(cargo, status);
+=======
+            dt = funcionarioService.ReadFuncionariosAtivos();
+>>>>>>> 650c7ae01fc861ac5ba51c64b300f54bd19e1e3b
             dtGrid_User.DataSource = dt;
             dtGrid_User.Columns[0].Visible = false;            
         }
@@ -94,6 +98,10 @@ namespace SistemaAdv
             );
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 650c7ae01fc861ac5ba51c64b300f54bd19e1e3b
         public void EditFuncionario()
         {
             if (dtGrid_User.SelectedRows.Count == 1)
@@ -112,7 +120,7 @@ namespace SistemaAdv
                 "Nenhum usuario selecionado", "Aviso",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
-            );
+                );
             }
         }
 
@@ -123,6 +131,14 @@ namespace SistemaAdv
 
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
+            //if (string.IsNullOrEmpty(CmbBox_Filter.Text))
+            //{
+            //    UpdateDataGrid();
+            //}                
+            //else
+            //{
+            //    FilterFuncionario();
+            //}
             FilterFuncionario();
         }
 

@@ -37,7 +37,6 @@
             this.LblEmail = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.LblNome = new System.Windows.Forms.Label();
-            this.TxtBox_Telefone = new System.Windows.Forms.TextBox();
             this.LblTelefone = new System.Windows.Forms.Label();
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
             this.BtnConfirmar = new System.Windows.Forms.Button();
@@ -75,6 +74,7 @@
             this.mskdBox_CPF = new System.Windows.Forms.MaskedTextBox();
             this.mskdBox_RG = new System.Windows.Forms.MaskedTextBox();
             this.TxtBox_PosicaoCliente = new System.Windows.Forms.TextBox();
+            this.TxtBox_Telefone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,13 +146,6 @@
             this.LblNome.Size = new System.Drawing.Size(35, 13);
             this.LblNome.TabIndex = 66;
             this.LblNome.Text = "Nome";
-            // 
-            // TxtBox_Telefone
-            // 
-            this.TxtBox_Telefone.Location = new System.Drawing.Point(12, 269);
-            this.TxtBox_Telefone.Name = "TxtBox_Telefone";
-            this.TxtBox_Telefone.Size = new System.Drawing.Size(100, 20);
-            this.TxtBox_Telefone.TabIndex = 63;
             // 
             // LblTelefone
             // 
@@ -483,6 +476,13 @@
             this.TxtBox_PosicaoCliente.Size = new System.Drawing.Size(121, 20);
             this.TxtBox_PosicaoCliente.TabIndex = 110;
             // 
+            // TxtBox_Telefone
+            // 
+            this.TxtBox_Telefone.Location = new System.Drawing.Point(12, 269);
+            this.TxtBox_Telefone.Name = "TxtBox_Telefone";
+            this.TxtBox_Telefone.Size = new System.Drawing.Size(100, 20);
+            this.TxtBox_Telefone.TabIndex = 63;
+            // 
             // ModalCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,7 +551,6 @@
         private System.Windows.Forms.Label LblEmail;
         private System.Windows.Forms.Button Btn_Clear;
         private System.Windows.Forms.Label LblNome;
-        private System.Windows.Forms.TextBox TxtBox_Telefone;
         private System.Windows.Forms.Label LblTelefone;
         private System.Windows.Forms.TextBox TxtBox_Name;
         private System.Windows.Forms.Button BtnConfirmar;
@@ -589,5 +588,6 @@
         private System.Windows.Forms.MaskedTextBox mskdBox_CPF;
         private System.Windows.Forms.MaskedTextBox mskdBox_RG;
         private System.Windows.Forms.TextBox TxtBox_PosicaoCliente;
+        private System.Windows.Forms.TextBox TxtBox_Telefone;
     }
 }

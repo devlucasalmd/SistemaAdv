@@ -271,30 +271,30 @@ namespace SistemaAdv.View
         //}
 
 
-        private bool VerificarCPF(string cpf)
-        {
-            // Utilize uma expressão regular para validar o formato do CPF
-            // A expressão regular abaixo considera um CPF no formato "XXX.XXX.XXX-XX" ou "XXXXXXXXXXX"
-            string cpfPattern = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
+        //private bool VerificarCPF(string cpf)
+        //{
+        //    // Utilize uma expressão regular para validar o formato do CPF
+        //    // A expressão regular abaixo considera um CPF no formato "XXX.XXX.XXX-XX" ou "XXXXXXXXXXX"
+        //    string cpfPattern = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
 
-            if (Regex.IsMatch(cpf, cpfPattern))
-            {
-                if (ValidarDigitoVerificadorCPF(cpf))
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("O CPF não é válido.");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("O campo do CPF não está em um formato válido.");
-                return false;
-            }
-        }
+        //    if (Regex.IsMatch(cpf, cpfPattern))
+        //    {
+        //        if (ValidarDigitoVerificadorCPF(cpf))
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("O CPF não é válido.");
+        //            return false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("O campo do CPF não está em um formato válido.");
+        //        return false;
+        //    }
+        //}
 
         //public void ValidarCPf()
         //{

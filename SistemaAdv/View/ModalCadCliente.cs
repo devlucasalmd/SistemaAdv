@@ -94,6 +94,7 @@ namespace SistemaAdv.View
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
+
             DateTime dataEscolhida = dtTime_DataNasc.Value.Date;
             string dataFormatada = dtTime_DataNasc.Value.ToString("yyyy-MM-dd");
             
@@ -131,9 +132,13 @@ namespace SistemaAdv.View
             var novocliente = new Cliente(CPF, Nome,  RG,  Telefone,  Email,  EstadoCivil,
                        DataNasc,  Profissao,  Pis,  Nacionalidade,
                        Posicao,  Natureza, enderecoCliente);
-            //if(VerificarRG(RG))
-            //{
-            clienteService.CreateCliente(novocliente);
+           // if (VerificarRG(RG))
+
+            if (VerificarCPF(CPF))
+
+            if (VerificarCampos())
+
+                clienteService.CreateCliente(novocliente);
             //enderecoService.CreateEndereco(novocliente.EnderecoCliente);
 
             LimparCampos();
@@ -247,23 +252,23 @@ namespace SistemaAdv.View
             return true;
         }
 
-        private bool VerificarRG(string rg)
-        {
-            // Utilize uma expressão regular para validar o formato do RG
-            // A expressão regular abaixo considera um RG no formato "XX.XXX.XXX-X" ou "XXXXXXXXX"
-            // Você pode ajustar conforme necessário para atender aos padrões do seu país/região.
-            string rgPattern = @"^\d{1,2}\.\d{3}\.\d{3}-\d{1}$|^\d{9}$";
+        //private bool VerificarRG(string rg)
+        //{
+        //    // Utilize uma expressão regular para validar o formato do RG
+        //    // A expressão regular abaixo considera um RG no formato "XX.XXX.XXX-X" ou "XXXXXXXXX"
+        //    // Você pode ajustar conforme necessário para atender aos padrões do seu país/região.
+        //    string rgPattern = @"^\d{1,2}\.\d{3}\.\d{3}-\d{1}$|^\d{9}$";
 
-            if (Regex.IsMatch(rg, rgPattern))
-            {
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("O campo do RG não está em um formato válido.");
-                return false;
-            }
-        }
+        //    if (Regex.IsMatch(rg, rgPattern))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("O campo do RG não está em um formato válido.");
+        //        return false;
+        //    }
+        //}
 
 
         private bool VerificarCPF(string cpf)
@@ -290,6 +295,75 @@ namespace SistemaAdv.View
                 return false;
             }
         }
+
+        //public void ValidarCPf()
+        //{
+        //    int[] multi1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2, };
+        //    int[] multi2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+        //    string cpf = mskdBox_CPF.Text;
+        //    string auxCPF;
+        //    string digito;
+        //    int soma;
+        //    int resto;
+
+        //    cpf = cpf.Trim();
+        //    cpf = cpf.Replace(",", "").Replace("-", "");
+
+        //    auxCPF = cpf.Substring(0, 9);
+
+        //    soma = 0;
+
+
+        //    for(int i=0; i < 9; i++)
+        //    {
+        //        soma += int.Parse(auxCPF[i].ToString())*multi1[1];
+        //    }
+
+        //    resto = soma % 11;
+
+        //    if(resto < 2)
+
+        //    {
+        //        resto = 0;
+        //    }
+        //    else
+        //    {
+        //        resto = 11 - resto;
+        //    }
+
+        //    digito = resto.ToString();
+        //    auxCPF = auxCPF + digito;
+
+        //    soma = 0;
+
+        //    for( int i=0; i < 10; i++)
+        //    {
+        //        soma += int.Parse(auxCPF[i].ToString()) * multi2[1];
+        //    }
+
+        //    resto = soma % 11;
+
+        //    if (resto < 2)
+
+        //    {
+        //        resto = 0;
+        //    }
+        //    else
+        //    {
+        //        resto = 11 - resto;
+        //    }
+
+        //    auxCPF = auxCPF + resto;
+
+        //    if(cpf == auxCPF)
+        //    {
+        //        MessageBox.Show("CPF valido");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("CPF invalido");
+        //    }
+        //}
 
         private bool ValidarDigitoVerificadorCPF(string cpf)
         {

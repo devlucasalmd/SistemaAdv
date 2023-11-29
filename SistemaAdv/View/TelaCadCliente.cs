@@ -45,6 +45,7 @@ namespace SistemaAdv.View
         {
             ModalCadCliente modalCliente = new ModalCadCliente();
             modalCliente.ShowDialog();
+            UpdateDataGrid();
         }
 
         private void AbrirModalClienteJuridico()
@@ -127,8 +128,8 @@ namespace SistemaAdv.View
             if (dtGrid_Cliente.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
-                int id;
-                if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+                int cpf;
+                if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString(), out cpf))
                 {
                     OpenModal();
                     UpdateDataGrid();
@@ -164,6 +165,11 @@ namespace SistemaAdv.View
 
             OpenModal();
             UpdateDataGrid();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EditEnderecoCliente();
         }
 
         public void OpenModal()

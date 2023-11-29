@@ -172,6 +172,7 @@ namespace SistemaAdv
         private void PicBox_CadUser_Click(object sender, EventArgs e)
         {
            OpenModal();
+           UpdateDataGrid();
         }
 
     }

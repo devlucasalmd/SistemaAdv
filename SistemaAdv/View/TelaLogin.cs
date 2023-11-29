@@ -1,5 +1,6 @@
 ﻿using SistemaAdv.Models;
 using SistemaAdv.Service;
+using SistemaAdv.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,9 @@ namespace SistemaAdv
     public partial class TelaLogin : Form
     {
         private LoginService loginService;
+        public ModalCadUser modalCadUser;
+
+        public object ModalCalUser { get; private set; }
 
         public TelaLogin()
         {
@@ -31,7 +35,7 @@ namespace SistemaAdv
         private void Btn_Login_Click(object sender, EventArgs e)
         {
              var user = TxtBox_UserName.Text;
-             var pass = TxtBox_Password.Text;
+             string pass = TxtBox_Password.Text;
 
             if (string.IsNullOrEmpty(user))
             {
@@ -45,6 +49,7 @@ namespace SistemaAdv
 
             try
             {
+                //string senhaCriptografada = ModalCalUser.CriptografarSenha(pass);
 
                 if (loginService.UserExists(user))
                 {

@@ -57,32 +57,59 @@ namespace SistemaAdv.Service
             );
         }
 
-        //public DataTable ReadEndereco(cpf)
-        //{
-        //    connection.OpenConnection();
-        //    sqlCommand.Connection = connection.ReturnConnection();
-        //    sqlCommand.Parameters.Clear();
-        //    sqlCommand.CommandText = @"select * from Funcionarios where CPF = @cpf";
+        public DataTable GetEndereco(int id)
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.Parameters.Clear();
+            sqlCommand.CommandText = @"select * from Enderecos where Id = @id";
 
-        //    sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+            sqlCommand.Parameters.AddWithValue("@id", id);
 
-        //    try
-        //    {
-        //        SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-        //        return dt;
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
 
-        //    }
-        //    catch (Exception err)
-        //    {
-        //        throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
-        //            + err.Message);
-        //    }
-        //    finally
-        //    {
-        //        connection.CloseConnection();
-        //    }
-        //}
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
     }
+    //public DataTable ReadEndereco(cpf)
+    //{
+    //    connection.OpenConnection();
+    //    sqlCommand.Connection = connection.ReturnConnection();
+    //    sqlCommand.Parameters.Clear();
+    //    sqlCommand.CommandText = @"select * from Funcionarios where CPF = @cpf";
+
+    //    sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+
+    //    try
+    //    {
+    //        SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
+    //        DataTable dt = new DataTable();
+    //        da.Fill(dt);
+    //        return dt;
+
+    //    }
+    //    catch (Exception err)
+    //    {
+    //        throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+    //            + err.Message);
+    //    }
+    //    finally
+    //    {
+    //        connection.CloseConnection();
+    //    }
+    //}
 }

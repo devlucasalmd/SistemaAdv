@@ -55,6 +55,7 @@ namespace SistemaAdv.Service
             }
 
         }
+
         //public static bool VerificarSenha(string senhaUsuario, string senhaArmazenada)
         //{
         //    using (SHA256 sha256 = SHA256.Create())
@@ -84,6 +85,39 @@ namespace SistemaAdv.Service
                 int count = (int)sqlCommand.ExecuteScalar();
 
                 return count > 0; // Se houver pelo menos um registro correspondente, a senha está correta.
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro ao validar usuario e senha", err);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
+        public string GetPassword(string user)
+        {
+            string senhaArmazenada = null;
+
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+
+            try
+            {
+                sqlCommand.CommandText = "SELECT Senha FROM Funcionarios WHERE UserName = @user";
+                sqlCommand.Parameters.Clear();
+
+                sqlCommand.Parameters.AddWithValue("@user", user);
+
+                using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        senhaArmazenada = reader["Senha"].ToString();
+                    }
+                }
+                return senhaArmazenada;
             }
             catch (Exception err)
             {

@@ -15,7 +15,8 @@ namespace SistemaAdv.View
     public partial class TelaCadCliente : Form
     {
         // private MenuService menuService;
-
+        private ModalCadCliente modalCliente;
+        
         private ClienteService clienteService;
 
         public static int parentX, parentY;
@@ -43,8 +44,7 @@ namespace SistemaAdv.View
 
         private void AbrirModalClienteFisico()
         {
-            ModalCadCliente modalCliente = new ModalCadCliente();
-            modalCliente.ShowDialog();
+            OpenModal();
             UpdateDataGrid();
         }
 
@@ -123,37 +123,11 @@ namespace SistemaAdv.View
             DeleteCliente();
         }
 
-        public void EditEnderecoCliente()
-        {
-            if (dtGrid_Cliente.SelectedRows.Count == 1)
-            {
-                DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
-                int cpf;
-                if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString(), out cpf))
-                {
-                    OpenModal();
-                    UpdateDataGrid();
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                "Nenhum usuario selecionado", "Aviso",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-                );
-            }   
-        }
+       
 
         private void LnkLbl_Enderecos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
-            //int cpf;
-            //if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString(), out cpf))
-            //    if (dtGrid_Cliente.SelectedRows.Count == 1)
-            //    {
-
-            //}
+            
             //else
             //{
             //    MessageBox.Show(
@@ -163,23 +137,45 @@ namespace SistemaAdv.View
             //    );
             //}
 
-            OpenModal();
+            //OpenModal(cpf);
             UpdateDataGrid();
+        }
+
+        public void EditEndereco()
+        {
+            if (dtGrid_Cliente.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
+                int cpf;
+                if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString(), out cpf))
+                {
+
+                    OpenModal(cpf);
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "Nenhum usuario selecionado", "Aviso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+                );
+            }
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            EditEnderecoCliente();
+            EditEndereco();
         }
 
-        public void OpenModal()
+        public void OpenModal(int cpf = 0)
         {
-            ModalViewEndereco modal = new ModalViewEndereco();
-            modal.Show();
+            ModalCadCliente modal = new ModalCadCliente(cpf);
+            modal.ShowDialog();
 
             //Form modalBackground = new Form();
             ////using (ModalViewEndereco modal = new ModalViewEndereco(cpf))
-            //using (ModalViewEndereco modal = new ModalViewEndereco())
+            //using (ModalViewEndereco modal = new ModalViewEndereco(cpf))
             //{
             //    modalBackground.StartPosition = FormStartPosition.Manual;
             //    modalBackground.FormBorderStyle = FormBorderStyle.None;

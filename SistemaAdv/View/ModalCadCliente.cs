@@ -21,12 +21,33 @@ namespace SistemaAdv.View
 
         private ClienteService clienteService;
         private EnderecoService enderecoService;
-        public ModalCadCliente()
+        int cpf;
+
+        public ModalCadCliente(int cpf)
         {
             InitializeComponent();
             clienteService = new ClienteService();
+            this.cpf = cpf;
+            if (cpf != 0)
+            {
+                DataTable dt = new DataTable();
+                dt = clienteService.ReadCliente(cpf);
+                TxtBox_Natureza.Text = dt.Rows[0]["Natureza"].ToString();
+                TxtBox_Email.Text = dt.Rows[0]["Email"].ToString();
+                TxtBox_Telefone.Text = dt.Rows[0]["Telefone"].ToString();
+                TxtBox_Name.Text = dt.Rows[0]["Nome"].ToString();
+                TxtBox_PIS.Text = dt.Rows[0]["Pis"].ToString();
+                TxtBox_Nacionalidade.Text = dt.Rows[0]["Nacionalidade"].ToString();
+                TxtBox_Profissao.Text = dt.Rows[0]["Profissao"].ToString();
+                mskdBox_CPF.Text = dt.Rows[0]["CPF"].ToString();
+                mskdBox_RG.Text = dt.Rows[0]["RG"].ToString();
+                TxtBox_PosicaoCliente.Text = dt.Rows[0]["Posicao"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Erro");
+            }
         }
-
         private void Btn_BuscarCEP_Click(object sender, EventArgs e)
         {
             LocalizarCEP();
@@ -132,23 +153,18 @@ namespace SistemaAdv.View
             var novocliente = new Cliente(CPF, Nome,  RG,  Telefone,  Email,  EstadoCivil,
                        DataNasc,  Profissao,  Pis,  Nacionalidade,
                        Posicao,  Natureza, enderecoCliente);
-           // if (VerificarRG(RG))
 
-            if (VerificarCPF(CPF))
-
+            //if (ValidarCPf())
             if (VerificarCampos())
+            {
+                    clienteService.CreateCliente(novocliente);
+                    enderecoService.CreateEndereco(novocliente.EnderecoCliente);
+                    MessageBox.Show("Cliente cadastrado!");
+            }                
 
-                clienteService.CreateCliente(novocliente);
-            //enderecoService.CreateEndereco(novocliente.EnderecoCliente);
-
+            //else { MessageBox.Show("Erro"); }
             LimparCampos();
             this.Close();
-            //}            
-            
-            //if (VerificarCampos())
-            //{
-            //    MessageBox.Show("Erro");
-            //}
         }
 
         private bool VerificarCampos()
@@ -252,51 +268,8 @@ namespace SistemaAdv.View
             return true;
         }
 
-        //private bool VerificarRG(string rg)
-        //{
-        //    // Utilize uma expressão regular para validar o formato do RG
-        //    // A expressão regular abaixo considera um RG no formato "XX.XXX.XXX-X" ou "XXXXXXXXX"
-        //    // Você pode ajustar conforme necessário para atender aos padrões do seu país/região.
-        //    string rgPattern = @"^\d{1,2}\.\d{3}\.\d{3}-\d{1}$|^\d{9}$";
 
-        //    if (Regex.IsMatch(rg, rgPattern))
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("O campo do RG não está em um formato válido.");
-        //        return false;
-        //    }
-        //}
-
-
-        //private bool VerificarCPF(string cpf)
-        //{
-        //    // Utilize uma expressão regular para validar o formato do CPF
-        //    // A expressão regular abaixo considera um CPF no formato "XXX.XXX.XXX-XX" ou "XXXXXXXXXXX"
-        //    string cpfPattern = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
-
-        //    if (Regex.IsMatch(cpf, cpfPattern))
-        //    {
-        //        if (ValidarDigitoVerificadorCPF(cpf))
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("O CPF não é válido.");
-        //            return false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("O campo do CPF não está em um formato válido.");
-        //        return false;
-        //    }
-        //}
-
-        //public void ValidarCPf()
+        //public bool ValidarCPf()
         //{
         //    int[] multi1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2, };
         //    int[] multi2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -314,14 +287,14 @@ namespace SistemaAdv.View
         //    soma = 0;
 
 
-        //    for(int i=0; i < 9; i++)
+        //    for (int i = 0; i < 9; i++)
         //    {
-        //        soma += int.Parse(auxCPF[i].ToString())*multi1[1];
+        //        soma += int.Parse(auxCPF[i].ToString()) * multi1[1];
         //    }
 
         //    resto = soma % 11;
 
-        //    if(resto < 2)
+        //    if (resto < 2)
 
         //    {
         //        resto = 0;
@@ -336,7 +309,7 @@ namespace SistemaAdv.View
 
         //    soma = 0;
 
-        //    for( int i=0; i < 10; i++)
+        //    for (int i = 0; i < 10; i++)
         //    {
         //        soma += int.Parse(auxCPF[i].ToString()) * multi2[1];
         //    }
@@ -355,70 +328,16 @@ namespace SistemaAdv.View
 
         //    auxCPF = auxCPF + resto;
 
-        //    if(cpf == auxCPF)
+        //    if (cpf == auxCPF)
         //    {
-        //        MessageBox.Show("CPF valido");
+        //        MessageBox.Show("Certo");
+        //        return true;
         //    }
         //    else
         //    {
-        //        MessageBox.Show("CPF invalido");
+        //        MessageBox.Show("eRRO");
+        //        return false;
         //    }
-        //}
-
-        private bool ValidarDigitoVerificadorCPF(string cpf)
-        {
-            // Lógica para validar os dígitos verificadores do CPF
-            // Implemente a lógica de validação conforme necessário
-            // Você pode encontrar algoritmos de validação de CPF em diversas fontes
-            // Aqui está um exemplo simples para fins educativos:
-            // (Não é uma implementação completa, apenas ilustrativa)
-
-            // Remove caracteres não numéricos
-            cpf = new string(cpf.Where(char.IsDigit).ToArray());
-
-            if (cpf.Length != 11)
-            {
-                return false;
-            }
-
-            // Implemente a lógica de validação dos dígitos verificadores do CPF aqui...
-
-            return true; // Retorna true se os dígitos verificadores são válidos
-        }
-
-        //TxtBox_Telefone.Text = "Nome";
-        //TxtBox_UserName.Text = "User Name";
-        //    // Outros campos...
-
-        //    // Chamada para verificar os campos
-        //    bool camposValidos = VerificarCampos(this);
-        //    if (!camposValidos)
-        //    {
-        //        // Campos inválidos, tome as medidas apropriadas
-        //    }
-        //    else
-        //    {
-        //        // Campos válidos, prossiga com a lógica desejada
-        //    }
-
-        //private bool VerificarCampos(Control container)
-        //{
-        //    foreach (Control control in container.Controls)
-        //    {
-        //        if (control is TextBox textBox && string.IsNullOrEmpty(textBox.Text))
-        //        {
-        //            MessageBox.Show($"O campo {textBox.Tag} não pode estar vazio");
-        //            return false;
-        //        }
-        //        else if (control is ComboBox comboBox && string.IsNullOrEmpty(comboBox.Text))
-        //        {
-        //            MessageBox.Show($"O campo {comboBox.Tag} não pode estar vazio");
-        //            return false;
-        //        }
-        //        Adicione mais verificações conforme necessário, por exemplo, para MaskedTextBox, DateTimePicker, etc.
-        //    }
-
-        //    return true;
         //}
 
 

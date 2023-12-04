@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection;
-
+using CrystalDecisions.CrystalReports.Engine;
 namespace SistemaAdv
 {
     public partial class TelaCadUser : Form
@@ -169,6 +169,50 @@ namespace SistemaAdv
             }
 
         }
+
+        private void LnkLbl_Relatorio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //if (dtGrid_User.SelectedRows.Count == 1)
+            //{
+            //    DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
+            //    int id;
+            //    if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+            //    {
+            //        DataTable dt = new DataTable();
+            //        dt = funcionarioService.GetFuncionario(id);
+
+            //    }
+            //}
+            try
+            {
+                if (dtGrid_User.SelectedRows.Count == 1)
+                {
+                    DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
+                    int id;
+                    if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+                    {
+                        // Obter os dados do serviço
+                        DataTable dt = funcionarioService.GetFuncionario(id);
+
+                        // Carregar os dados no relatório
+                        ReportDocument reportDocument = new ReportDocument();
+                        reportDocument.Load("C:\\Users\\lucas\\Documents\\SistemaAdv\\SistemaAdv\\Relatorios\\Relatorio.rpt"); // Substitua pelo caminho do seu relatório
+
+                        reportDocument.SetDataSource(dt);
+
+                        // Exibir o relatório
+                        ////FormRelatorio formRelatorio = new FormRelatorio();
+                        //formRelatorio.crystalReportViewer1.ReportSource = reportDocument;
+                        //formRelatorio.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gerar relatório: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void PicBox_CadUser_Click(object sender, EventArgs e)
         {
            OpenModal();

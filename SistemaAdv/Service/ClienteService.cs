@@ -26,6 +26,7 @@ namespace SistemaAdv.Service
             //{
             //    throw new Exception("Erro: CPF já existe na base de dados.");
             //}
+
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
 
@@ -59,8 +60,8 @@ namespace SistemaAdv.Service
             {
                 connection.CloseConnection();
             }
-            //EnderecoService enderecoService = new EnderecoService();  // Certifique-se de inicializar a instância corretamente
-            //enderecoService.CreateEndereco(novoCliente.EnderecoCliente);
+            EnderecoService enderecoService = new EnderecoService();  // Certifique-se de inicializar a instância corretamente
+            enderecoService.CreateEndereco(novoCliente.EnderecoCliente);
             MessageBox.Show(
             "Cadastrado com Sucesso",
             "CADASTRO",
@@ -69,14 +70,14 @@ namespace SistemaAdv.Service
             );
         }
 
-        private bool ClienteExiste(string cpf)
-        {
-            // Verificar se o CPF já existe na tabela ClientesFisicos
-            sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
-            sqlCommand.Parameters.AddWithValue("@CPF", cpf);
-            int count = 1;
-            return count > 0;
-        }
+        //private bool ClienteExiste(string cpf)
+        //{
+        //    // Verificar se o CPF já existe na tabela ClientesFisicos
+        //    sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
+        //    sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+        //    int count = 1;
+        //    return count > 0;
+        //}
 
         public DataTable ReadCliente()
         {
@@ -130,6 +131,34 @@ namespace SistemaAdv.Service
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao ler colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
+        public DataTable ReadCliente(int cpf)
+        {
+            connection.OpenConnection();
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.Parameters.Clear();
+            sqlCommand.CommandText = @"select * from Funcionarios where CPF = @cpf";
+
+            sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
             }
             catch (Exception err)
             {

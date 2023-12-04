@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -32,10 +33,23 @@ namespace SistemaAdv
             TxtBox_UserName.Clear();
             TxtBox_Password.Clear();
         }
+
+        private string CriptografarSenha(string senha)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(senha);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return BitConverter.ToString(hash).Replace("-", "").ToLower();
+            }
+        }
+
         private void Btn_Login_Click(object sender, EventArgs e)
         {
-             var user = TxtBox_UserName.Text;
-             string pass = TxtBox_Password.Text;
+            var user = TxtBox_UserName.Text;
+            string pass = TxtBox_Password.Text;
+            string senhaCrip = CriptografarSenha(pass);
+            string senhaArm = loginService.GetPassword(user);
 
             if (string.IsNullOrEmpty(user))
             {
@@ -47,6 +61,7 @@ namespace SistemaAdv
                 MessageBox.Show("A senha não pode estar vazia");
             }
 
+            
             try
             {
                 //string senhaCriptografada = ModalCalUser.CriptografarSenha(pass);
@@ -55,10 +70,13 @@ namespace SistemaAdv
                 {
                     if (loginService.ValidatePassword(user, pass))
                     {
-                        TelaInicial telaInicial = new TelaInicial();
-                        telaInicial.Show();                             
-                        LimparCampos();
-                        loginService.IsLoggedIn = true;
+                        if(senhaCrip == senhaArm)
+                        {
+                            TelaInicial telaInicial = new TelaInicial();
+                            telaInicial.Show();
+                            LimparCampos();
+                            loginService.IsLoggedIn = true;
+                        }                        
                     }
                     else
                     {

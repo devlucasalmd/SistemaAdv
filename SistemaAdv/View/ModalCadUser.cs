@@ -19,19 +19,19 @@ namespace SistemaAdv.View
     public partial class ModalCadUser : Form
     {
 
+        private EnderecoService enderecoService;
         private FuncionarioService funcionarioService;
         int id;
 
         public ModalCadUser(int id)
         {
             InitializeComponent();
-            funcionarioService = new FuncionarioService();
-            CmbBox_Status.SelectedItem = "Ativo";
+            enderecoService = new EnderecoService();
             this.id = id;
             if(id != 0)
             {
                 DataTable dt = new DataTable();
-                dt = funcionarioService.GetFuncionario(id);
+                dt = enderecoService.GetEndereco(id);
                 TxtBox_Name.Text = dt.Rows[0]["Nome"].ToString();
                 TxtBox_UserName.Text = dt.Rows[0]["UserName"].ToString();
                 TxtBox_Email.Text = dt.Rows[0]["Email"].ToString();
@@ -69,7 +69,7 @@ namespace SistemaAdv.View
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
             string senhaCriptografada = CriptografarSenha(TxtBox_Password.Text);
-
+            funcionarioService = new FuncionarioService();
             string Nome = TxtBox_Name.Text;
             string UserName = TxtBox_UserName.Text;
             string Senha = senhaCriptografada;

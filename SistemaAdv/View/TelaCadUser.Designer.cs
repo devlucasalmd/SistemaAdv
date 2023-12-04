@@ -43,6 +43,8 @@
             this.dtGrid_User = new System.Windows.Forms.DataGridView();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
+            this.LnkLbl_Relatorio = new System.Windows.Forms.LinkLabel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -190,11 +192,31 @@
             this.BtnDelete.UseVisualStyleBackColor = true;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
+            // LnkLbl_Relatorio
+            // 
+            this.LnkLbl_Relatorio.AutoSize = true;
+            this.LnkLbl_Relatorio.LinkColor = System.Drawing.Color.Black;
+            this.LnkLbl_Relatorio.Location = new System.Drawing.Point(702, 71);
+            this.LnkLbl_Relatorio.Name = "LnkLbl_Relatorio";
+            this.LnkLbl_Relatorio.Size = new System.Drawing.Size(78, 13);
+            this.LnkLbl_Relatorio.TabIndex = 32;
+            this.LnkLbl_Relatorio.TabStop = true;
+            this.LnkLbl_Relatorio.Text = "Gerar Relatorio";
+            this.LnkLbl_Relatorio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkLbl_Relatorio_LinkClicked);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // TelaCadUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LnkLbl_Relatorio);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.PicBox_CadUser);
@@ -207,7 +229,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaCadUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "TelaCadUser";
+            this.Text = "87";
             this.Activated += new System.EventHandler(this.TelaCadUser_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_CadUser)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -231,5 +253,7 @@
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Label Lbl_Inativo;
+        private System.Windows.Forms.LinkLabel LnkLbl_Relatorio;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

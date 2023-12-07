@@ -53,6 +53,8 @@ namespace SistemaAdv.Service
             }
             catch (Exception err)
             {
+                
+                
                 throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
                     + err.Message);
             }

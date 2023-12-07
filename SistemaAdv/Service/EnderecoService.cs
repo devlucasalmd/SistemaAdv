@@ -48,13 +48,6 @@ namespace SistemaAdv.Service
             {
                 connection.CloseConnection();
             }
-
-            MessageBox.Show(
-            "Cadastrado com Sucesso",
-            "CADASTRO",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information
-            );
         }
 
         public DataTable GetEndereco(int id)

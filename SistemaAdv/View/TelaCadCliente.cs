@@ -170,29 +170,29 @@ namespace SistemaAdv.View
 
         public void OpenModal(int cpf = 0)
         {
-            ModalCadCliente modal = new ModalCadCliente(cpf);
-            modal.ShowDialog();
+            //ModalCadCliente modal = new ModalCadCliente(cpf);
+            //modal.ShowDialog();
 
-            //Form modalBackground = new Form();
-            ////using (ModalViewEndereco modal = new ModalViewEndereco(cpf))
+            Form modalBackground = new Form();
             //using (ModalViewEndereco modal = new ModalViewEndereco(cpf))
-            //{
-            //    modalBackground.StartPosition = FormStartPosition.Manual;
-            //    modalBackground.FormBorderStyle = FormBorderStyle.None;
-            //    modalBackground.Opacity = .50d;
-            //    modalBackground.BackColor = Color.Black;
-            //    modalBackground.Size = this.Size;
-            //    modalBackground.Location = this.Location;
-            //    modalBackground.ShowInTaskbar = false;
-            //    modalBackground.Show();
-            //    modal.Owner = modalBackground;
+            using (ModalCadCliente modal = new ModalCadCliente(cpf))
+            {
+                modalBackground.StartPosition = FormStartPosition.Manual;
+                modalBackground.FormBorderStyle = FormBorderStyle.None;
+                modalBackground.Opacity = .50d;
+                modalBackground.BackColor = Color.Black;
+                modalBackground.Size = this.Size;
+                modalBackground.Location = this.Location;
+                modalBackground.ShowInTaskbar = false;
+                modalBackground.Show();
+                modal.Owner = modalBackground;
 
-            //    parentX = this.Location.X;
-            //    parentY = this.Location.Y;
+                parentX = this.Location.X;
+                parentY = this.Location.Y;
 
-            //    modal.ShowDialog();
-            //    modalBackground.Dispose();
-            //}
+                modal.ShowDialog();
+                modalBackground.Dispose();
+            }
         }
     }
 }

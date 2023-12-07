@@ -43,10 +43,6 @@ namespace SistemaAdv.View
                 mskdBox_RG.Text = dt.Rows[0]["RG"].ToString();
                 TxtBox_PosicaoCliente.Text = dt.Rows[0]["Posicao"].ToString();
             }
-            else
-            {
-                MessageBox.Show("Erro");
-            }
         }
         private void Btn_BuscarCEP_Click(object sender, EventArgs e)
         {
@@ -158,8 +154,6 @@ namespace SistemaAdv.View
             if (VerificarCampos())
             {
                     clienteService.CreateCliente(novocliente);
-                    enderecoService.CreateEndereco(novocliente.EnderecoCliente);
-                    MessageBox.Show("Cliente cadastrado!");
             }                
 
             //else { MessageBox.Show("Erro"); }

@@ -18,30 +18,25 @@ namespace SistemaAdv.View
 {
     public partial class ModalCadUser : Form
     {
-
-        private EnderecoService enderecoService;
         private FuncionarioService funcionarioService;
         int id;
 
         public ModalCadUser(int id)
         {
             InitializeComponent();
-            enderecoService = new EnderecoService();
+            CmbBox_Status.SelectedItem = "Ativo";
+            funcionarioService = new FuncionarioService();
             this.id = id;
             if(id != 0)
             {
                 DataTable dt = new DataTable();
-                dt = enderecoService.GetEndereco(id);
+                dt = funcionarioService.GetFuncionario(id);
                 TxtBox_Name.Text = dt.Rows[0]["Nome"].ToString();
                 TxtBox_UserName.Text = dt.Rows[0]["UserName"].ToString();
                 TxtBox_Email.Text = dt.Rows[0]["Email"].ToString();
                 CmbBox_Cargo.Text = dt.Rows[0]["Cargo"].ToString();
                 CmbBox_Status.SelectedItem = dt.Rows[0]["Status"].ToString();
-            }
-            if(CmbBox_Cargo.Text == "Estagiario (a)")
-            {
-                TxtBox_UserName.Text = "est-";
-            }
+            }          
         }
 
 

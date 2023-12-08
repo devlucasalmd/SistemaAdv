@@ -51,19 +51,9 @@ namespace SistemaAdv.View
             CmbBox_Status.ResetText();
         }
 
-        public static string CriptografarSenha(string senha)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(senha);
-                byte[] hashBytes = sha256.ComputeHash(bytes);
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-            }
-        }
-
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            string senhaCriptografada = CriptografarSenha(TxtBox_Password.Text);
+            string senhaCriptografada = Util.CriptografarSenha(TxtBox_Password.Text);
             funcionarioService = new FuncionarioService();
             string Nome = TxtBox_Name.Text;
             string UserName = TxtBox_UserName.Text;

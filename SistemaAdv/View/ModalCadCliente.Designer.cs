@@ -456,10 +456,11 @@
             // mskdBox_CPF
             // 
             this.mskdBox_CPF.Location = new System.Drawing.Point(141, 119);
-            this.mskdBox_CPF.Mask = "000.000.000-00";
+            this.mskdBox_CPF.Mask = "000,000,000-00";
             this.mskdBox_CPF.Name = "mskdBox_CPF";
             this.mskdBox_CPF.Size = new System.Drawing.Size(100, 20);
             this.mskdBox_CPF.TabIndex = 108;
+            this.mskdBox_CPF.Leave += new System.EventHandler(this.mskdBox_CPF_Leave);
             // 
             // mskdBox_RG
             // 

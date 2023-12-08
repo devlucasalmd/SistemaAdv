@@ -150,7 +150,7 @@ namespace SistemaAdv.View
                        DataNasc,  Profissao,  Pis,  Nacionalidade,
                        Posicao,  Natureza, enderecoCliente);
 
-            //if (ValidarCPf())
+
             if (VerificarCampos())
             {
                     clienteService.CreateCliente(novocliente);
@@ -274,7 +274,7 @@ namespace SistemaAdv.View
         //    int resto;
 
         //    cpf = cpf.Trim();
-        //    cpf = cpf.Replace(",", "").Replace("-", "");
+        //    cpf = cpf.Replace(".", "").Replace("-", "");
 
         //    auxCPF = cpf.Substring(0, 9);
 
@@ -329,11 +329,57 @@ namespace SistemaAdv.View
         //    }
         //    else
         //    {
-        //        MessageBox.Show("eRRO");
+        //        MessageBox.Show("eRRO" + cpf + " " + auxCPF);
         //        return false;
         //    }
         //}
 
+        public bool ValidarCpf()
+        {
+            string cpf = mskdBox_CPF.Text;
+            string auxCPF;
+            int resto;
 
+            cpf = cpf.Trim();
+            cpf = cpf.Replace(".", "").Replace("-", "");
+
+            auxCPF = cpf.Substring(0, 9);
+            if (cpf.Length != 11)
+                return false;
+            else
+            {
+                int soma = 0;
+                for (int i = 0; i < 9; i++)
+                    soma += (Convert.ToInt32(cpf[i]) - 48) * (10 - i);
+
+                int digito = (11 - (soma % 11)) > 9 ? 0 : 11 - (soma % 11);
+                if (digito == Convert.ToInt32(cpf[9] - 48))
+                {
+                    soma = 0;
+                    for (int i = 0; i < 10; i++)
+                        soma += (Convert.ToInt32(cpf[i]) - 48) * (11 - i);
+
+                    digito = (11 - (soma % 11)) > 9 ? 0 : 11 - (soma % 11);
+                    if (digito == Convert.ToInt32(cpf[10] - 48))
+                    {
+                        MessageBox.Show("Certo");
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("eRRO" + cpf + " " + auxCPF);
+                        return false;
+                    }
+
+                }
+                return false;
+                
+            }
+        }
+
+            private void mskdBox_CPF_Leave(object sender, EventArgs e)
+        {
+            if (!ValidarCpf()) { MessageBox.Show("CPf invalido"); }
+        }
     }
 }

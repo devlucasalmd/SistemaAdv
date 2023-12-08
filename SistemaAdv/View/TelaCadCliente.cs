@@ -147,9 +147,10 @@ namespace SistemaAdv.View
             {
                 DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
                 int cpf;
-                if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString(), out cpf))
+                //    cpf = cpf.Replace(",", "").Replace("-", "");
+                if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString().Replace(",", "").Replace("-", ""), out cpf))
                 {
-
+                    MessageBox.Show("CPF");
                     OpenModal(cpf);
                 }
             }

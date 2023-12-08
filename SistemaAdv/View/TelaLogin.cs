@@ -34,21 +34,12 @@ namespace SistemaAdv
             TxtBox_Password.Clear();
         }
 
-        private string CriptografarSenha(string senha)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(senha);
-                byte[] hash = sha256.ComputeHash(bytes);
-                return BitConverter.ToString(hash).Replace("-", "").ToLower();
-            }
-        }
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
             var user = TxtBox_UserName.Text;
             string pass = TxtBox_Password.Text;
-            string senhaCrip = CriptografarSenha(pass);
+            string senhaCrip = Util.CriptografarSenha(pass);
             string senhaArm = loginService.GetPassword(user);
 
             if (string.IsNullOrEmpty(user))
@@ -68,15 +59,12 @@ namespace SistemaAdv
 
                 if (loginService.UserExists(user))
                 {
-                    if (loginService.ValidatePassword(user, pass))
+                    if (loginService.ValidatePassword(user, senhaCrip))
                     {
-                        if(senhaCrip == senhaArm)
-                        {
                             TelaInicial telaInicial = new TelaInicial();
                             telaInicial.Show();
                             LimparCampos();
-                            loginService.IsLoggedIn = true;
-                        }                        
+                            loginService.IsLoggedIn = true;                    
                     }
                     else
                     {

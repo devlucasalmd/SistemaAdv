@@ -22,10 +22,10 @@ namespace SistemaAdv.Service
         //retornar int para devolver id do funcionario, para setar permissão
         public void CreateCliente(Cliente novoCliente)
         {
-            //if (ClienteExiste(novoCliente.CPF))
-            //{
-            //    throw new Exception("Erro: CPF já existe na base de dados.");
-            //}
+            if (ClienteExiste(novoCliente.CPF))
+            {
+               MessageBox.Show("Erro: CPF já existe na base de dados.");
+            }
 
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
@@ -72,14 +72,61 @@ namespace SistemaAdv.Service
             );
         }
 
-        //private bool ClienteExiste(string cpf)
-        //{
-        //    // Verificar se o CPF já existe na tabela ClientesFisicos
-        //    sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
-        //    sqlCommand.Parameters.AddWithValue("@CPF", cpf);
-        //    int count = 1;
-        //    return count > 0;
-        //}
+        public bool UpdateCliente(Cliente novoCliente)
+        {
+                connection.OpenConnection();
+
+                sqlCommand.Connection = connection.ReturnConnection();
+                sqlCommand.CommandText = @"Update ClientesFisicos SET (@CPF, @Nome, @RG, @Telefone, @Email, @EstadoCivil,
+            @DataNasc, @Profissao, @Pis, @Nacionalidade, @Posicao, @Natureza)";
+
+                sqlCommand.Parameters.AddWithValue("@CPF", novoCliente.CPF);
+                sqlCommand.Parameters.AddWithValue("@Nome", novoCliente.Nome);
+                sqlCommand.Parameters.AddWithValue("@RG", novoCliente.RG);
+                sqlCommand.Parameters.AddWithValue("@Telefone", novoCliente.Telefone);
+                sqlCommand.Parameters.AddWithValue("@Email", novoCliente.Email);
+                sqlCommand.Parameters.AddWithValue("@EstadoCivil", novoCliente.EstadoCivil);
+                sqlCommand.Parameters.AddWithValue("@DataNasc", novoCliente.DataNasc);
+                sqlCommand.Parameters.AddWithValue("@Profissao", novoCliente.Profissao);
+                sqlCommand.Parameters.AddWithValue("@Pis", novoCliente.Pis);
+                sqlCommand.Parameters.AddWithValue("@Nacionalidade", novoCliente.Nacionalidade);
+                sqlCommand.Parameters.AddWithValue("@Posicao", novoCliente.Posicao);
+                sqlCommand.Parameters.AddWithValue("@Natureza", novoCliente.Natureza);
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine(er.Message);
+                return false;
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+
+            EnderecoService enderecoService = new EnderecoService();  // Certifique-se de inicializar a instância corretamente
+            enderecoService.UpdateEndereco(novoCliente.EnderecoCliente);
+            MessageBox.Show(
+            "Cadastrado com Sucesso",
+            "CADASTRO",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information
+            );
+
+        }
+
+
+        public bool ClienteExiste(string cpf)
+        {
+            // Verificar se o CPF já existe na tabela ClientesFisicos
+            sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
+            sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+            int count = 1;
+            return count > 0;
+        }
 
         public DataTable ReadCliente()
         {
@@ -145,12 +192,12 @@ namespace SistemaAdv.Service
             }
         }
 
-        public DataTable ReadCliente(int cpf)
+        public DataTable ReadCliente(string cpf)
         {
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.Parameters.Clear();
-            sqlCommand.CommandText = @"select * from Funcionarios where CPF = @cpf";
+            sqlCommand.CommandText = @"select * from ClientesFisicos where CPF = @cpf";
 
             sqlCommand.Parameters.AddWithValue("@CPF", cpf);
 

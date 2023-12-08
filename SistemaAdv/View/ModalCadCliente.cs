@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SistemaAdv.View
@@ -21,18 +22,19 @@ namespace SistemaAdv.View
 
         private ClienteService clienteService;
         private EnderecoService enderecoService;
-        int cpf;
+        string cpf;
 
-        public ModalCadCliente(int cpf)
+        public ModalCadCliente(string cpf)
         {
             InitializeComponent();
             clienteService = new ClienteService();
             this.cpf = cpf;
-            if (cpf != 0)
+            if (cpf != "")
             {
                 DataTable dt = new DataTable();
                 dt = clienteService.ReadCliente(cpf);
                 TxtBox_Natureza.Text = dt.Rows[0]["Natureza"].ToString();
+                cmbBox_EstadoCivil.Text = dt.Rows[0]["EstadoCivil"].ToString();
                 TxtBox_Email.Text = dt.Rows[0]["Email"].ToString();
                 TxtBox_Telefone.Text = dt.Rows[0]["Telefone"].ToString();
                 TxtBox_Name.Text = dt.Rows[0]["Nome"].ToString();
@@ -42,6 +44,13 @@ namespace SistemaAdv.View
                 mskdBox_CPF.Text = dt.Rows[0]["CPF"].ToString();
                 mskdBox_RG.Text = dt.Rows[0]["RG"].ToString();
                 TxtBox_PosicaoCliente.Text = dt.Rows[0]["Posicao"].ToString();
+                //mskdBox_CEP
+                //TxtBox_Logadouro
+                //TxtBox_Numero
+                //TxtBox_Comple
+                //TxtBox_Bairro
+                //TxtBox_Municipio
+                //TxtBox_Estado
             }
         }
         private void Btn_BuscarCEP_Click(object sender, EventArgs e)
@@ -150,11 +159,23 @@ namespace SistemaAdv.View
                        DataNasc,  Profissao,  Pis,  Nacionalidade,
                        Posicao,  Natureza, enderecoCliente);
 
-
             if (VerificarCampos())
             {
+                if (cpf != "")
+                {
+                    if (clienteService.UpdateCliente(novocliente))
+                    {
+                        MessageBox.Show("Modificado com sucesso");
+                        this.Close();
+                    }
+                }
+                else
+                {
                     clienteService.CreateCliente(novocliente);
-            }                
+                    LimparCampos();
+                    this.Close();
+                }
+            }              
 
             //else { MessageBox.Show("Erro"); }
             LimparCampos();
@@ -362,12 +383,10 @@ namespace SistemaAdv.View
                     digito = (11 - (soma % 11)) > 9 ? 0 : 11 - (soma % 11);
                     if (digito == Convert.ToInt32(cpf[10] - 48))
                     {
-                        MessageBox.Show("Certo");
                         return true;
                     }
                     else
                     {
-                        MessageBox.Show("eRRO" + cpf + " " + auxCPF);
                         return false;
                     }
 
@@ -377,9 +396,21 @@ namespace SistemaAdv.View
             }
         }
 
-            private void mskdBox_CPF_Leave(object sender, EventArgs e)
+        public bool VerificarCPF()
+        {
+            string cpf = mskdBox_CPF.Text;
+            if (clienteService.ClienteExiste(cpf))
+            {
+                MessageBox.Show("CPF já existe na base de dados.");
+            }
+
+                return true;            
+        }
+
+        private void mskdBox_CPF_Leave(object sender, EventArgs e)
         {
             if (!ValidarCpf()) { MessageBox.Show("CPf invalido"); }
+            VerificarCPF();
         }
     }
 }

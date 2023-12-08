@@ -23,7 +23,7 @@ namespace SistemaAdv
         public object ModalCalUser { get; private set; }
 
         public TelaLogin()
-        {
+        {   
             InitializeComponent();
             loginService = new LoginService();
         }
@@ -61,6 +61,8 @@ namespace SistemaAdv
                 {
                     if (loginService.ValidatePassword(user, senhaCrip))
                     {
+                            TelaLogin telaLogin = new TelaLogin();
+                            telaLogin.Visible = false;
                             TelaInicial telaInicial = new TelaInicial();
                             telaInicial.Show();
                             LimparCampos();

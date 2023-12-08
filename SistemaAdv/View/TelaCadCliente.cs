@@ -44,7 +44,7 @@ namespace SistemaAdv.View
 
         private void AbrirModalClienteFisico()
         {
-            OpenModal();
+            OpenModal("");
             UpdateDataGrid();
         }
 
@@ -141,18 +141,15 @@ namespace SistemaAdv.View
             UpdateDataGrid();
         }
 
-        public void EditEndereco()
+        public void EditCliente()
         {
             if (dtGrid_Cliente.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
-                int cpf;
-                //    cpf = cpf.Replace(",", "").Replace("-", "");
-                if (int.TryParse(selectedRow.Cells["CPF"].Value.ToString().Replace(",", "").Replace("-", ""), out cpf))
-                {
-                    MessageBox.Show("CPF");
-                    OpenModal(cpf);
-                }
+                int cpfColumn = 0;
+                string cpf = selectedRow.Cells[cpfColumn].Value.ToString();
+                    //MessageBox.Show(cpf);
+                    OpenModal(cpf);                
             }
             else
             {
@@ -166,10 +163,10 @@ namespace SistemaAdv.View
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            EditEndereco();
+            EditCliente();
         }
 
-        public void OpenModal(int cpf = 0)
+        public void OpenModal(string cpf)
         {
             //ModalCadCliente modal = new ModalCadCliente(cpf);
             //modal.ShowDialog();

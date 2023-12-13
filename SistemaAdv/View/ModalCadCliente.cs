@@ -396,21 +396,21 @@ namespace SistemaAdv.View
             }
         }
 
-        public bool VerificarCPF()
-        {
-            string cpf = mskdBox_CPF.Text;
-            if (clienteService.ClienteExiste(cpf))
-            {
-                MessageBox.Show("CPF já existe na base de dados.");
-            }
+        //public bool VerificarCPF()
+        //{
+        //    string cpf = mskdBox_CPF.Text;
+        //    if (clienteService.ClienteExiste(cpf))
+        //    {
+        //        MessageBox.Show("CPF já existe na base de dados.");
+        //    }
 
-                return true;            
-        }
+        //        return true;            
+        //}
 
         private void mskdBox_CPF_Leave(object sender, EventArgs e)
         {
             if (!ValidarCpf()) { MessageBox.Show("CPf invalido"); }
-            VerificarCPF();
+            //VerificarCPF();
         }
     }
 }

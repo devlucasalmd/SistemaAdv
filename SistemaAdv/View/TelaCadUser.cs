@@ -17,6 +17,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection;
 using CrystalDecisions.CrystalReports.Engine;
+using System.Drawing.Printing;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
+
 namespace SistemaAdv
 {
     public partial class TelaCadUser : Form
@@ -172,45 +175,62 @@ namespace SistemaAdv
 
         private void LnkLbl_Relatorio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //if (dtGrid_User.SelectedRows.Count == 1)
-            //{
-            //    DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
-            //    int id;
-            //    if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
-            //    {
-            //        DataTable dt = new DataTable();
-            //        dt = funcionarioService.GetFuncionario(id);
-
-            //    }
-            //}
-            try
             {
-                if (dtGrid_User.SelectedRows.Count == 1)
+                PrintDocument pd = new PrintDocument();
+                pd.PrintPage += new PrintPageEventHandler(this.DesenharRelatorio);
+
+                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+                previewDialog.Document = pd;
+                previewDialog.ShowDialog();
+            }           
+        }
+
+        private void DesenharRelatorio(object sender, PrintPageEventArgs e)
+        {
+            // Desenhe o conteúdo do relatório usando GDI+
+            Graphics g = e.Graphics;
+            Font fonte = new Font("Arial", 12);
+            float linhaAtual = 20;
+            DataTable dados = null;
+
+            if (dtGrid_User.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
+                int id;
+                if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
                 {
-                    DataGridViewRow selectedRow = dtGrid_User.SelectedRows[0];
-                    int id;
-                    if (int.TryParse(selectedRow.Cells["Id"].Value.ToString(), out id))
+                   dados = funcionarioService.GetFuncionario(id);
+                    foreach (DataRow row in dados.Rows)
                     {
-                        // Obter os dados do serviço
-                        DataTable dt = funcionarioService.GetFuncionario(id);
+                        g.DrawString($"Nome: {row["Nome"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                        linhaAtual += 20;
 
-                        // Carregar os dados no relatório
-                        ReportDocument reportDocument = new ReportDocument();
-                        reportDocument.Load("C:\\Users\\lucas\\Documents\\SistemaAdv\\SistemaAdv\\Relatorios\\Relatorio.rpt"); // Substitua pelo caminho do seu relatório
+                        g.DrawString($"UserName: {row["UserName"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                        linhaAtual += 20;
 
-                        reportDocument.SetDataSource(dt);
+                        g.DrawString($"Email: {row["Email"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                        linhaAtual += 20;
 
-                        // Exibir o relatório
-                        ////FormRelatorio formRelatorio = new FormRelatorio();
-                        //formRelatorio.crystalReportViewer1.ReportSource = reportDocument;
-                        //formRelatorio.ShowDialog();
+                        g.DrawString($"Cargo: {row["Cargo"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                        linhaAtual += 20;
+
+                        g.DrawString($"Status: {row["Status"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                        linhaAtual += 20;
+
+                        // Adicione mais campos conforme necessário
                     }
                 }
+                else
+                {
+                    MessageBox.Show(
+                    "Nenhum usuario selecionado", "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao gerar relatório: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+
         }
 
         private void PicBox_CadUser_Click(object sender, EventArgs e)

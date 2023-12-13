@@ -22,10 +22,10 @@ namespace SistemaAdv.Service
         //retornar int para devolver id do funcionario, para setar permissão
         public void CreateCliente(Cliente novoCliente)
         {
-            if (ClienteExiste(novoCliente.CPF))
-            {
-               MessageBox.Show("Erro: CPF já existe na base de dados.");
-            }
+            //if (ClienteExiste(novoCliente.CPF))
+            //{
+            //   MessageBox.Show("Erro: CPF já existe na base de dados.");
+            //}
 
             connection.OpenConnection();
             sqlCommand.Connection = connection.ReturnConnection();
@@ -77,8 +77,9 @@ namespace SistemaAdv.Service
                 connection.OpenConnection();
 
                 sqlCommand.Connection = connection.ReturnConnection();
-                sqlCommand.CommandText = @"Update ClientesFisicos SET (@CPF, @Nome, @RG, @Telefone, @Email, @EstadoCivil,
-            @DataNasc, @Profissao, @Pis, @Nacionalidade, @Posicao, @Natureza)";
+                sqlCommand.Parameters.Clear();
+                sqlCommand.CommandText = @"Update ClientesFisicos SET CPF = @CPF, Nome = @Nome, RG = @RG,Telefone = @Telefone, Email = @Email, EstadoCivil = @EstadoCivil,
+                DataNasc = @DataNasc, Profissao = @Profissao, Pis = @Pis, Nacionalidade = @Nacionalidade, Posicao = @Posicao, Natureza = @Natureza)";
 
                 sqlCommand.Parameters.AddWithValue("@CPF", novoCliente.CPF);
                 sqlCommand.Parameters.AddWithValue("@Nome", novoCliente.Nome);
@@ -119,14 +120,14 @@ namespace SistemaAdv.Service
         }
 
 
-        public bool ClienteExiste(string cpf)
-        {
-            // Verificar se o CPF já existe na tabela ClientesFisicos
-            sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
-            sqlCommand.Parameters.AddWithValue("@CPF", cpf);
-            int count = 1;
-            return count > 0;
-        }
+        //public bool ClienteExiste(string cpf)
+        //{
+        //    // Verificar se o CPF já existe na tabela ClientesFisicos
+        //    sqlCommand.CommandText = "SELECT COUNT(*) FROM ClientesFisicos WHERE CPF = @CPF";
+        //    sqlCommand.Parameters.AddWithValue("@CPF", cpf);
+        //    int count = 1;
+        //    return count > 0;
+        //}
 
         public DataTable ReadCliente()
         {

@@ -6,7 +6,7 @@
 - [x]  MessageBox para confirmação de cadastros;
 - [x]  Tela de Login;
 - [x]  Criptografia de senha (sugestão SHA-256);
-- [ ]  Geração de relatório em PDF ou CSV;
+- [X]  Geração de relatório em PDF ou CSV;
 - [x]  Uso de ao menos 5 telas difentes.
 - [x]  BÔNUS: implemente funcionalidades não previstas e aumente em até 10% sua nota do projeto.
 

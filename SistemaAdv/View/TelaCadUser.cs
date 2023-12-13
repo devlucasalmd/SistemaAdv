@@ -217,8 +217,8 @@ namespace SistemaAdv
                         g.DrawString($"Status: {row["Status"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
                         linhaAtual += 20;
 
-                        // Adicione mais campos conforme necessário
                     }
+
                 }
                 else
                 {

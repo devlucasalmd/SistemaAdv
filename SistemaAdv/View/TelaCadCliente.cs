@@ -148,8 +148,9 @@ namespace SistemaAdv.View
                 DataGridViewRow selectedRow = dtGrid_Cliente.SelectedRows[0];
                 int cpfColumn = 0;
                 string cpf = selectedRow.Cells[cpfColumn].Value.ToString();
-                    //MessageBox.Show(cpf);
-                    OpenModal(cpf);                
+                    OpenModal(cpf);
+                    UpdateDataGrid();
+
             }
             else
             {

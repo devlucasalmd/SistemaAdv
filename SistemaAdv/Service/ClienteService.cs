@@ -78,8 +78,9 @@ namespace SistemaAdv.Service
 
                 sqlCommand.Connection = connection.ReturnConnection();
                 sqlCommand.Parameters.Clear();
-                sqlCommand.CommandText = @"Update ClientesFisicos SET CPF = @CPF, Nome = @Nome, RG = @RG,Telefone = @Telefone, Email = @Email, EstadoCivil = @EstadoCivil,
-                DataNasc = @DataNasc, Profissao = @Profissao, Pis = @Pis, Nacionalidade = @Nacionalidade, Posicao = @Posicao, Natureza = @Natureza)";
+                sqlCommand.CommandText = @"UPDATE ClientesFisicos SET Nome = @Nome, RG = @RG, Telefone = @Telefone, Email = @Email, EstadoCivil = @EstadoCivil,
+                            DataNasc = @DataNasc, Profissao = @Profissao, Pis = @Pis, Nacionalidade = @Nacionalidade, Posicao = @Posicao, Natureza = @Natureza
+                            WHERE CPF = @CPF";
 
                 sqlCommand.Parameters.AddWithValue("@CPF", novoCliente.CPF);
                 sqlCommand.Parameters.AddWithValue("@Nome", novoCliente.Nome);
@@ -93,6 +94,12 @@ namespace SistemaAdv.Service
                 sqlCommand.Parameters.AddWithValue("@Nacionalidade", novoCliente.Nacionalidade);
                 sqlCommand.Parameters.AddWithValue("@Posicao", novoCliente.Posicao);
                 sqlCommand.Parameters.AddWithValue("@Natureza", novoCliente.Natureza);
+
+
+            //EnderecoService enderecoService = new EnderecoService();  // Certifique-se de inicializar a instância corretamente
+            //enderecoService.UpdateEndereco(novoCliente.EnderecoCliente);
+
+
             try
             {
                 sqlCommand.ExecuteNonQuery();
@@ -108,14 +115,6 @@ namespace SistemaAdv.Service
                 connection.CloseConnection();
             }
 
-            EnderecoService enderecoService = new EnderecoService();  // Certifique-se de inicializar a instância corretamente
-            enderecoService.UpdateEndereco(novoCliente.EnderecoCliente);
-            MessageBox.Show(
-            "Cadastrado com Sucesso",
-            "CADASTRO",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information
-            );
 
         }
 

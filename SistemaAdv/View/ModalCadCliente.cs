@@ -179,15 +179,16 @@ namespace SistemaAdv.View
 
             //else { MessageBox.Show("Erro"); }
             LimparCampos();
-            this.Close();
+
         }
 
         private bool VerificarCampos()
         {
             if (string.IsNullOrEmpty(TxtBox_Natureza.Text))
             {
-                MessageBox.Show("O campo da Natureza não pode estar vazio");
+                MessageBox.Show("O campo do Nome não pode estar vazio");
                 return false;
+               
             }
             else if (string.IsNullOrEmpty(TxtBox_Email.Text))
             {
@@ -201,7 +202,7 @@ namespace SistemaAdv.View
             }
             else if (string.IsNullOrEmpty(TxtBox_Name.Text))
             {
-                MessageBox.Show("O campo do Nome não pode estar vazio");
+                MessageBox.Show("O campo da Natureza não pode estar vazio");
                 return false;
             }
             else if (string.IsNullOrEmpty(TxtBox_PIS.Text))

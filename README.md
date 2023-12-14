@@ -1,6 +1,6 @@
 # Anotações
 
-- [ ]  2 CRUDs completos;
+- [X]  2 CRUDs completos;
 - [x]  Uso dos componentes: panel, label, textbox, listbox, button, radiobutton, checkbox, picturebox, monthcalendar, maskedtextbox;
 - [x]  Validação de campos no momento do cadastro (CPF, email, senha, telefone…);
 - [x]  MessageBox para confirmação de cadastros;
@@ -14,7 +14,6 @@ Você deverá entregar nesta tarefa:
 
 - Link do GitHub contendo os códigos do projeto e o script do banco de dados;
 
-Crud User ok e CRUD Cliente faltando o Edit.
 
-- Fazer o update no Banco
+
 
